@@ -1,33 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Free Creative Portfolio Template: Holding Page</title>
-    <meta name="description" content="When writing a meta description, keep it between 140 and 160 characters so Google can display your entire message. Don’t forget to include your keyword!" />
+    <title>
+      Free Creative Portfolio Template: April 2025 Version | Work Page
+    </title>
+    <meta
+      name="description"
+      content="When writing a meta description, keep it between 140 and 160 characters so Google can display your entire message. Don’t forget to include your keyword!"
+    />
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="5; url=work.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="screenshot.jpg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body class="holding-page">
-    <div class="holding-page-wrapper">
-      <div class="holding-page-inner-container">
-        <a href="work.html">
-          <figure class="holding-page-animation">
-            <img src="assets/temp/holding-page-animation.gif" alt="Portfolio Website Launching Soon" />
-          </figure>
-          <h1 class="holding-page-title">Portfolio Launching Soon</h1>
-        </a>
-      </div>
-      <div class="holding-page-footer">
-        <p class="holding-page-copyright">
-          &copy; 2020-2025. Hand crafted with
-          <span class="heart">❤</span>
-          by James Neufeld.
+
+  <body class="work-page" id="top">
+    <section class="hero gradient-animation">
+      <header class="hero-header">
+        <ul class="nav-branding">
+          <li class="nav-branding-item">
+            <a href="work.html" class="nav-link-primary">WORK</a>
+          </li>
+          <li class="nav-branding-item">
+            <a href="about.html" class="nav-link-primary">ABOUT</a>
+          </li>
+        </ul>
+      </header>
+      <div>
+        <p class="blurb">
+          GRAPHIC DESIGNER CURRENTLY LOCATED IN VANCOUVER, BC. CURRENTLY WORKING
+          AT XXXX
         </p>
       </div>
+      <div class="hero-headline-wrapper">
+        <li class="wordmark">
+          <img src="assets/branding-images/logowordmark.svg" />
+        </li>
+      </div>
+    </section>
+    <section class="tagline-section">
+      <p class="tagline">
+        Designed for <strong><em>reality</em></strong>
+      </p>
+      <p class="tagline">
+        born from <strong><em>imagination.</em></strong>
+      </p>
+      <p class="tagline2">
+        <br />Where does our story begin?<br />
+        <i class="fa-solid fa-envelope fa-xl" style="color: #bedd4e"></i>
+      </p>
+    </section>
+    <ul class="footer-global">
+      <li class="footer-tagline">
+        <p><strong>Template features:</strong></p>
+        <ul class="footer-list">
+          <li class="footer-item">
+            🖼️ Hero section - Big impactful intro for your brand.
+          </li>
+        </ul>
+      </li>
+
+      <li class="footer-contact-social">
+        <h2>Contact &amp; Social</h2>
+        <ul class="footer-socials-list">
+          <li class="footer-item">
+            <i class="fa-brands fa-square-instagram" style="color: #fefae6"></i>
+          </li>
+          <li class="footer-item">
+            <i class="fa-brands fa-linkedin" style="color: #fefae6"></i>
+          </li>
+          <li class="footer-item">
+            <i class="fa-brands fa-square-behance" style="color: #fefae6"></i>
+          </li>
+        </ul>
+      </li>
+      <li class="footer-full-width">
+        <p class="footer-fineprint">
+          &copy; <span id="copyright-years"></span>. keiraschick.com
+          <span class="heart">❤</span>
+        </p>
+        <script>
+          document.getElementById("copyright-years").textContent +=
+            new Date().getFullYear();
+        </script>
+      </li>
+    </ul>
+
+    <div id="myID" class="bottomMenu hide">
+      <a href="#"></a>
     </div>
+
+    <div class="flier">
+      <img src="assets/branding-images/dragon.svg" alt="Describe your image" />
+    </div>
+
+    <script>
+      myID = document.getElementById("myID");
+
+      var myScrollFunc = function () {
+        var y = window.scrollY;
+        if (y >= 800) {
+          myID.className = "bottomMenu show";
+        } else {
+          myID.className = "bottomMenu hide";
+        }
+      };
+
+      window.addEventListener("scroll", myScrollFunc);
+    </script>
   </body>
 </html>

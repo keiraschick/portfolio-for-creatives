@@ -38,8 +38,8 @@
 /* Rubik Font (clean and modern for body text) */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap");
 
-/* Inter Font (great for readability and minimal design) */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Plus Jarkata Sans (great for readability and minimal design) */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 /*
 
@@ -102,58 +102,59 @@
 
 :root {
   /* Typography */
-  --font-family-body: "Inter", sans-serif;
-  --font-family-heading: "Eczar", serif;
-  --font-family-project-title: "Eczar", serif;
+  --font-family-body: "Plus Jakarta Sans", sans;
+  --font-family-heading: "Plus Jakarta Sans", sans;
+  --font-family-project-title: "Plus Jakarta Sans", sans;
   /* Core Colours */
   --color-text-primary: #222;
   --color-text-secondary: #333;
-  --color-accent-primary: #5200ff;
+  --color-accent-primary: #ffffff;
   --color-accent-secondary: #ff057c;
-  --color-overlay-primary: #5200ff;
+  --color-overlay-primary: #ffffff;
   --color-highlight: lemonchiffon;
   --color-fallback: #ff057c; /* Fallback color for glitch effect on 404 page */
   /* Backgrounds */
   --color-bg: #fdfdfd;
-  --color-bg-about: #f5f5f5;
+  --color-bg-about: #000000;
   --color-bg-footer: #f5f5f5;
-  --color-bg-holding-page: rgba(82, 0, 255, 0.6);
+  --color-bg-holding-page: rgba(1, 1, 1, 0.6);
   /* Headings */
-  --h1-color: #5200ff;
-  --h2-color: #5200ff;
-  --h3-color: #5200ff;
-  --h4-color: #5200ff;
-  --h5-color: #5200ff;
-  --h6-color: #5200ff;
+  --h1-color: #060606;
+  --h2-color: #070707;
+  --h3-color: #000000;
+  --h4-color: #000000;
+  --h5-color: #ffffff;
+  --h6-color: #000000;
   /* Special Text Colours */
-  --color-text-holding-title: #ebedf0;
-  --color-text-project-category: #ffffff;
-  --color-text-project-description: #222;
-  --color-text-project-sidebar: #222;
-  --color-text-project-title: #5200ff;
-  --color-text-work-grid-title: #ffffff;
+  --color-text-holding-title: #000000;
+  --color-text-project-category: #000000;
+  --color-text-project-description: #000000;
+  --color-text-project-sidebar: #000000;
+  --color-text-project-title: #000000;
+  --color-text-work-grid-title: #000000;
   /* Link States */
-  --color-link: #5200ff;
+  --color-link: #ffffff;
   --color-link-hover: #111;
-  --color-link-visited: #5200ff;
+  --color-link-visited: #000000;
   /* Navigation */
-  --color-nav-link: #5200ff;
-  --color-nav-link-hover: #321575;
+  --color-nav-link: #000000;
+  --color-nav-link-hover: #ff3f3f;
   --color-nav-arrow: #5200ff;
   --color-nav-arrow-hover: #000;
   --color-nav-arrow-stroke: #5200ff;
   --color-nav-arrow-stroke-hover: #000;
   /* Components */
   --color-bg-full-width: #f5f5f5;
-  --color-bg-project-description: #f5f5f5;
-  --color-bg-sidebar-project: orangered;
+  --color-bg-project-description: #ffffff;
+  --color-bg-sidebar-project: transparent;
   --color-bg-sidebar-work: lemonchiffon;
   --color-gradient-hero: linear-gradient(90deg, #ff00ff, #00ffff);
-  --color-gradient-project-details: linear-gradient(-225deg, #ff057c 0%, #8d0b93 50%, #321575 100%);
+  --color-gradient-project-details: transparent;
+
   /* Special Elements */
-  --color-icon-heart: darkred;
+  --color-icon-heart: #bedd4e;
   --color-text-holding-footer: #f8f8ff;
-  --color-bg-selection: #5200ff;
+  --color-bg-selection: #bedd4e;
   --color-shadow-stroke: rgba(0, 0, 0, 0.4);
   /* Assets */
   --image-noise-texture: url(/assets/temp/noise.svg);
@@ -167,11 +168,11 @@
   --radius-lg: 2rem; /* Large decorative elements */
   --radius-full: 50%; /* Circles/pills */
   /* Padding Scale */
-  --padding-tiny: 0.5rem; /* Micro-spacing: icon padding, toggle switches */
+  --padding-tiny: 2rem; /* Micro-spacing: icon padding, toggle switches */
   --padding-small: 1rem; /* Compact spacing: mobile buttons, form tags */
   --padding-medium: 2rem; /* Standard spacing: desktop buttons, card content */
   --padding-large: 3rem; /* Section spacing: content blocks, banner padding */
-  --padding-jumbo: 4rem; /* Hero elements: full-width containers, page headers */
+  --padding-jumbo: 3rem; /* Hero elements: full-width containers, page headers */
   --padding-ultra: 8rem; /* Full-bleed spacing: edge-to-edge layouts, super-sized headers */
 }
 
@@ -196,7 +197,7 @@
 html {
   box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
   scroll-behavior: smooth; /* Adds smooth scrolling between sections */
-  cursor: url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
+  cursor: url("../assets/branding-images/cursor.svg"), auto !important; /* Custom cursor (change the URL below to use your own) */
 
   /* TODO: Replace the URL above to add a custom cursor. 
      If you want to use the default browser cursor, just delete this line. */
@@ -224,7 +225,9 @@ body {
 /* ------------------------------- */
 
 ::selection {
-  background: var(--color-bg-selection); /* Uses your custom color for highlighted text */
+  background: var(
+    --color-bg-selection
+  ); /* Uses your custom color for highlighted text */
 }
 
 /* ---------------------------------------- */
@@ -332,7 +335,7 @@ svg {
 
 /* Large decorative elements (modals, banners) */
 .rounded-large {
-  border-radius: var(--radius-lg);
+  border: 5px #000000;
 }
 
 /* Perfect circles (avatars, icons) */
@@ -401,7 +404,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: var(--font-family-heading);
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -409,7 +412,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.325rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   line-height: 1.2;
   color: var(--h3-color);
@@ -448,7 +451,7 @@ p {
 }
 
 strong {
-  font-weight: 700; /* Makes text bold */
+  font-weight: 800; /* Makes text bold */
 }
 
 em {
@@ -459,6 +462,26 @@ em {
 /* 🎨 Custom Class Styles for Headlines, Projects, and Highlights     */
 /* Use these utility classes to style key text elements across pages  */
 /* ------------------------------------------------------------------ */
+
+.tagline {
+  font-size: 4rem;
+  line-height: 1;
+  margin-top: 3px;
+  padding-top: 10px;
+  color: #fefae6;
+}
+
+.tagline2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: space-between;
+  font-size: 2rem;
+  line-height: 1;
+  margin-top: 10%;
+  gap: 50px;
+  color: #bedd4e;
+}
 
 /* Main hero headline — usually sits in the intro section */
 .hero-headline {
@@ -472,7 +495,6 @@ em {
 .project-title {
   font-size: 3.625rem;
   font-family: var(--font-family-project-title);
-  color: var(--color-text-project-title);
   margin-bottom: 1rem;
 }
 
@@ -493,7 +515,7 @@ em {
 
 /* ✨ Highlighted text — great for emphasis */
 .highlight-primary {
-  color: var(--color-accent-secondary);
+  color: #bedd4e;
 }
 
 .highlight-gradient {
@@ -563,10 +585,49 @@ a:active {
 /* -------------------------------------------------------------------------- */
 
 a.nav-link-primary {
-  color: var(--color-nav-link);
+  display: inline-block;
+  border: 2px solid black;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
 }
+
+a.nav-link-primary-invert {
+  display: inline-block;
+  border: 2px solid #fefae6;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  color: #fefae6;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
 a.nav-link-primary:hover {
-  color: var(--color-nav-link-hover);
+  display: inline-block;
+  border: 2px solid black;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  color: black;
+  background-color: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+a.nav-link-primary-invert:hover {
+  display: inline-block;
+  border: 2px solid #bedd4e;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  color: black;
+  background-color: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -576,11 +637,6 @@ a.nav-link-primary:hover {
 /* -------------------------------------------------------------------------- */
 
 /* Default and visited state for navigation arrows */
-
-.navigation-arrow:link,
-.navigation-arrow:visited {
-  color: var(--color-nav-arrow);
-}
 
 /* Hover and active (clicked) states — makes arrows feel interactive */
 .navigation-arrow:active,
@@ -618,14 +674,79 @@ a.nav-link-primary:hover {
 /* Great place for first impression and personal branding                    */
 /* -------------------------------------------------------------------------- */
 
+.blurb {
+  width: 20%;
+  margin-left: 50px;
+}
+
 .hero {
   width: 100%;
   min-height: 80vh; /* Takes up most of the screen height */
   display: flex;
   flex-direction: column;
 }
+
 .hero-header {
-  min-height: 6rem; /* Space reserved for logo + nav */
+  min-height: 25rem; /* Space reserved for logo + nav */
+  background: #fefae6;
+  background-repeat: no-repeat;
+}
+
+.hero-header-work {
+  /* Space reserved for logo + nav */
+  width: 100%;
+  min-height: 5rem;
+  background: transparent;
+}
+
+.hero-header-about {
+  width: 100%;
+  min-height: 5rem;
+  background: #000;
+}
+
+.fixed-top-image {
+  width: 10rem;
+  position: absolute;
+  top: 4rem;
+  right: 13rem;
+  z-index: 1000;
+}
+
+.fixed-top-image-about {
+  width: 10rem;
+  position: absolute;
+  top: 13rem;
+  left: 33rem;
+  z-index: 1000;
+}
+
+/* Spin animation */
+.spin {
+  width: 100%;
+  height: auto;
+  display: block; /* remove inline gap */
+  transform-origin: center center;
+  animation: spin 13s linear infinite;
+}
+
+/* Spin keyframes */
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  .fixed-top-image {
+    width: 6rem;
+    top: 2rem;
+    right: 2rem;
+  }
 }
 
 .nav-branding {
@@ -650,26 +771,34 @@ a.nav-link-primary:hover {
 }
 
 .hero-headline-wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  gap: 3rem;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-small);
-  text-align: center; /* Keeps text centered */
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 3%;
+  background: #fefae6;
+  /* Keeps text centered */
+}
+
+.wordmark {
+  width: 110%;
 }
 
 .hero-icon {
   font-size: 4rem;
 }
 
-.hero-footer {
+.tagline-section {
+  width: 100%;
+  padding: 5%;
+  min-height: 125vh;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
+  background: #000;
 }
 
 .hero-footer-navigation {
@@ -702,7 +831,9 @@ a.nav-link-primary:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-full-width); /* Background color for full-width sections */
+  background: var(
+    --color-bg-full-width
+  ); /* Background color for full-width sections */
   margin-bottom: 1rem;
 }
 
@@ -753,16 +884,20 @@ a.nav-link-primary:hover {
 }
 
 /* Padding around work grid and project page */
+
 .portfolio,
 .project-wrapper,
 .work-sidebar-wrapper {
-  padding: var(--padding-tiny); /* Padding to keep content from touching edges */
+  padding: var(--padding-tiny);
+  /* Padding to keep content from touching edges */
 }
 
 /* Work Sidebar on Mobile */
 .work-sidebar {
   width: 100%;
-  background: var(--color-bg-sidebar-work); /* Background color for the sidebar */
+  background: var(
+    --color-bg-sidebar-work
+  ); /* Background color for the sidebar */
 }
 
 /* Main Work Area with Sidebar on Mobile */
@@ -773,8 +908,14 @@ a.nav-link-primary:hover {
 /* Defining the work page grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates a responsive grid */
-  grid-gap: 1rem; /* Space between grid items */
+  grid-gap: 0px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Creates a responsive grid */
+  margin: 0rem;
+  padding: 0rem;
+  background-color: #5200ff; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
 }
 
@@ -782,12 +923,14 @@ a.nav-link-primary:hover {
 .work-page-grid-item {
   width: 100%;
   height: auto;
-  position: relative; /* Needed to position the overlay */
+  position: relative;
+  /* Needed to position the overlay */
 }
 
 /* Project container for background and padding */
 .project-container {
-  background: var(--color-accent-primary); /* Set project background color */
+  background: var(--color-accent-primary);
+  background-color: #00ffff;
   padding: var(--padding-medium);
 }
 
@@ -807,7 +950,9 @@ a.nav-link-primary:hover {
   align-items: center;
   flex-direction: column;
   padding: var(--padding-small);
-  background-color: var(--color-overlay-primary); /* Background color of the overlay */
+  background-color: var(
+    --color-overlay-primary
+  ); /* Background color of the overlay */
   transition: opacity var(--duration-normal), visibility var(--duration-normal);
 }
 
@@ -867,24 +1012,44 @@ a.nav-link-primary:hover {
 
 /* Grid container for the About section */
 .about-grid {
-  display: grid; /* Set to grid layout */
-  grid-template-columns: 1fr; /* Single column layout for mobile and smaller screens */
-  grid-gap: 3rem; /* Space between grid items */
-  background: var(--color-bg-about); /* Background color for the section */
-  padding: var(--padding-small); /* Padding around the grid */
-  flex: 1; /* Flex-grow to take up available space */
+  /* Set to grid layout */
+  /* Single column layout for mobile and smaller screens */
+  /* Space between grid items */
+  width: 100%;
+  background: #000; /* Background color for the section */
+
+  /* Padding around the grid */
+  /* Flex-grow to take up available space */
 }
 
 /* Image section in the About page grid */
 .about-grid-image {
-  grid-column: 1 / 2; /* Image spans the first column */
-  grid-row: 1 / 2; /* Image spans the first row */
+  max-width: 100%;
+  justify-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+
+  /* Image spans the first column */
+  /* Image spans the first row */
 }
 
 /* Text section in the About page grid */
 .about-grid-text {
-  grid-column: 1 / 2; /* Text spans the first column */
-  grid-row: 2 / 3; /* Text spans the second row */
+  max-width: 506px;
+  min-width: 20px;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+  /* Text spans the first column */
+  /* Text spans the second row */
+}
+
+.about-name {
+  position: absolute;
+  bottom: 50px; /* Move slightly below the image edge */
+  right: 540px; /* Push slightly to the right */
+  z-index: 20; /* Make sure it appears above the image */
 }
 
 /* 
@@ -907,9 +1072,8 @@ a.nav-link-primary:hover {
   grid-template-columns: 1fr; /* Single column layout */
   grid-gap: 3rem; /* Consistent spacing between sections */
   min-height: auto; /* Allows footer to expand based on content, no fixed height */
-  background: var(--color-bg-footer); /* Using CSS variable for theming */
+  background: #000; /* Using CSS variable for theming */
   padding: var(--padding-small); /* Internal spacing */
-
   /* Note: Using 'fr' units ensures proper scaling across devices */
 }
 
@@ -1041,7 +1205,6 @@ a.nav-link-primary:hover {
 /* Full-width wrapper for the project section */
 .project-wrapper-full-width {
   width: 100%;
-  padding: var(--padding-small);
 }
 
 /* Container for the project content with full-width display */
@@ -1061,22 +1224,24 @@ a.nav-link-primary:hover {
 }
 
 /* Container for project images with center alignment */
-.project-image-container {
+.project-image {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 1rem; /* Space below the image */
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1%;
+  /* Space below the image */
 }
 
 /* Container for project description */
 .project-description-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   flex-direction: column;
-  background: var(--color-bg-project-description);
-  padding: var(--padding-small);
+  margin-top: 1rem;
+  padding-left: 10%;
+  padding-right: 10%;
   width: 100%;
   margin-bottom: 1rem; /* Space below the description */
 }
@@ -1084,7 +1249,6 @@ a.nav-link-primary:hover {
 /* Column styles for two-column layouts */
 .col-2 {
   width: 100%;
-  padding: var(--padding-small);
 }
 
 /* Project image styling */
@@ -1098,32 +1262,25 @@ a.nav-link-primary:hover {
 /* Project details section */
 .project-details {
   width: 100%;
-  padding: var(--padding-small);
-  background: var(--color-gradient-project-details); /* TODO: Remove gradient background if you prefer a simpler design */
+  background: var(
+    --color-gradient-project-details
+  ); /* TODO: Remove gradient background if you prefer a simpler design */
 }
 
 /* Previous/Next Arrow Styles */
 
 .project-navigation {
   display: flex;
-  flex-direction: row;
-  flex: 1;
-  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
+  position: absolute;
+  background: #ff00ff;
 }
 
 /* Styling for left and right arrows */
 .arrow-left,
 .arrow-right {
-  width: 50%;
-}
-.arrow-right {
-  text-align: right;
-}
-
-.arrow {
-  padding: 0;
+  width: 20px;
 }
 
 /*
@@ -1170,7 +1327,12 @@ a.nav-link-primary:hover {
   width: 100%;
   min-height: 100vh;
   /* TODO: Delete the following if you do not want a grainy gradient background on index.html. Be careful not to delete the closing } */
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1), var(--color-bg-holding-page)), var(--image-noise-texture);
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1),
+      var(--color-bg-holding-page)
+    ),
+    var(--image-noise-texture);
   /* For more on grainy gradients see https://grainy-gradients.vercel.app/ */
 }
 
@@ -1192,7 +1354,9 @@ a.nav-link-primary:hover {
 
 .holding-page-copyright {
   font-size: 0.8rem; /* Smaller font size for copyright text */
-  color: var(--color-text-holding-footer); /* Custom color for the footer text */
+  color: var(
+    --color-text-holding-footer
+  ); /* Custom color for the footer text */
   margin-bottom: 0; /* Removes default margin from the bottom of the copyright text */
 }
 
@@ -1307,7 +1471,7 @@ to keep your styles reusable and consistent.
   }
 
   h1 {
-    font-size: 4.275rem;
+    font-size: 3rem;
   }
 
   h2 {
@@ -1315,7 +1479,7 @@ to keep your styles reusable and consistent.
   }
 
   h3 {
-    font-size: 1.625rem;
+    font-size: 1rem;
   }
 
   .h1-full-width,
@@ -1388,7 +1552,6 @@ to keep your styles reusable and consistent.
   /* Project Full Width Styles */
 
   .project-wrapper-full-width {
-    padding: var(--padding-small) var(--padding-jumbo);
   }
 
   /* Sidebar on Large Devices */
@@ -1454,7 +1617,10 @@ to keep your styles reusable and consistent.
     padding-right: var(--padding-jumbo);
     padding-bottom: 0;
     padding-left: var(--padding-jumbo);
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 5px #fefae6;
+    z-index: 1000;
+    /* Three equal columns */
   }
 
   /* Column 1: Tagline/Message */
