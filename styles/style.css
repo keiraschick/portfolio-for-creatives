@@ -123,7 +123,7 @@
   --h2-color: #070707;
   --h3-color: #000000;
   --h4-color: #000000;
-  --h5-color: #ffffff;
+  --h5-color: #fefae6;
   --h6-color: #000000;
   /* Special Text Colours */
   --color-text-holding-title: #000000;
@@ -404,7 +404,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: var(--font-family-heading);
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -427,8 +427,8 @@ h4 {
 
 h5 {
   font-size: 1.1rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
   color: var(--h5-color);
 }
 
@@ -716,8 +716,8 @@ a.nav-link-primary-invert:hover {
 .fixed-top-image-about {
   width: 10rem;
   position: absolute;
-  top: 13rem;
-  left: 33rem;
+  top: 19rem;
+  left: 13rem;
   z-index: 1000;
 }
 
@@ -778,12 +778,27 @@ a.nav-link-primary-invert:hover {
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 3%;
-  background: #fefae6;
+  background: #ffffff;
   /* Keeps text centered */
 }
 
 .wordmark {
   width: 110%;
+}
+
+#wordmarkArea {
+  position: relative;
+  z-index: 100; /* ensures clicks register properly */
+}
+
+#bouncingCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1024px; /* Adjust for how tall you want the flame area */
+  pointer-events: none; /* So clicks pass through if needed */
+  z-index: 100;
 }
 
 .hero-icon {
@@ -905,6 +920,12 @@ a.nav-link-primary-invert:hover {
   width: 100%;
 }
 
+.project-identifiers {
+  flex-direction: row;
+  border: 1px solid black;
+  padding: 0.7rem 1.4rem;
+}
+
 /* Defining the work page grid */
 .grid {
   display: grid;
@@ -914,8 +935,8 @@ a.nav-link-primary-invert:hover {
     minmax(300px, 1fr)
   ); /* Creates a responsive grid */
   margin: 0rem;
-  padding: 0rem;
-  background-color: #5200ff; /* Space between grid items */
+  padding: 2.5%;
+  background-color: #ffffff; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
 }
 
@@ -924,6 +945,7 @@ a.nav-link-primary-invert:hover {
   width: 100%;
   height: auto;
   position: relative;
+  border: 1px solid #000;
   /* Needed to position the overlay */
 }
 
@@ -1011,12 +1033,22 @@ a.nav-link-primary-invert:hover {
 /* -------------------------------------------------------------------------- */
 
 /* Grid container for the About section */
+.about-photo-grid {
+  width: 100%;
+  background: #000000;
+  padding-top: 8rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-items: center;
+}
+
 .about-grid {
   /* Set to grid layout */
   /* Single column layout for mobile and smaller screens */
   /* Space between grid items */
+
   width: 100%;
-  background: #000; /* Background color for the section */
+  background: #000000; /* Background color for the section */
 
   /* Padding around the grid */
   /* Flex-grow to take up available space */
@@ -1026,8 +1058,6 @@ a.nav-link-primary-invert:hover {
 .about-grid-image {
   max-width: 100%;
   justify-items: center;
-  padding-left: 20%;
-  padding-right: 20%;
 
   /* Image spans the first column */
   /* Image spans the first row */
@@ -1041,14 +1071,19 @@ a.nav-link-primary-invert:hover {
   margin-left: auto;
   margin-right: auto;
   padding-top: 10%;
+
   /* Text spans the first column */
   /* Text spans the second row */
 }
 
+.about-image {
+  justify-items: center;
+}
+
 .about-name {
   position: absolute;
-  bottom: 50px; /* Move slightly below the image edge */
-  right: 540px; /* Push slightly to the right */
+  bottom: -60px; /* Move slightly below the image edge */
+  right: 270px; /* Push slightly to the right */
   z-index: 20; /* Make sure it appears above the image */
 }
 
@@ -1082,43 +1117,46 @@ a.nav-link-primary-invert:hover {
 /* Each component stacks vertically in mobile view                             */
 /* -------------------------------------------------------------------------- */
 
-.footer-tagline {
+.footer-list {
   grid-column: 1 / 2; /* Full width (single column) */
   grid-row: 1 / 2;
 }
-.footer-highlights {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
+
 .footer-contact-social {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
+}
+
+.footer-logo {
+  width: 15%;
 }
 /* -------------------------------------------------------------------------- */
 /* 🌊 FULL-WIDTH BOTTOM SECTION                                               */
 /* Typically used for copyright/legal information                             */
 /* -------------------------------------------------------------------------- */
-.footer-full-width {
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
-  text-align: center; /* Center copyright text */
-  align-self: end; /* Push to bottom */
-}
 
 /* ------------------------------- */
 /* 📜 Reusable footer list styles */
 /* ------------------------------- */
 .footer-list {
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: left;
+  padding-left: 2%;
 }
-.footer-awards-list {
-  margin-bottom: 2rem;
+
+.footer-copyright {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.footer-works-list {
-  margin-bottom: 2rem;
-}
+
 .footer-socials-list {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  gap: 20px;
+  padding-right: 2%;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1159,7 +1197,8 @@ a.nav-link-primary-invert:hover {
 
 .footer-fineprint {
   font-size: 0.875rem; /* Slightly smaller for disclaimers or captions */
-  color: var(--color-text-secondary); /* Themed color */
+  color: #fefae6; /* Themed color */
+  margin-bottom: 0;
 }
 
 /* New item badges */
@@ -1209,7 +1248,6 @@ a.nav-link-primary-invert:hover {
 
 /* Container for the project content with full-width display */
 .project-full-width {
-  width: 100%;
   margin-bottom: 2rem;
 }
 
@@ -1224,26 +1262,32 @@ a.nav-link-primary-invert:hover {
 }
 
 /* Container for project images with center alignment */
+
+.full-width-image {
+  width: 130%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 .project-image {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 1%;
+  width: 100%;
   /* Space below the image */
 }
 
 /* Container for project description */
 .project-description-container {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
-  margin-top: 1rem;
-  padding-left: 10%;
-  padding-right: 10%;
-  width: 100%;
-  margin-bottom: 1rem; /* Space below the description */
+  margin-top: 2rem;
+  padding-left: 10.5%;
+  width: 100%; /* Space below the description */
 }
 
 /* Column styles for two-column layouts */
@@ -1271,18 +1315,27 @@ a.nav-link-primary-invert:hover {
 
 .project-navigation {
   display: flex;
-  justify-content: space-between;
   width: 100%;
-  position: absolute;
-  background: #ff00ff;
 }
 
 /* Styling for left and right arrows */
+
 .arrow-left,
 .arrow-right {
-  width: 20px;
+  width: 14%;
 }
 
+.arrow-left {
+  padding-left: 4%;
+  padding-right: 2%;
+}
+
+.arrow-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 4%;
+  padding-left: 2%;
+}
 /*
 
 ██████  ██       ██████   ██████      ██ ██████  ███████ ███████ ██    ██ ███    ███ ███████ 
@@ -1475,11 +1528,12 @@ to keep your styles reusable and consistent.
   }
 
   h2 {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 
   h3 {
     font-size: 1rem;
+    margin-top: -0.6rem;
   }
 
   .h1-full-width,
@@ -1526,12 +1580,12 @@ to keep your styles reusable and consistent.
   /* Grayscale filter with full-colour on hover and tap */
 
   .work-page-grid-item a.grayscale img {
-    filter: grayscale(100);
+    filter: grayscale(0);
   }
 
   .work-page-grid-item > a.grayscale:active img,
   .work-page-grid-item > a.grayscale:hover img {
-    filter: grayscale(0);
+    filter: grayscale(100) blur(4px);
   }
 
   /* Padding around work grid and project page */
@@ -1550,9 +1604,6 @@ to keep your styles reusable and consistent.
   }
 
   /* Project Full Width Styles */
-
-  .project-wrapper-full-width {
-  }
 
   /* Sidebar on Large Devices */
 
@@ -1613,20 +1664,11 @@ to keep your styles reusable and consistent.
   /* ------------------------------- */
 
   .footer-global {
-    padding-top: var(--padding-jumbo);
-    padding-right: var(--padding-jumbo);
-    padding-bottom: 0;
-    padding-left: var(--padding-jumbo);
+    height: 10%;
+    padding: 2%;
     grid-template-columns: 1fr 1fr 1fr;
-    border-top: 5px #fefae6;
-    z-index: 1000;
+    border-top: 1px solid #fefae6;
     /* Three equal columns */
-  }
-
-  /* Column 1: Tagline/Message */
-  .footer-tagline {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
   }
 
   /* Column 2: Awards & Works */

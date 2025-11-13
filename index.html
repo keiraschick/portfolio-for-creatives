@@ -43,9 +43,13 @@
           AT XXXX
         </p>
       </div>
-      <div class="hero-headline-wrapper">
+      <div class="hero-headline-wrapper" id="wordmarkArea">
         <li class="wordmark">
-          <img src="assets/branding-images/logowordmark.svg" />
+          <object
+  id="wordmarkAnimation"
+  type="image/svg+xml"
+  data="assets/branding-images/wordmarkframe.svg">
+</object>
         </li>
       </div>
     </section>
@@ -60,64 +64,49 @@
         <br />Where does our story begin?<br />
         <i class="fa-solid fa-envelope fa-xl" style="color: #bedd4e"></i>
       </p>
+
+
     </section>
     <ul class="footer-global">
-      <li class="footer-tagline">
-        <p><strong>Template features:</strong></p>
         <ul class="footer-list">
-          <li class="footer-item">
-            🖼️ Hero section - Big impactful intro for your brand.
-          </li>
+          <a href="index.html"
+            ><img class= "footer-logo" src="assets/branding-images/logo_green.svg"
+          /></a>
         </ul>
       </li>
-
-      <li class="footer-contact-social">
-        <h2>Contact &amp; Social</h2>
-        <ul class="footer-socials-list">
-          <li class="footer-item">
-            <i class="fa-brands fa-square-instagram" style="color: #fefae6"></i>
-          </li>
-          <li class="footer-item">
-            <i class="fa-brands fa-linkedin" style="color: #fefae6"></i>
-          </li>
-          <li class="footer-item">
-            <i class="fa-brands fa-square-behance" style="color: #fefae6"></i>
-          </li>
-        </ul>
-      </li>
-      <li class="footer-full-width">
-        <p class="footer-fineprint">
-          &copy; <span id="copyright-years"></span>. keiraschick.com
-          <span class="heart">❤</span>
-        </p>
-        <script>
+<li class="footer-copyright"> 
+  <p class="footer-fineprint">
+          &copy; <span id="copyright-years"></span> Keira Schick is on 
+          <span class="heart">⊹₊🔥⋆｡°</span> 
+           <script>
           document.getElementById("copyright-years").textContent +=
             new Date().getFullYear();
         </script>
+        </p>
+      </li>
+      <li class="footer-contact-social">
+        <ul class="footer-socials-list">
+          <li class="footer-item">
+            <a href="https://www.instagram.com/kikisgallery?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+              <i class="fa-brands fa-square-instagram fa-xl"style="color: #bedd4e"></i></a>
+          </li>
+          <li class="footer-item">
+            <a href="https://www.linkedin.com/in/keira-schick-3644a7250"><i class="fa-brands fa-linkedin fa-xl" style="color: #bedd4e"></i></a>
+          </li>
+          <li class="footer-item">
+           <a href="https://www.behance.net/keiraschick0"><i class="fa-brands fa-square-behance fa-xl" style="color: #bedd4e"></i></a>
+          </li>
+        </ul>
       </li>
     </ul>
 
-    <div id="myID" class="bottomMenu hide">
-      <a href="#"></a>
-    </div>
 
     <div class="flier">
       <img src="assets/branding-images/dragon.svg" alt="Describe your image" />
     </div>
 
-    <script>
-      myID = document.getElementById("myID");
-
-      var myScrollFunc = function () {
-        var y = window.scrollY;
-        if (y >= 800) {
-          myID.className = "bottomMenu show";
-        } else {
-          myID.className = "bottomMenu hide";
-        }
-      };
-
-      window.addEventListener("scroll", myScrollFunc);
-    </script>
+ <canvas id="bouncingCanvas"></canvas>
+    <script src="js/flames.js"></script>
+  
   </body>
 </html>
