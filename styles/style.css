@@ -1457,19 +1457,20 @@ a.nav-link-primary-invert:hover {
 /* A great 404 page is a chance to leave a memorable impression when visitors land on a page that doesn't exist. Consider customizing this page to be more engaging, humorous, or on-brand with your site. Check out error.css for the gradient and glitch effect. */
 
 .error-headline-wrapper {
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-small);
   text-align: center;
-  margin: 0 auto;
+  margin: 0;
+  background-color: #000;
 }
 
 .error-page-animation {
-  width: 25rem;
+  width: 30rem;
+  margin-right: 2rem;
 }
 
 /*
