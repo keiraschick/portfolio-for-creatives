@@ -120,7 +120,7 @@
   --color-bg-holding-page: rgba(1, 1, 1, 0.6);
   /* Headings */
   --h1-color: #060606;
-  --h2-color: #070707;
+  --h2-color: #fefae6;
   --h3-color: #000000;
   --h4-color: #000000;
   --h5-color: #fefae6;
@@ -404,10 +404,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 2rem;
   font-family: var(--font-family-heading);
   line-height: 1.2;
-  margin-bottom: 1rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
   color: var(--h2-color);
 }
 
@@ -426,7 +427,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 3rem;
   color: var(--h5-color);
@@ -476,7 +477,7 @@ em {
   flex-direction: column;
   align-items: center;
   justify-items: space-between;
-  font-size: 2rem;
+  font-size: 1.3rem;
   line-height: 1;
   margin-top: 10%;
   gap: 50px;
@@ -674,6 +675,10 @@ a.nav-link-primary-invert:hover {
 /* Great place for first impression and personal branding                    */
 /* -------------------------------------------------------------------------- */
 
+.blurb-container {
+  background: #fefae6;
+}
+
 .blurb {
   width: 20%;
   margin-left: 50px;
@@ -778,7 +783,7 @@ a.nav-link-primary-invert:hover {
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 3%;
-  background: #ffffff;
+  background: #fefae6;
   /* Keeps text centered */
 }
 
@@ -982,6 +987,7 @@ a.nav-link-primary-invert:hover {
 .work-page-grid-item:hover .overlay {
   visibility: visible; /* Make overlay visible on hover */
   opacity: 0.8; /* Set opacity on hover */
+  justify-content: flex-start;
 }
 
 /* Optional container for future overlay customization */
@@ -1033,6 +1039,10 @@ a.nav-link-primary-invert:hover {
 /* -------------------------------------------------------------------------- */
 
 /* Grid container for the About section */
+.about-page {
+  background: #000;
+}
+
 .about-photo-grid {
   width: 100%;
   background: #000000;
@@ -1062,18 +1072,24 @@ a.nav-link-primary-invert:hover {
   /* Image spans the first column */
   /* Image spans the first row */
 }
-
-/* Text section in the About page grid */
-.about-grid-text {
-  max-width: 506px;
-  min-width: 20px;
-  justify-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10%;
-
-  /* Text spans the first column */
-  /* Text spans the second row */
+.column-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.about-text-1 {
+  width: 100%;
+  background: rgb(0, 0, 0);
+  padding: 2rem;
+  padding-top: 13%;
+  padding-left: 19%;
+}
+.about-text-2 {
+  width: 100%;
+  background: rgb(0, 0, 0);
+  padding: 2rem;
+  padding-top: 13%;
+  padding-right: 19%;
 }
 
 .about-image {
@@ -1087,6 +1103,21 @@ a.nav-link-primary-invert:hover {
   z-index: 20; /* Make sure it appears above the image */
 }
 
+.about-category-container {
+  padding-bottom: 1.5rem;
+  color: #fefae6;
+  font-size: 1rem;
+}
+
+.about-category-header {
+  line-height: 0px;
+  font-weight: 600;
+}
+
+.about-category-body {
+  line-height: 1rem;
+  font-weight: 200;
+}
 /* 
 
 ███████  ██████   ██████  ████████ ███████ ██████  
@@ -1585,7 +1616,31 @@ to keep your styles reusable and consistent.
 
   .work-page-grid-item > a.grayscale:active img,
   .work-page-grid-item > a.grayscale:hover img {
-    filter: grayscale(100) blur(4px);
+    filter: grayscale(200) blur(4px) brightness(50%);
+  }
+
+  .project-text {
+    position: absolute;
+    top: 20px;
+  }
+
+  .project-text-title {
+    font-size: 2.3rem;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  :hover .project-text {
+  }
+
+  .project-text-list {
+    color: #ffffff;
+    font-weight: 200;
+  }
+
+  .project-text-year {
+    color: #ffffff;
+    font-weight: 700;
   }
 
   /* Padding around work grid and project page */
@@ -1643,6 +1698,22 @@ to keep your styles reusable and consistent.
     padding-right: 1rem;
   }
 
+  .column-2 {
+    flex-direction: row;
+  }
+
+  .about-text-1 {
+    width: 50%;
+    font-weight: 300;
+  }
+  .about-text-2 {
+    width: 50%;
+    font-weight: 300;
+  }
+
+  .signature {
+    width: 30%;
+  }
   /* About Page Grid for Large Devices */
 
   .about-grid {
@@ -1653,10 +1724,6 @@ to keep your styles reusable and consistent.
   .about-grid-image {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-  }
-  .about-grid-text {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
   }
 
   /* ------------------------------- */
