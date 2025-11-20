@@ -413,10 +413,11 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   line-height: 1.2;
   color: var(--h3-color);
+  font-weight: 800;
 }
 
 h4 {
@@ -995,6 +996,66 @@ a.nav-link-primary-invert:hover {
   /* Placeholder: no custom styles yet */
 }
 
+.project-year {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.work-title {
+  color: #000;
+}
+
+.work-description {
+  color: #000;
+}
+
+.work-text-1 {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  padding-top: 13%;
+  padding-left: 10%;
+}
+.work-text-2 {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  padding-top: 13%;
+  padding-right: 10%;
+}
+
+.work-category-container {
+  padding-bottom: 1.5rem;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.work-category-header {
+  font-weight: 600;
+  color: #000;
+}
+
+.work-category-body {
+  line-height: 1rem;
+  font-weight: 200;
+}
+
+.work-image-1 {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  padding-top: 8%;
+  padding-left: 10%;
+}
+.work-image-2 {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  padding-top: 8%;
+  padding-right: 10%;
+}
+
 /*
 
 ███████ ██ ██████  ███████ ██████   █████  ██████  
@@ -1531,6 +1592,10 @@ to keep your styles reusable and consistent.
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
+  .project-categories {
+    font-size: 1rem;
+    color: solid red;
+  }
   /* TODO: Adjust  layout for tablets */
 }
 
@@ -1564,8 +1629,9 @@ to keep your styles reusable and consistent.
   }
 
   h3 {
-    font-size: 1rem;
+    font-size: 2rem;
     margin-top: -0.6rem;
+    font-weight: 800;
   }
 
   .h1-full-width,
@@ -1706,10 +1772,12 @@ to keep your styles reusable and consistent.
   .about-text-1 {
     width: 50%;
     font-weight: 300;
+    word-spacing: 2px;
   }
   .about-text-2 {
     width: 50%;
     font-weight: 300;
+    word-spacing: 2px;
   }
 
   .signature {
