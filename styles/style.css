@@ -110,7 +110,7 @@
   --color-text-secondary: #333;
   --color-accent-primary: #ffffff;
   --color-accent-secondary: #ff057c;
-  --color-overlay-primary: #ffffff;
+  --color-overlay-primary: rgb(255, 255, 255, 0.5);
   --color-highlight: lemonchiffon;
   --color-fallback: #ff057c; /* Fallback color for glitch effect on 404 page */
   /* Backgrounds */
@@ -484,7 +484,9 @@ em {
   gap: 50px;
   color: #bedd4e;
 }
-
+.all-caps {
+  text-transform: uppercase;
+}
 /* Main hero headline — usually sits in the intro section */
 .hero-headline {
   color: var(--color-overlay-primary); /* Uses your brand's dominant color */
@@ -988,7 +990,6 @@ a.nav-link-primary-invert:hover {
 .work-page-grid-item:hover .overlay {
   visibility: visible; /* Make overlay visible on hover */
   opacity: 0.8; /* Set opacity on hover */
-  justify-content: flex-start;
 }
 
 /* Optional container for future overlay customization */
@@ -1401,6 +1402,10 @@ a.nav-link-primary-invert:hover {
   background: var(
     --color-gradient-project-details
   ); /* TODO: Remove gradient background if you prefer a simpler design */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid hotpink;
 }
 
 /* Previous/Next Arrow Styles */
@@ -1427,6 +1432,11 @@ a.nav-link-primary-invert:hover {
   justify-content: flex-end;
   padding-right: 4%;
   padding-left: 2%;
+}
+
+.project-categories {
+  font-size: 1rem;
+  color: rgb(202, 19, 215);
 }
 /*
 
@@ -1594,7 +1604,7 @@ to keep your styles reusable and consistent.
 @media (min-width: 768px) {
   .project-categories {
     font-size: 1rem;
-    color: solid red;
+    color: red;
   }
   /* TODO: Adjust  layout for tablets */
 }
@@ -1605,7 +1615,10 @@ to keep your styles reusable and consistent.
 
 @media (min-width: 992px) {
   /* TODO: Add or adjust styles here for large devices. */
-
+  .project-categories {
+    font-size: 1rem;
+    color: green;
+  }
   .flex-row {
     flex-direction: row; /* Changes to row layout on larger screens */
   }
@@ -1683,12 +1696,7 @@ to keep your styles reusable and consistent.
 
   .work-page-grid-item > a.grayscale:active img,
   .work-page-grid-item > a.grayscale:hover img {
-    filter: grayscale(200) blur(4px) brightness(50%);
-  }
-
-  .project-text {
-    position: absolute;
-    top: 20px;
+    filter: grayscale(200) blur(4px);
   }
 
   .project-text-title {
@@ -1853,6 +1861,10 @@ to keep your styles reusable and consistent.
 
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+  .project-categories {
+    font-size: 1rem;
+    color: rgb(166, 175, 66);
   }
 }
 
