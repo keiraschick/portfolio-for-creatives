@@ -45,10 +45,28 @@
       </ul>
     </header>
 
+    <style>
+      @keyframes appear {
+        from {
+          opacity: 0;
+          scale: 0.5;
+        }
+        to {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+      .block {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 20%;
+      }
+    </style>
+
     <main class="main-work-section">
       <section class="portfolio">
         <ul class="grid">
-          <li class="work-page-grid-item">
+          <li class="work-page-grid-item block">
             <a href="/project-1" class="grayscale">
               <figure>
                 <img
@@ -60,206 +78,136 @@
                   alt="Describe your project"
                 />
               </figure>
-
-              <div
-                class="project-details-overlay overlay rounded-large centered-text"
-              >
-                <h1 class="work-grid-project-title">Project Number One</h1>
-                <h4 class="work-grid-project-category">
-                  Branding &amp; Illustration
-                </h4>
+              <div class="project-details-overlay overlay rounded-large">
+                <p class="project-text-title">HEARTWOOD</p>
+                <p class="project-text-list">
+                  Brand Identity | Packaging | Website | Menu Design
+                </p>
+                <p class="project-text-year">2024</p>
               </div>
             </a>
           </li>
-          <li class="work-page-grid-item">
-            <a href="/project-1" class="grayscale">
-              <figure>
-                <img
-                  src="assets/branding-images/GinFront_Heartwood_optimized.jpg"
-                  width="1920"
-                  height="1080"
-                  class="rounded-large"
-                  loading="lazy"
-                  alt="Describe your project"
-                />
-              </figure>
 
-              <div
-                class="project-details-overlay overlay rounded-large centered-text"
-              >
-                <h1 class="work-grid-project-title">Project Number One</h1>
-                <h4 class="work-grid-project-category">
-                  Branding &amp; Illustration
-                </h4>
-              </div>
-            </a>
-          </li>
-          <li class="work-page-grid-item">
-            <a href="/project-1" class="grayscale">
-              <figure>
-                <img
-                  src="assets/branding-images/GinFront_Heartwood_optimized.jpg"
-                  width="1920"
-                  height="1080"
-                  class="rounded-large"
-                  loading="lazy"
-                  alt="Describe your project"
-                />
-              </figure>
-
-              <div
-                class="project-details-overlay overlay rounded-large centered-text"
-              >
-                <h1 class="work-grid-project-title">Project Number One</h1>
-                <h4 class="work-grid-project-category">
-                  Branding &amp; Illustration
-                </h4>
-              </div>
-            </a>
-          </li>
-          <li class="work-page-grid-item rounded-large">
-            <a href="Heartwood-KeiraSchick.html" class="grayscale">
-              <figure>
-                <img
-                  src="assets/branding-images/GinFront_Heartwood_optimized.jpg"
-                  width="1485"
-                  height="1124"
-                  class="rounded-large"
-                  loading="lazy"
-                  alt="Heartwood Gin Packaging all 3 front facing"
-                />
-                <li class="project-text">
-                  <p class="project-text-title">HEARTWOOD</p>
-                  <p class="project-text-list">
-                    Brand Identity | Packaging | Website | Menu Design
-                  </p>
-                  <p class="project-text-year">2024</p>
-                </li>
-              </figure>
-            </a>
-          </li>
-          <li class="work-page-grid-item rounded-large">
+          <li class="work-page-grid-item block">
             <a href="TitleistRebrand-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
                   src="assets/branding-images/KeiraSchick_Titleist_TourSoft_front.jpg"
                   width="1920"
                   height="1080"
-                  class="rounded-large"
                   loading="lazy"
                   alt="Keira Schick Titliest Rebrand TourSoft front box mockup"
                 />
-                <li class="project-text">
-                  <p class="project-text-title">TITLEIST REBRAND</p>
-                  <p class="project-text-list">
-                    Brand Identity | Packaging | Marketing Strategy
-                  </p>
-                  <p class="project-text-year">2024</p>
-                </li>
               </figure>
+              <div class="project-details-overlay overlay rounded-large">
+                <p class="project-text-title">TITLEIST REBRAND</p>
+                <p class="project-text-list">
+                  Brand Identity | Packaging | Marketing Strategy
+                </p>
+                <p class="project-text-year">2024</p>
+              </div>
             </a>
           </li>
-          <li class="work-page-grid-item rounded-large">
+
+          <li class="work-page-grid-item block">
             <a href="Vanguard-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
                   src="assets/branding-images/KeiraSchick_Capstone_ComingSoon.jpg"
                   width="1920"
                   height="1080"
-                  class="rounded-large"
                   loading="lazy"
                   alt="Keira Schick Vanguard Capstone Coming Soon Thumbnail"
                 />
-                <li class="project-text">
-                  <p class="project-text-title">VANGUARD</p>
-                  <p class="project-text-list">
-                    Brand identity | Packaging | Geurilla | Advertising
-                  </p>
-                  <p class="project-text-year">2025</p>
-                </li>
               </figure>
+              <div class="project-details-overlay overlay rounded-large">
+                <p class="project-text-title">VANGUARD</p>
+                <p class="project-text-list">
+                  Brand identity | Packaging | Geurilla | Advertising
+                </p>
+                <p class="project-text-year">2025</p>
+              </div>
             </a>
           </li>
-          <li class="work-page-grid-item rounded-large">
+
+          <li class="work-page-grid-item block">
             <a href="OffTheRecord-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
                   src="assets/branding-images/KeiraSchick_OffTheRecord_LogoThumbnail.jpg"
                   width="1920"
                   height="1080"
-                  class="rounded-large"
                   loading="lazy"
                   alt="Keira Schick Off The Record Festival Logo Thumbnail"
                 />
-                <li class="project-text">
-                  <p class="project-text-title">OFF THE RECORD</p>
-                  <p class="project-text-list">
-                    Brand identity | Advertising | Social Campaign
-                  </p>
-                  <p class="project-text-year">2024</p>
-                </li>
               </figure>
+              <div class="project-details-overlay overlay rounded-large">
+                <p class="project-text-title">OFF THE RECORD</p>
+                <p class="project-text-list">
+                  Brand identity | Advertising | Social Campaign
+                </p>
+                <p class="project-text-year">2024</p>
+              </div>
             </a>
           </li>
-          <li class="work-page-grid-item rounded-large">
+
+          <li class="work-page-grid-item block">
             <a href="MorphoMagazine-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
                   src="assets/branding-images/KeiraSchick_Morpho_SpreadDisplayMockup.jpg"
                   width="1920"
                   height="1080"
-                  class="rounded-large"
                   loading="lazy"
                   alt="Keira Schick Morpho Magazine Spread Mockup"
                 />
-                <li class="project-text">
-                  <p class="project-text-title">MORPHO</p>
-                  <p class="project-text-list">Editorial Design | Logo</p>
-                  <p class="project-text-year">2024</p>
-                </li>
               </figure>
+              <div class="project-details-overlay overlay rounded-large">
+                <p class="project-text-title">MORPHO MAGAZINE</p>
+                <p class="project-text-list">Editorial Design | Logo</p>
+                <p class="project-text-year">2024</p>
+              </div>
             </a>
           </li>
-          <li class="work-page-grid-item rounded-large">
+
+          <li class="work-page-grid-item block">
             <a href="WildsideMatcha-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
                   src="assets/branding-images/KeiraSchick_WildsideMatcha_ComingSoon.jpg"
                   width="1920"
                   height="1080"
-                  class="rounded-large"
                   loading="lazy"
                   alt="Keira Schick Wildside Matcha Coming Soon Thumbnail"
                 />
-                <li class="project-text">
-                  <p class="project-text-title">WILDSIDE MATCHA</p>
-                  <p class="project-text-list">
-                    Brand identity | Packaging | Advertising
-                  </p>
-                  <p class="project-text-year">TBD</p>
-                </li>
               </figure>
+              <div class="project-details-overlay overlay rounded-large">
+                <p class="project-text-title">WILDSIDE MATCHA</p>
+                <p class="project-text-list">
+                  Brand identity | Packaging | Advertising
+                </p>
+                <p class="project-text-year">TBD</p>
+              </div>
             </a>
           </li>
-          <li class="work-page-grid-item rounded-large">
+          <li class="work-page-grid-item block">
             <a href="ThresholdLeadership-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
                   src="assets/branding-images/KeiraSchick_Threshold_LogoThumbnail.jpg"
                   width="1920"
                   height="1080"
-                  class="rounded-large"
                   loading="lazy"
                   alt="Keira Schick Threshold Leadership Logo Thumbnail"
                 />
-                <li class="project-text">
-                  <p class="project-text-title">THRESHOLD LEADERSHIP</p>
-                  <p class="project-text-list">
-                    Brand identity | Logo | Advertising | Clothing Design
-                  </p>
-                  <p class="project-text-year">2024</p>
-                </li>
               </figure>
+              <div class="project-details-overlay overlay rounded-large">
+                <p class="project-text-title">THRESHOLD LEADERSHIP</p>
+                <p class="project-text-list">
+                  Brand identity | Logo | Advertising | Clothing Design
+                </p>
+                <p class="project-text-year">2024</p>
+              </div>
             </a>
           </li>
         </ul>

@@ -1,20 +1,34 @@
+// ===== Setup =====
 const canvas = document.getElementById("bouncingCanvas");
 const ctx = canvas.getContext("2d");
 let shapes = [];
 
 canvas.width = window.innerWidth;
-canvas.height = 1024; // match the CSS height
+canvas.height = 860;
+
+const wordmark = document.getElementById("wordmarkAnimation");
+const wordmarkArea = document.getElementById("wordmarkArea");
+
+wordmarkArea.addEventListener("click", () => {
+  spawnFlame();
+});
+
+// where the mouth is inside the original SVG file
+const MOUTH = { x: 420, y: 80 };
+const SVG_W = 1022.25;
+const SVG_H = 294.66;
 
 const flameImages = [
   "assets/branding-images/Flame_green.svg",
   "assets/branding-images/Flame_green.svg",
-  "assets/branding-images/Flame_green.svg",
+  "assets/branding-images/Flame_blue.svg",
+  "assets/branding-images/candycane.svg",
   "assets/branding-images/Flame_purple.svg",
   "assets/branding-images/Flame_green.svg",
-  "assets/branding-images/Flame-blue.svg",
-  "assets/branding-images/Flame_green.svg",
+  "assets/branding-images/candycane.svg",
 ];
 
+// ===== Shape Class =====
 class Shape {
   constructor(x, y, radius, imageSrc) {
     this.x = x;
@@ -24,8 +38,18 @@ class Shape {
     this.image.src = imageSrc;
     this.vx = (Math.random() - 0.5) * 5;
     this.vy = (Math.random() - 0.5) * 5;
-    this.birthTime = Date.now();
-    this.lifespan = 15000;
+    this.birth = Date.now();
+    this.life = 10000;
+  }
+
+  update() {
+    if (this.x + this.radius > canvas.width || this.x - this.radius < 0)
+      this.vx *= -1;
+    if (this.y + this.radius > canvas.height || this.y - this.radius < 0)
+      this.vy *= -1;
+
+    this.x += this.vx;
+    this.y += this.vy;
   }
 
   draw() {
@@ -37,57 +61,63 @@ class Shape {
       this.radius * 2
     );
   }
-
-  update() {
-    if (this.x + this.radius > canvas.width || this.x - this.radius < 0)
-      this.vx = -this.vx;
-    if (this.y + this.radius > canvas.height || this.y - this.radius < 0)
-      this.vy = -this.vy;
-    this.x += this.vx;
-    this.y += this.vy;
-  }
 }
 
-// 🎯 Only trigger when clicking over the wordmark area
-const wordmark = document.getElementById("wordmarkArea");
-
-wordmark.addEventListener("click", (event) => {
-  // Get the position of the wordmark relative to the viewport
+// ===== Mouth Position in Screen Coordinates =====
+function getMouthPosition() {
   const rect = wordmark.getBoundingClientRect();
 
-  // Get the click position in global (page) coordinates
-  const x = event.clientX;
-  const y = event.clientY;
+  const scaleX = rect.width / SVG_W;
+  const scaleY = rect.height / SVG_H;
 
-  // Check if the click is actually inside the visible wordmark area
-  if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
-    const radius = 25;
-    const randomImage =
-      flameImages[Math.floor(Math.random() * flameImages.length)];
+  return {
+    x: rect.left + MOUTH.x * scaleX,
+    y: rect.top + MOUTH.y * scaleY,
+  };
+}
 
-    // Spawn the flame at the click’s global position (on the canvas)
-    const newShape = new Shape(x, y, radius, randomImage);
-    shapes.push(newShape);
-  }
+// ===== Spawn Flame =====
+function spawnFlame() {
+  const pos = getMouthPosition();
+  const img = flameImages[Math.floor(Math.random() * flameImages.length)];
+
+  shapes.push(new Shape(pos.x, pos.y, 40, img));
+}
+
+// ===== Click Event =====
+wordmark.addEventListener("load", () => {
+  const svgDoc = wordmark.contentDocument;
+  if (!svgDoc) return;
+
+  const svgRoot = svgDoc.documentElement;
+
+  // when wrapper is clicked, trigger SVG click too
+  document.getElementById("wordmarkArea").addEventListener("click", () => {
+    svgRoot.dispatchEvent(new Event("click"));
+  });
 });
 
+// ===== Animation Loop =====
 function animate() {
-  requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   const now = Date.now();
   for (let i = shapes.length - 1; i >= 0; i--) {
-    if (now - shapes[i].birthTime > shapes[i].lifespan) {
+    if (now - shapes[i].birth > shapes[i].life) {
       shapes.splice(i, 1);
       continue;
     }
     shapes[i].update();
     shapes[i].draw();
   }
+
+  requestAnimationFrame(animate);
 }
 
+animate();
+
+// ===== Resize Canvas =====
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
-  canvas.height = 1024; // keep it the same
+  canvas.height = 860;
 });
-
-animate();
