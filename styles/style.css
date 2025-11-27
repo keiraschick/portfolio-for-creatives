@@ -427,7 +427,7 @@ h4 {
 h5 {
   font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: var(--h5-color);
 }
 
@@ -494,9 +494,9 @@ em {
 
 /* Large project title — appears on individual project pages */
 .project-title {
+  padding-top: 7%;
   font-size: 3.625rem;
   font-family: var(--font-family-project-title);
-  margin-bottom: 1rem;
 }
 
 /* Project description text — pairs with the project title */
@@ -1070,17 +1070,38 @@ a.nav-link-primary-invert:hover {
 
 .work-image-1 {
   width: 100%;
-  background: rgb(255, 255, 255);
-  padding: 2rem;
-  padding-top: 8%;
   padding-left: 10%;
 }
 .work-image-2 {
   width: 100%;
-  background: rgb(255, 255, 255);
-  padding: 2rem;
-  padding-top: 8%;
   padding-right: 10%;
+}
+
+.cross-banner-image {
+  width: 100%;
+  padding-top: 10%;
+}
+
+.case-study-text {
+  width: 100%;
+  align-content: center;
+}
+
+.case-study-title {
+  color: #000;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.case-study-description {
+  color: #000;
+  width: 40rem;
+}
+
+.process-work {
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 /*
@@ -1168,6 +1189,7 @@ a.nav-link-primary-invert:hover {
 .column-2 {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
   padding-top: 3%;
   padding-bottom: 3%;
@@ -1391,7 +1413,6 @@ a.nav-link-primary-invert:hover {
 
 /* Container for the project content with full-width display */
 .project-full-width {
-  margin-bottom: 2rem;
 }
 
 /* Sidebar Styles */
@@ -1426,9 +1447,7 @@ a.nav-link-primary-invert:hover {
 /* Container for project description */
 .project-description-container {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  margin-top: 2rem;
   padding-left: 10.5%;
   width: 100%; /* Space below the description */
 }
@@ -1754,7 +1773,7 @@ to keep your styles reusable and consistent.
 
   .work-page-grid-item > a.grayscale:active img,
   .work-page-grid-item > a.grayscale:hover img {
-    filter: grayscale(200) blur(2px) brightness(20%);
+    filter: grayscale(200) brightness(20%);
   }
 
   .project-text-title {
