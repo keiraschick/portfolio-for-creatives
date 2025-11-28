@@ -425,9 +425,9 @@ h4 {
 }
 
 h5 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: var(--h5-color);
 }
 
@@ -728,18 +728,18 @@ a.nav-link-primary-invert:hover {
 }
 
 .fixed-top-image {
-  width: 10rem;
+  width: 4.2rem;
   position: absolute;
-  top: 4rem;
-  right: 13rem;
+  top: 70px;
+  right: 50px;
   z-index: 1000;
 }
 
-.fixed-top-image-about {
-  width: 10rem;
+.about-fixed-top-image {
+  width: 4.2rem;
   position: absolute;
-  top: 200px;
-  left: 160px;
+  top: 110px;
+  left: 15px;
   z-index: 1000;
 }
 
@@ -764,11 +764,6 @@ a.nav-link-primary-invert:hover {
 
 /* Responsive adjustments for small screens */
 @media (max-width: 600px) {
-  .fixed-top-image {
-    width: 6rem;
-    top: 2rem;
-    right: 2rem;
-  }
 }
 
 .nav-branding {
@@ -1228,9 +1223,6 @@ a.nav-link-primary-invert:hover {
 .about-photo-grid {
   width: 100%;
   background: #000000;
-  padding-top: 2rem;
-  padding-left: 10%;
-  padding-right: 10%;
   text-align: center;
 }
 
@@ -1274,6 +1266,7 @@ a.nav-link-primary-invert:hover {
   padding: 2rem;
   padding-top: 13%;
   padding-left: 18%;
+  padding-right: 18%;
 }
 .about-text-2 {
   width: 100%;
@@ -1281,6 +1274,7 @@ a.nav-link-primary-invert:hover {
   padding: 2rem;
   padding-top: 13%;
   padding-right: 18%;
+  padding-left: 18%;
 }
 
 .about-text-1-second {
@@ -1303,14 +1297,6 @@ a.nav-link-primary-invert:hover {
   width: 80%;
 }
 
-.about-name {
-  position: absolute;
-  bottom: -10px; /* Move slightly below the image edge */
-  right: 190px; /* Push slightly to the right */
-  z-index: 20; /* Make sure it appears above the image */
-  width: 40%;
-}
-
 .about-category-container {
   padding-bottom: 1.5rem;
   color: #fefae6;
@@ -1318,11 +1304,13 @@ a.nav-link-primary-invert:hover {
 }
 
 .about-category-header {
-  line-height: 0px;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
   font-weight: 600;
 }
 
 .about-category-body {
+  font-size: 0.8rem;
   line-height: 1rem;
   font-weight: 200;
 }
@@ -1607,6 +1595,31 @@ a.nav-link-primary:hover {
   font-size: 0.7rem;
 }
 
+a.nav-link-primary-invert {
+  display: inline-block;
+  border: 2px solid #fefae6;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fefae6;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 0.7rem;
+}
+
+a.nav-link-primary-invert:hover {
+  display: inline-block;
+  border: 2px solid #bedd4e;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+  background-color: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 0.7rem;
+}
+
 .white-images {
   border: solid 1px black;
 }
@@ -1778,8 +1791,48 @@ to keep your styles reusable and consistent.
   }
 
   .project-categories {
-    font-size: 1rem;
+    font-size: 0.6rem;
     color: rgb(255, 149, 28);
+  }
+
+  .about-text-1 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-top: 6rem;
+  }
+  .about-text-2 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-right: 9%;
+    padding-left: 9%;
+  }
+
+  .about-text-1-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-top: 6rem;
+  }
+  .about-text-2-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-right: 9%;
+    padding-left: 9%;
+  }
+
+  .about-category-header {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+  }
+
+  .about-category-body {
+    font-size: 0.8rem;
+    line-height: 0.2rem;
+    font-weight: 200;
   }
 
   a.nav-link-primary {
@@ -1807,6 +1860,31 @@ to keep your styles reusable and consistent.
     font-size: 0.6rem;
   }
 
+  a.nav-link-primary-invert {
+    display: inline-block;
+    border: 2px solid #fefae6;
+    padding: 0.4rem 0.9rem;
+    text-decoration: none;
+    color: #fefae6;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 0.6rem;
+  }
+
+  a.nav-link-primary-invert:hover {
+    display: inline-block;
+    border: 2px solid #bedd4e;
+    padding: 0.4rem 0.9rem;
+    text-decoration: none;
+    color: black;
+    background-color: #bedd4e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 0.6rem;
+  }
+
   .project-text-title {
     font-size: 1.7rem;
     color: #ffffff;
@@ -1824,6 +1902,14 @@ to keep your styles reusable and consistent.
     font-weight: 700;
     font-size: 0.8rem;
   }
+
+  .about-name {
+    position: absolute;
+    top: 180px; /* Move slightly below the image edge */
+    right: 20px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 60%;
+  }
 }
 
 /* Media Queries for Layout Adjustments */
@@ -1833,8 +1919,42 @@ to keep your styles reusable and consistent.
     width: 3rem;
   }
 
+  h5 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: var(--h5-color);
+  }
+
+  .about-text-1 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-top: 20%;
+    padding-left: 13%;
+    padding-right: 13%;
+  }
+  .about-text-2 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-right: 13%;
+    padding-left: 13%;
+  }
+
+  .about-text-1-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-left: 13%;
+    padding-right: 13%;
+  }
+  .about-text-2-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding-right: 13%;
+    padding-left: 13%;
+  }
+
   .project-categories {
-    font-size: 1rem;
+    font-size: 0.7rem;
     color: rgb(195, 235, 144);
   }
 
@@ -1863,6 +1983,31 @@ to keep your styles reusable and consistent.
     font-size: 0.7rem;
   }
 
+  a.nav-link-primary-invert {
+    display: inline-block;
+    border: 2px solid #fefae6;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #fefae6;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 0.7rem;
+  }
+
+  a.nav-link-primary-invert:hover {
+    display: inline-block;
+    border: 2px solid #bedd4e;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: black;
+    background-color: #bedd4e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 0.7rem;
+  }
+
   .project-text-title {
     font-size: 1.7rem;
     color: #ffffff;
@@ -1879,6 +2024,61 @@ to keep your styles reusable and consistent.
     color: #ffffff;
     font-weight: 700;
     font-size: 1rem;
+  }
+
+  .fixed-top-image {
+    width: 5rem;
+    position: absolute;
+    top: 70px;
+    right: 80px;
+    z-index: 1000;
+  }
+
+  .about-fixed-top-image {
+    width: 5rem;
+    position: absolute;
+    top: 110px;
+    left: 15px;
+    z-index: 1000;
+  }
+
+  .about-name {
+    position: absolute;
+    top: 210px; /* Move slightly below the image edge */
+    right: 20px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 60%;
+  }
+}
+
+@media (min-width: 490px) {
+  .project-categories {
+    color: #ac1313;
+    font-size: 1rem;
+  }
+
+  .fixed-top-image {
+    width: 6rem;
+    position: absolute;
+    top: 70px;
+    right: 100px;
+    z-index: 1000;
+  }
+
+  .about-fixed-top-image {
+    width: 6rem;
+    position: absolute;
+    top: 140px;
+    left: 25px;
+    z-index: 1000;
+  }
+
+  .about-name {
+    position: absolute;
+    top: 250px; /* Move slightly below the image edge */
+    right: 20px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 50%;
   }
 }
 
@@ -1904,14 +2104,72 @@ to keep your styles reusable and consistent.
     font-weight: 700;
     font-size: 1.1rem;
   }
+
+  .about-name {
+    position: absolute;
+    top: 280px; /* Move slightly below the image edge */
+    right: 20px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 50%;
+  }
 }
 
+@media (min-width: 640px) {
+  .about-name {
+    position: absolute;
+    top: 290px; /* Move slightly below the image edge */
+    right: 20px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 50%;
+  }
+}
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
   .project-categories {
     font-size: 1rem;
     color: red;
+  }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: var(--h5-color);
+  }
+
+  .about-text-1 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    padding-top: 15%;
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+  .about-text-2 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    padding-top: 15%;
+    padding-right: 18%;
+    padding-left: 18%;
+  }
+
+  .about-text-1-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    padding-top: 15%;
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+  .about-text-2-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    padding-top: 15%;
+    padding-right: 18%;
+    padding-left: 18%;
   }
 
   .logo {
@@ -1944,6 +2202,31 @@ to keep your styles reusable and consistent.
     font-size: 0.9rem;
   }
 
+  a.nav-link-primary-invert {
+    display: inline-block;
+    border: 2px solid #fefae6;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    color: #fefae6;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+  }
+
+  a.nav-link-primary-invert:hover {
+    display: inline-block;
+    border: 2px solid #bedd4e;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    color: black;
+    background-color: #bedd4e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+  }
+
   .project-text-title {
     font-size: 2rem;
     color: #ffffff;
@@ -1962,6 +2245,29 @@ to keep your styles reusable and consistent.
     font-size: 0.9rem;
   }
 
+  .fixed-top-image {
+    width: 6.2rem;
+    position: absolute;
+    top: 70px;
+    right: 140px;
+    z-index: 1000;
+  }
+
+  .about-fixed-top-image {
+    width: 7em;
+    position: absolute;
+    top: 190px;
+    left: 50px;
+    z-index: 1000;
+  }
+
+  .about-name {
+    position: absolute;
+    top: 340px; /* Move slightly below the image edge */
+    right: 60px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 50%;
+  }
   /* TODO: Adjust  layout for tablets */
 }
 
@@ -1975,6 +2281,55 @@ to keep your styles reusable and consistent.
     font-size: 1rem;
     color: rgb(53, 131, 219);
   }
+
+  .about-category-header {
+    font-size: 0.8rem;
+    line-height: 0.4rem;
+    font-weight: 600;
+  }
+
+  .about-category-body {
+    font-size: 0.8rem;
+    line-height: 0.2rem;
+    font-weight: 200;
+  }
+
+  h5 {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: var(--h5-color);
+  }
+
+  .about-text-1 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    padding-top: 20%;
+    padding-left: 10%;
+  }
+  .about-text-2 {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    padding-top: 20%;
+    padding-right: 10%;
+  }
+
+  .about-text-1-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+
+    padding-left: 10%;
+  }
+  .about-text-2-second {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    padding-right: 10%;
+  }
+
   .flex-row {
     flex-direction: row; /* Changes to row layout on larger screens */
   }
@@ -2127,17 +2482,6 @@ to keep your styles reusable and consistent.
     flex-direction: row;
   }
 
-  .about-text-1 {
-    width: 50%;
-    font-weight: 300;
-    word-spacing: 2px;
-  }
-  .about-text-2 {
-    width: 50%;
-    font-weight: 300;
-    word-spacing: 2px;
-  }
-
   .signature {
     width: 30%;
   }
@@ -2202,6 +2546,30 @@ to keep your styles reusable and consistent.
   .work-details {
     width: 75%;
   }
+
+  .fixed-top-image {
+    width: 8rem;
+    position: absolute;
+    top: 50px;
+    right: 180px;
+    z-index: 1000;
+  }
+
+  .about-fixed-top-image {
+    width: 8rem;
+    position: absolute;
+    top: 170px;
+    left: 50px;
+    z-index: 1000;
+  }
+
+  .about-name {
+    position: absolute;
+    top: 460px; /* Move slightly below the image edge */
+    right: 70px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 50%;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up)*/
@@ -2232,6 +2600,14 @@ to keep your styles reusable and consistent.
     padding-bottom: 3%;
     background: #fefae6;
     /* Keeps text centered */
+  }
+
+  .about-photo-grid {
+    width: 100%;
+    background: #000000;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
   }
 }
 
