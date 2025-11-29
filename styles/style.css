@@ -482,19 +482,17 @@ em {
   color: #bedd4e;
 }
 .all-caps {
-  border: 2px solid yellowgreen;
   text-transform: uppercase;
 }
 
 .ribbon::before {
   position: absolute;
   width: 100%;
-  height: 20rem;
   content: url("../assets/branding-images/BANNER.svg");
-  top: 0px;
-  left: 0px;
-  border: 2px solid red;
+  top: 40px;
+  left: 10px;
 }
+
 /* Main hero headline — usually sits in the intro section */
 .hero-headline {
   color: var(--color-overlay-primary); /* Uses your brand's dominant color */
@@ -692,13 +690,7 @@ a.nav-link-primary-invert:hover {
 
 .blurb-container {
   background: #fefae6;
-  padding-top: 8%;
-}
-
-.blurb {
-  width: 25%;
-  margin-left: 50px;
-  font-size: 120%;
+  padding-top: 10%;
 }
 
 .hero {
@@ -771,7 +763,6 @@ a.nav-link-primary-invert:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid green;
 }
 
 .sub-menu {
@@ -798,7 +789,6 @@ a.nav-link-primary-invert:hover {
 
 .nav-branding-logo {
   width: 30rem;
-  border: 2px solid yellowgreen;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -807,7 +797,6 @@ a.nav-link-primary-invert:hover {
 }
 .logo {
   width: 5rem;
-  border: 2px solid purple;
 }
 
 .hero-headline-wrapper {
@@ -852,7 +841,6 @@ a.nav-link-primary-invert:hover {
   width: 1500;
   height: 1500;
   background-color: rgba(255, 255, 255, 0); /* White background, 50% opaque */
-  border: 1px solid #ac1313;
 }
 
 .hero-icon {
@@ -933,13 +921,6 @@ a.nav-link-primary-invert:hover {
 
 .banner-container {
   padding-left: -4%;
-}
-
-.banner {
-  width: 6%;
-  padding-top: 7px;
-  padding-bottom: 12px;
-  padding-right: 5px;
 }
 
 .banner2 {
@@ -1282,6 +1263,7 @@ a.nav-link-primary-invert:hover {
   background: rgb(0, 0, 0);
   padding: 2rem;
   padding-left: 18%;
+  position: relative;
 }
 
 .about-text-2-second {
@@ -1295,6 +1277,8 @@ a.nav-link-primary-invert:hover {
 .about-image {
   text-align: center;
   width: 80%;
+  padding-top: 40%;
+  padding-bottom: 40%;
 }
 
 .about-category-container {
@@ -1330,13 +1314,26 @@ a.nav-link-primary-invert:hover {
 /* -------------------------------------------------------------------------- */
 
 .footer-global {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column layout */
-  grid-gap: 3rem; /* Consistent spacing between sections */
-  min-height: auto; /* Allows footer to expand based on content, no fixed height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   background: #000; /* Using CSS variable for theming */
-  padding: var(--padding-small); /* Internal spacing */
+  padding: var(--padding-small);
+  border-top: solid #fefae6; /* Internal spacing */
   /* Note: Using 'fr' units ensures proper scaling across devices */
+}
+
+.footer-list {
+  text-align: center;
+}
+
+.footer-socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  gap: 20px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1376,14 +1373,6 @@ a.nav-link-primary-invert:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.footer-socials-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
-  gap: 20px;
-  padding-right: 2%;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1795,18 +1784,53 @@ to keep your styles reusable and consistent.
     color: rgb(255, 149, 28);
   }
 
+  .blurb {
+    width: 50%;
+    margin-left: 30px;
+    font-size: 80%;
+  }
+
+  .blurb-container {
+    padding-top: 80%;
+  }
+
+  .ribbon::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 7px;
+  }
+
+  .ribbon2::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 7px;
+  }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: var(--h5-color);
+  }
+
   .about-text-1 {
     width: 100%;
     background: rgb(0, 0, 0);
     padding-left: 9%;
     padding-right: 9%;
-    padding-top: 6rem;
   }
   .about-text-2 {
     width: 100%;
     background: rgb(0, 0, 0);
     padding-right: 9%;
     padding-left: 9%;
+    padding-top: 0%;
   }
 
   .about-text-1-second {
@@ -1814,7 +1838,6 @@ to keep your styles reusable and consistent.
     background: rgb(0, 0, 0);
     padding-left: 9%;
     padding-right: 9%;
-    padding-top: 6rem;
   }
   .about-text-2-second {
     width: 100%;
@@ -1824,13 +1847,13 @@ to keep your styles reusable and consistent.
   }
 
   .about-category-header {
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.1rem;
     font-weight: 600;
   }
 
   .about-category-body {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 0.2rem;
     font-weight: 200;
   }
@@ -1905,10 +1928,37 @@ to keep your styles reusable and consistent.
 
   .about-name {
     position: absolute;
-    top: 180px; /* Move slightly below the image edge */
+    top: 330px; /* Move slightly below the image edge */
     right: 20px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 60%;
+  }
+
+  .about-fixed-top-image {
+    width: 5rem;
+    position: absolute;
+    top: 210px;
+    left: 15px;
+    z-index: 1000;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #fefae6;
+  }
+
+  .tagline-section {
+    width: 100%;
+    padding-left: 4%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
   }
 }
 
@@ -1919,11 +1969,70 @@ to keep your styles reusable and consistent.
     width: 3rem;
   }
 
-  h5 {
+  .tagline {
     font-size: 1.2rem;
+    line-height: 0;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #fefae6;
+  }
+
+  .tagline-section {
+    width: 100%;
+    padding: 2%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+  }
+
+  .blurb {
+    width: 50%;
+    margin-left: 30px;
+    font-size: 80%;
+  }
+
+  .blurb-container {
+    padding-top: 80%;
+  }
+
+  .ribbon::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 25px;
+  }
+
+  .ribbon2::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 25px;
+  }
+
+  h5 {
+    font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 2rem;
     color: var(--h5-color);
+  }
+
+  .about-category-header {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+  }
+
+  .about-category-body {
+    font-size: 1rem;
+    line-height: 0.2rem;
+    font-weight: 200;
   }
 
   .about-text-1 {
@@ -2037,17 +2146,24 @@ to keep your styles reusable and consistent.
   .about-fixed-top-image {
     width: 5rem;
     position: absolute;
-    top: 110px;
+    top: 260px;
     left: 15px;
     z-index: 1000;
   }
 
   .about-name {
     position: absolute;
-    top: 210px; /* Move slightly below the image edge */
+    top: 400px; /* Move slightly below the image edge */
     right: 20px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 60%;
+  }
+
+  .about-image {
+    text-align: center;
+    width: 80%;
+    padding-top: 50%;
+    padding-bottom: 40%;
   }
 }
 
@@ -2055,6 +2171,53 @@ to keep your styles reusable and consistent.
   .project-categories {
     color: #ac1313;
     font-size: 1rem;
+  }
+
+  .tagline {
+    font-size: 2.5rem;
+    line-height: 0.7;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #fefae6;
+  }
+
+  .tagline-section {
+    width: 100%;
+    padding: 5%;
+    min-height: 125vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+  }
+
+  .blurb {
+    width: 40%;
+    margin-left: 35px;
+    font-size: 80%;
+  }
+
+  .blurb-container {
+    padding-top: 70%;
+  }
+
+  .ribbon::before {
+    position: absolute;
+    width: 20%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 40px;
+  }
+
+  .ribbon2::before {
+    position: absolute;
+    width: 20%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 40px;
   }
 
   .fixed-top-image {
@@ -2068,23 +2231,68 @@ to keep your styles reusable and consistent.
   .about-fixed-top-image {
     width: 6rem;
     position: absolute;
-    top: 140px;
+    top: 300px;
     left: 25px;
     z-index: 1000;
   }
 
   .about-name {
     position: absolute;
-    top: 250px; /* Move slightly below the image edge */
+    top: 500px; /* Move slightly below the image edge */
     right: 20px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 50%;
   }
 }
 
-@media (min-width: 550px) {
+@media (min-width: 480px) {
   .logo {
     width: 3rem;
+  }
+
+  .tagline {
+    font-size: 2rem;
+    line-height: 0.5;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #fefae6;
+  }
+
+  .tagline-section {
+    width: 100%;
+    padding: 5%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+  }
+
+  .ribbon::before {
+    position: absolute;
+    width: 20%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 60px;
+  }
+
+  .ribbon2::before {
+    position: absolute;
+    width: 20%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 60px;
+  }
+
+  .about-fixed-top-image {
+    width: 7rem;
+    position: absolute;
+    top: 350px;
+    left: 25px;
+    z-index: 1000;
   }
 
   .project-text-title {
@@ -2107,7 +2315,7 @@ to keep your styles reusable and consistent.
 
   .about-name {
     position: absolute;
-    top: 280px; /* Move slightly below the image edge */
+    top: 570px; /* Move slightly below the image edge */
     right: 20px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 50%;
@@ -2117,10 +2325,23 @@ to keep your styles reusable and consistent.
 @media (min-width: 640px) {
   .about-name {
     position: absolute;
-    top: 290px; /* Move slightly below the image edge */
+    top: 370px; /* Move slightly below the image edge */
     right: 20px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 50%;
+  }
+
+  .about-fixed-top-image {
+    width: 7rem;
+    position: absolute;
+    top: 180px;
+    left: 25px;
+    z-index: 1000;
+  }
+
+  .about-image {
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -2131,11 +2352,69 @@ to keep your styles reusable and consistent.
     color: red;
   }
 
+  .tagline {
+    font-size: 3rem;
+    line-height: 0.7;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #fefae6;
+  }
+
+  .tagline-section {
+    width: 100%;
+    padding: 5%;
+    min-height: 125vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+  }
+
+  .blurb {
+    width: 25%;
+    margin-left: 50px;
+    font-size: 90%;
+  }
+
+  .blurb-container {
+    padding-top: 20%;
+  }
+  .ribbon::before {
+    position: absolute;
+    width: 40%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 150px;
+    left: 130px;
+  }
+
+  .ribbon2::before {
+    position: absolute;
+    width: 40%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 150px;
+    left: 130px;
+  }
+
   h5 {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 2rem;
     color: var(--h5-color);
+  }
+
+  .about-category-header {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+  }
+
+  .about-category-body {
+    font-size: 0.9rem;
+    line-height: 0.2rem;
+    font-weight: 200;
   }
 
   .about-text-1 {
@@ -2174,7 +2453,6 @@ to keep your styles reusable and consistent.
 
   .logo {
     width: 4rem;
-    border: solid rgb(147, 84, 255);
   }
 
   a.nav-link-primary {
@@ -2263,11 +2541,12 @@ to keep your styles reusable and consistent.
 
   .about-name {
     position: absolute;
-    top: 340px; /* Move slightly below the image edge */
+    top: 450px; /* Move slightly below the image edge */
     right: 60px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 50%;
   }
+
   /* TODO: Adjust  layout for tablets */
 }
 
@@ -2280,6 +2559,52 @@ to keep your styles reusable and consistent.
   .project-categories {
     font-size: 1rem;
     color: rgb(53, 131, 219);
+  }
+
+  .tagline {
+    font-size: 4rem;
+    line-height: 1;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #fefae6;
+  }
+
+  .tagline-section {
+    width: 100%;
+    padding: 5%;
+    min-height: 125vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+  }
+
+  .blurb {
+    width: 25%;
+    margin-left: 50px;
+    font-size: 120%;
+  }
+
+  .blurb-container {
+    padding-top: 20%;
+  }
+  .ribbon::before {
+    position: absolute;
+    width: 100%;
+    height: 22rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: -8px;
+  }
+
+  .ribbon2::before {
+    position: absolute;
+    width: 30%;
+    height: 20rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 80px;
   }
 
   .about-category-header {
@@ -2295,24 +2620,34 @@ to keep your styles reusable and consistent.
   }
 
   h5 {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 2rem;
     color: var(--h5-color);
+  }
+
+  .about-category-header {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+  }
+
+  .about-category-body {
+    font-size: 1.1rem;
+    line-height: 0.2rem;
+    font-weight: 200;
   }
 
   .about-text-1 {
     width: 100%;
     background: rgb(0, 0, 0);
     padding: 2rem;
-    padding-top: 20%;
     padding-left: 10%;
   }
   .about-text-2 {
     width: 100%;
     background: rgb(0, 0, 0);
     padding: 2rem;
-    padding-top: 20%;
     padding-right: 10%;
   }
 
@@ -2320,7 +2655,6 @@ to keep your styles reusable and consistent.
     width: 100%;
     background: rgb(0, 0, 0);
     padding: 2rem;
-
     padding-left: 10%;
   }
   .about-text-2-second {
@@ -2502,11 +2836,32 @@ to keep your styles reusable and consistent.
   /* ------------------------------- */
 
   .footer-global {
-    height: 10%;
+    display: grid;
+    grid-gap: 3rem;
+    min-height: auto;
     padding: 2%;
     grid-template-columns: 1fr 1fr 1fr;
     border-top: 1px solid #fefae6;
     /* Three equal columns */
+  }
+
+  .footer-list {
+    text-align: left;
+  }
+
+  .footer-socials-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 20px;
+  }
+
+  .footer-socials-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 20px;
+    padding-right: 2%;
   }
 
   /* Column 2: Awards & Works */
@@ -2556,7 +2911,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-fixed-top-image {
-    width: 8rem;
+    width: 9rem;
     position: absolute;
     top: 170px;
     left: 50px;
@@ -2565,16 +2920,31 @@ to keep your styles reusable and consistent.
 
   .about-name {
     position: absolute;
-    top: 460px; /* Move slightly below the image edge */
+    top: 560px; /* Move slightly below the image edge */
     right: 70px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 50%;
   }
+
+  .about-image {
+    padding-top: 10%;
+    padding-bottom: 15%;
+  }
 }
 
+@media (min-width: 1200px) {
+  .ribbon2::before {
+    position: absolute;
+    width: 100%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 80px;
+  }
+}
 /* X-Large devices (large desktops, 1200px and up)*/
 
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   /* TODO: Add styles here for X-large devices. */
 
   .grid {
@@ -2584,6 +2954,123 @@ to keep your styles reusable and consistent.
   .project-categories {
     font-size: 1rem;
     color: rgb(166, 175, 66);
+  }
+
+  .blurb {
+    width: 25%;
+    margin-left: 50px;
+    font-size: 120%;
+  }
+
+  .ribbon::before {
+    position: absolute;
+    width: 30%;
+    height: 20rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: -8px;
+  }
+
+  .ribbon2::before {
+    position: absolute;
+    width: 30%;
+    height: 20rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 40px;
+    left: 130px;
+  }
+
+  .nav-branding {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7%;
+  }
+
+  a.nav-link-primary {
+    display: inline-block;
+    border: 2px solid black;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+  }
+
+  a.nav-link-primary:hover {
+    display: inline-block;
+    border: 2px solid black;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    color: black;
+    background-color: #bedd4e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+  }
+
+  a.nav-link-primary-invert {
+    display: inline-block;
+    border: 2px solid #fefae6;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    color: #fefae6;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+  }
+
+  a.nav-link-primary-invert:hover {
+    display: inline-block;
+    border: 2px solid #bedd4e;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    color: black;
+    background-color: #bedd4e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  .about-image {
+    text-align: center;
+    width: 95%;
+    padding-bottom: 20%;
+    padding-top: 4%;
+  }
+
+  .about-name {
+    position: absolute;
+    top: 640px; /* Move slightly below the image edge */
+    right: 96px; /* Push slightly to the right */
+    z-index: 20; /* Make sure it appears above the image */
+    width: 50%;
+  }
+
+  .fixed-top-image {
+    width: 12rem;
+    position: absolute;
+    top: 70px;
+    right: 220px;
+    z-index: 1000;
+  }
+
+  .about-fixed-top-image {
+    width: 12em;
+    position: absolute;
+    top: 200px;
+    left: 110px;
+    z-index: 1000;
   }
 
   .logo {
