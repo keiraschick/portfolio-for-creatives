@@ -644,6 +644,88 @@ a.nav-link-primary-invert:hover {
   font-size: 1.2rem;
 }
 
+a.nav-link-primary-ribbon-next-work {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 20px) 50%, 100% 100%, 0% 100%);
+}
+
+a.nav-link-primary-ribbon-next-work:hover {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  text-decoration: none;
+  color: black;
+  background-color: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.5s ease;
+  font-size: 1.2rem;
+  clip-path: none;
+  padding-left: 24%;
+}
+
+a.nav-link-primary-ribbon-current-work {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  text-decoration: none;
+  color: #000000;
+  background: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  clip-path: polygon(20px 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  padding-left: 25%;
+}
+
+a.nav-link-primary-ribbon-next-vault:hover {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  text-decoration: none;
+  color: black;
+  background-color: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.5s ease;
+  font-size: 1.2rem;
+  clip-path: none;
+  padding-left: 19%;
+}
+
+a.nav-link-primary-ribbon-next-vault {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  clip-path: polygon(20px 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  padding-left: 25%;
+}
+
+a.nav-link-primary-ribbon-current-vault {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  text-decoration: none;
+  color: #000000;
+  background: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 20px) 50%, 100% 100%, 0% 100%);
+}
+
 /* -------------------------------------------------------------------------- */
 /* 🧭 Previous & Next Project Navigation Arrows                               */
 /* These styles are for the left and right arrows used to move between       */
@@ -770,13 +852,12 @@ a.nav-link-primary-invert:hover {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background: lemonchiffon;
 }
 .sub-menu-item {
   width: 8rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
   display: block;
 }
 .nav-branding-group {
@@ -982,10 +1063,7 @@ a.nav-link-primary-invert:hover {
 .grid {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /* Creates a responsive grid */
+  grid-template-columns: 1fr;
   margin: 0rem;
   padding: 2.5%;
   background-color: #ffffff; /* Space between grid items */
@@ -1067,6 +1145,8 @@ a.nav-link-primary-invert:hover {
 
 /* Optional container for future overlay customization */
 .project-details-overlay {
+  padding-bottom: 2rem;
+  padding-left: 2rem;
   text-align: left;
   /* Placeholder: no custom styles yet */
 }
@@ -1074,7 +1154,14 @@ a.nav-link-primary-invert:hover {
 .project-year {
   font-size: 1rem;
   font-weight: 800;
-  margin-bottom: 40px;
+  line-height: 2rem;
+  padding-top: 1rem;
+}
+
+.timeline {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1rem;
 }
 
 .work-title {
@@ -1101,10 +1188,13 @@ a.nav-link-primary-invert:hover {
   padding-right: 10%;
 }
 
-.work-category-container {
+.work-timeline-container {
+  text-align: right;
   padding-bottom: 1.5rem;
+  padding-top: 7%;
   color: #000000;
   font-size: 1rem;
+  font-family: var(--font-family-project-title);
 }
 
 .work-category-header {
@@ -1249,6 +1339,7 @@ a.nav-link-primary-invert:hover {
   padding-left: 18%;
   padding-right: 18%;
 }
+
 .about-text-2 {
   width: 100%;
   background: rgb(0, 0, 0);
@@ -1285,15 +1376,52 @@ a.nav-link-primary-invert:hover {
   padding-bottom: 1.5rem;
   color: #fefae6;
   font-size: 0.9rem;
+  line-height: 3.5rem;
 }
 
 .about-category-header {
   font-size: 0.8rem;
   line-height: 1.2rem;
   font-weight: 600;
+  color: #fefae6;
+}
+
+.work-category-header {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.linked-header:hover {
+  text-decoration: underline;
+  color: #fefae6;
+}
+
+.linked-header:link,
+.linked-header:visited {
+  color: #fefae6;
+  text-decoration: none;
+}
+
+.linked-header2:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.linked-header2:link,
+.linked-header2:visited {
+  color: #000000;
+  text-decoration: none;
 }
 
 .about-category-body {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  font-weight: 200;
+}
+
+.work-category-body {
   font-size: 0.8rem;
   line-height: 1rem;
   font-weight: 200;
@@ -1499,7 +1627,9 @@ a.nav-link-primary-invert:hover {
 .project-description-container {
   display: flex;
   flex-direction: column;
+  padding-top: 3%;
   padding-left: 10.5%;
+  padding-right: 10.5%;
   width: 100%; /* Space below the description */
 }
 
@@ -1744,25 +1874,56 @@ For common layout or effects, continue using the base utility classes
 to keep your styles reusable and consistent.
 */
 
-.play-page {
-  /* Add page-specific layout or container styles here */
+.masonry-item {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border: 1px solid #000;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 1.5rem;
 }
 
-/*
+.masonry-grid {
+  padding: 2.5%;
+  grid-gap: 1.5rem;
+}
 
-███████ ██   ██ ███████ ████████  ██████ ██   ██ ██████   ██████   ██████  ██   ██ 
-██      ██  ██  ██         ██    ██      ██   ██ ██   ██ ██    ██ ██    ██ ██  ██  
-███████ █████   █████      ██    ██      ███████ ██████  ██    ██ ██    ██ █████   
-     ██ ██  ██  ██         ██    ██      ██   ██ ██   ██ ██    ██ ██    ██ ██  ██  
-███████ ██   ██ ███████    ██     ██████ ██   ██ ██████   ██████   ██████  ██   ██ 
+@media only screen and (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
 
-*/
+@media only screen and (min-width: 500px) and (max-width: 1023px) {
+  .masonry-grid {
+    column-count: 2;
+    grid-gap: 1rem;
+  }
+  .masonry-item {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid #000;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 1rem;
+  }
+}
 
-/* Sketchbook Page Styles */
-
-.sketchbook-page {
-  display: grid;
-  place-items: center;
+@media only screen and (min-width: 200px) and (max-width: 768px) {
+  masonry-grid {
+    grid-gap: 0.5rem;
+  }
+  .masonry-item {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid #000;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 1rem;
+  }
 }
 
 /*
@@ -1782,6 +1943,18 @@ to keep your styles reusable and consistent.
   .project-categories {
     font-size: 0.6rem;
     color: rgb(255, 149, 28);
+    line-height: 0rem;
+  }
+
+  .work-image-1 {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .work-image-2 {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
   }
 
   .blurb {
@@ -1852,9 +2025,21 @@ to keep your styles reusable and consistent.
     font-weight: 600;
   }
 
+  .work-category-header {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+  }
+
   .about-category-body {
     font-size: 0.9rem;
     line-height: 0.2rem;
+    font-weight: 200;
+  }
+
+  .work-category-body {
+    font-size: 0.9rem;
+    line-height: 2rem;
     font-weight: 200;
   }
 
@@ -1960,6 +2145,15 @@ to keep your styles reusable and consistent.
     justify-content: center;
     background: #000;
   }
+
+  .ribbon3::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 490px;
+    left: 6px;
+  }
 }
 
 /* Media Queries for Layout Adjustments */
@@ -1967,6 +2161,11 @@ to keep your styles reusable and consistent.
 @media (min-width: 350px) {
   .logo {
     width: 3rem;
+  }
+
+  .project-categories {
+    font-size: 0.7rem;
+    color: rgb(195, 235, 144);
   }
 
   .tagline {
@@ -2016,6 +2215,15 @@ to keep your styles reusable and consistent.
     left: 25px;
   }
 
+  .ribbon3::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 579px;
+    left: 25px;
+  }
+
   h5 {
     font-size: 1.1rem;
     line-height: 1.5;
@@ -2029,9 +2237,21 @@ to keep your styles reusable and consistent.
     font-weight: 600;
   }
 
+  .work-category-header {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+  }
+
   .about-category-body {
     font-size: 1rem;
     line-height: 0.2rem;
+    font-weight: 200;
+  }
+
+  .work-category-body {
+    font-size: 1rem;
+    line-height: 2rem;
     font-weight: 200;
   }
 
@@ -2042,9 +2262,25 @@ to keep your styles reusable and consistent.
     padding-left: 13%;
     padding-right: 13%;
   }
+
+  .work-text-1 {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-top: 13%;
+    padding-left: 13%;
+    padding-right: 13%;
+  }
+
   .about-text-2 {
     width: 100%;
     background: rgb(0, 0, 0);
+    padding-right: 13%;
+    padding-left: 13%;
+  }
+
+  .work-text-2 {
+    width: 100%;
+    background: rgb(255, 255, 255);
     padding-right: 13%;
     padding-left: 13%;
   }
@@ -2060,11 +2296,6 @@ to keep your styles reusable and consistent.
     background: rgb(0, 0, 0);
     padding-right: 13%;
     padding-left: 13%;
-  }
-
-  .project-categories {
-    font-size: 0.7rem;
-    color: rgb(195, 235, 144);
   }
 
   a.nav-link-primary {
@@ -2153,7 +2384,7 @@ to keep your styles reusable and consistent.
 
   .about-name {
     position: absolute;
-    top: 400px; /* Move slightly below the image edge */
+    top: 440px; /* Move slightly below the image edge */
     right: 20px; /* Push slightly to the right */
     z-index: 20; /* Make sure it appears above the image */
     width: 60%;
@@ -2171,6 +2402,15 @@ to keep your styles reusable and consistent.
   .project-categories {
     color: #ac1313;
     font-size: 1rem;
+  }
+
+  .ribbon3::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 750px;
+    left: 50px;
   }
 
   .tagline {
@@ -2243,11 +2483,26 @@ to keep your styles reusable and consistent.
     z-index: 20; /* Make sure it appears above the image */
     width: 50%;
   }
+
+  .work-category-body {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    font-weight: 200;
+  }
 }
 
 @media (min-width: 480px) {
   .logo {
     width: 3rem;
+  }
+
+  .ribbon3::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 710px;
+    left: 50px;
   }
 
   .tagline {
@@ -2331,6 +2586,15 @@ to keep your styles reusable and consistent.
     width: 50%;
   }
 
+  .ribbon3::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 760px;
+    left: 55px;
+  }
+
   .about-fixed-top-image {
     width: 7rem;
     position: absolute;
@@ -2350,6 +2614,15 @@ to keep your styles reusable and consistent.
   .project-categories {
     font-size: 1rem;
     color: red;
+  }
+
+  .ribbon3::before {
+    position: absolute;
+    width: 15%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 900px;
+    left: 75px;
   }
 
   .tagline {
@@ -2411,9 +2684,21 @@ to keep your styles reusable and consistent.
     font-weight: 600;
   }
 
+  .work-category-header {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+  }
+
   .about-category-body {
     font-size: 0.9rem;
     line-height: 0.2rem;
+    font-weight: 200;
+  }
+
+  .work-category-body {
+    font-size: 0.9rem;
+    line-height: 1.7rem;
     font-weight: 200;
   }
 
@@ -2561,6 +2846,42 @@ to keep your styles reusable and consistent.
     color: rgb(53, 131, 219);
   }
 
+  .work-image-1 {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 0%;
+  }
+  .work-image-2 {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 0%;
+  }
+
+  .work-text-1 {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 2rem;
+    padding-top: 13%;
+    padding-left: 10%;
+  }
+
+  .work-text-2 {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-top: 13%;
+    padding-right: 10%;
+    padding-left: 0%;
+  }
+
+  .ribbon3::before {
+    position: absolute;
+    width: 20%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 1203px;
+    left: 100px;
+  }
+
   .tagline {
     font-size: 4rem;
     line-height: 1;
@@ -2613,7 +2934,19 @@ to keep your styles reusable and consistent.
     font-weight: 600;
   }
 
+  .work-category-header {
+    font-size: 0.8rem;
+    line-height: 0.4rem;
+    font-weight: 600;
+  }
+
   .about-category-body {
+    font-size: 0.8rem;
+    line-height: 0.2rem;
+    font-weight: 200;
+  }
+
+  .work-category-body {
     font-size: 0.8rem;
     line-height: 0.2rem;
     font-weight: 200;
@@ -2632,9 +2965,21 @@ to keep your styles reusable and consistent.
     font-weight: 600;
   }
 
+  .work-category-header {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+  }
+
   .about-category-body {
     font-size: 1.1rem;
     line-height: 0.2rem;
+    font-weight: 200;
+  }
+
+  .work-category-body {
+    font-size: 1.1rem;
+    line-height: 2rem;
     font-weight: 200;
   }
 
@@ -2683,7 +3028,7 @@ to keep your styles reusable and consistent.
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.7rem;
   }
 
   h3 {
@@ -2732,15 +3077,10 @@ to keep your styles reusable and consistent.
 
   /* Work Page Grid for Large Devices */
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 1rem;
-  }
-
   /* Grayscale filter with full-colour on hover and tap */
 
   .project-text-title {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     color: #ffffff;
     font-weight: 800;
   }
@@ -2794,6 +3134,9 @@ to keep your styles reusable and consistent.
   .project-image-container,
   .project-description-container {
     flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+    gap: 20px;
   }
 
   .section-container {
@@ -2801,7 +3144,7 @@ to keep your styles reusable and consistent.
     flex-direction: row;
   }
   .col-2 {
-    width: 50%;
+    width: 100%;
   }
 
   .project-navigation {
@@ -2947,19 +3290,58 @@ to keep your styles reusable and consistent.
 @media (min-width: 1600px) {
   /* TODO: Add styles here for X-large devices. */
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    grid-gap: 1rem;
-  }
   .project-categories {
     font-size: 1rem;
-    color: rgb(166, 175, 66);
+    color: rgb(0, 0, 0);
+  }
+
+  .project-text-title {
+    font-size: 2.3rem;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  .project-text-list {
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 0.9rem;
+  }
+
+  .project-text-year {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .work-text-1 {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 2rem;
+    padding-top: 13%;
+    padding-left: 10%;
+  }
+
+  .work-text-2 {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-top: 13%;
+    padding-right: 10%;
+    padding-left: 0%;
   }
 
   .blurb {
     width: 25%;
     margin-left: 50px;
     font-size: 120%;
+  }
+
+  .ribbon3::before {
+    position: absolute;
+    width: 20%;
+    height: 10rem;
+    content: url("../assets/branding-images/BANNER.svg");
+    top: 1968px;
+    left: 135px;
   }
 
   .ribbon::before {
@@ -3100,15 +3482,21 @@ to keep your styles reusable and consistent.
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 
-@media (min-width: 1400px) {
+@media (min-width: 1150px) {
   /* TODO: Add styles here for XX-large devices. */
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
   }
 }
 
+@media only screen and (min-width: 790px) and (max-width: 1150px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
 /*
 
 ███████ ██ ███    ██
