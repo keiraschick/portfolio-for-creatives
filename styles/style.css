@@ -946,6 +946,192 @@ a.nav-link-primary-ribbon-current-vault {
   padding: var(--padding-small);
 }
 
+.email-letter {
+  position: relative;
+  left: 3%;
+  bottom: -3rem;
+}
+
+.letter-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.animated-mail {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+
+  .letter-body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 80px 120px;
+    border-color: transparent transparent #b4ce53 transparent;
+    z-index: 2;
+  }
+
+  .top-fold {
+    position: absolute;
+    top: 70px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 60px 0 60px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    -moz-transform-origin: 50% 0%;
+    -moz-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    transform-origin: 50% 0%;
+    transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    border-color: #bedd4e transparent transparent transparent;
+    z-index: 2;
+  }
+
+  .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 80px;
+    background: #bedd4e;
+    z-index: 0;
+  }
+
+  .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 0 40px 60px;
+    border-color: transparent transparent transparent #aec84e;
+    z-index: 2;
+  }
+
+  .letter {
+    left: 20px;
+    bottom: 0px;
+    position: absolute;
+    width: 80px;
+    height: 10px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: 0.4s 0.2s;
+    -moz-transition: 0.4s 0.2s;
+    transition: 0.4s 0.2s;
+  }
+}
+
+.letter-image:hover {
+  .animated-mail {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+  }
+
+  .animated-mail .top-fold {
+    transition: transform 0.4s, z-index 0.2s;
+    transform: rotateX(180deg);
+    -webkit-transition: transform 0.4s, z-index 0.2s;
+    -webkit-transform: rotateX(180deg);
+    -moz-transition: transform 0.3s, z-index 0.1s;
+    -moz-transform: rotateX(180deg);
+    z-index: 0;
+  }
+
+  .animated-mail .letter {
+    height: 100px;
+  }
+
+  .shadow {
+    width: 250px;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  opacity: 1; /* No fading */
+  transform: translate(0, 0) scale(0.5);
+  transition: transform 0.5s ease-out; /* This is what makes them ease back */
+}
+
+@keyframes sparkle-burst {
+  0% {
+    opacity: 6;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  70% {
+    opacity: 6;
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(1.2);
+  }
+}
+
+/* When envelope is hovered → sparkles animate */
+.letter-image:hover .sparkle {
+  animation: sparkle-burst 1s ease-out forwards;
+}
+
+/* Random directions */
+.sparkle:nth-child(1) {
+  --x: -70px;
+  --y: -120px;
+}
+.sparkle:nth-child(2) {
+  --x: 80px;
+  --y: -70px;
+}
+.sparkle:nth-child(3) {
+  --x: -20px;
+  --y: -80px;
+}
+.sparkle:nth-child(4) {
+  --x: -60px;
+  --y: -40px;
+}
+.sparkle:nth-child(5) {
+  --x: 30px;
+  --y: -50px;
+}
+.sparkle:nth-child(6) {
+  --x: 80px;
+  --y: 70px;
+}
+.sparkle:nth-child(7) {
+  --x: -40px;
+  --y: 120px;
+}
+.sparkle:nth-child(8) {
+  --x: -100px;
+  --y: 80px;
+}
+.sparkle:nth-child(9) {
+  --x: 100px;
+  --y: 30px;
+}
+
 /*
 
  ██████  ██████  ███    ███ ██████   ██████  ███    ██ ███████ ███    ██ ████████ ███████ 
@@ -1850,6 +2036,10 @@ a.nav-link-primary-invert:hover {
 .error-page-animation {
   width: 30rem;
   margin-right: 2rem;
+}
+
+.error-page-title {
+  font-size: 1rem;
 }
 
 /*
@@ -2904,11 +3094,11 @@ to keep your styles reusable and consistent.
   .blurb {
     width: 25%;
     margin-left: 50px;
-    font-size: 120%;
+    font-size: 100%;
   }
 
   .blurb-container {
-    padding-top: 20%;
+    padding-top: 12%;
   }
   .ribbon::before {
     position: absolute;
@@ -3340,8 +3530,8 @@ to keep your styles reusable and consistent.
     width: 20%;
     height: 10rem;
     content: url("../assets/branding-images/BANNER.svg");
-    top: 1968px;
-    left: 135px;
+    top: 1920px;
+    left: 130px;
   }
 
   .ribbon::before {
@@ -3467,6 +3657,7 @@ to keep your styles reusable and consistent.
     padding-left: 8%;
     padding-right: 8%;
     padding-bottom: 3%;
+    padding-top: 0%;
     background: #fefae6;
     /* Keeps text centered */
   }
