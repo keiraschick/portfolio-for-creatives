@@ -1196,6 +1196,44 @@ a.nav-link-primary-ribbon-current-vault {
   padding-bottom: 12px;
   padding-right: 5px;
 }
+
+.marquee {
+  position: relative;
+  width: 100%;
+  min-height: 20vh;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-work {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.marquee-work-item {
+  width: 30%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+marquee-scroll animation {
+  transform: translateX(-42.2646%);
+}
+
 /* 
 
 ██     ██  ██████  ██████  ██   ██     ██████   █████   ██████  ███████ 
@@ -1363,15 +1401,17 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100%;
   background: rgb(255, 255, 255);
   padding: 2rem;
-  padding-top: 13%;
+  padding-right: 10%;
   padding-left: 10%;
+  padding-top: 0%;
 }
 .work-text-2 {
   width: 100%;
   background: rgb(255, 255, 255);
   padding: 2rem;
-  padding-top: 13%;
+  padding-left: 10%;
   padding-right: 10%;
+  padding-top: 0%;
 }
 
 .work-timeline-container {
@@ -1402,34 +1442,55 @@ a.nav-link-primary-ribbon-current-vault {
   padding-right: 10%;
 }
 
-.cross-banner-image {
-  width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
 .case-study-text {
-  width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .case-study-title {
   color: #000;
-  text-align: left;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 900;
+  text-align: center;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .case-study-description {
   color: #000;
-  text-align: left;
-  width: 40rem;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0%;
 }
 
-.process-work {
-  padding-left: 8%;
-  padding-right: 8%;
+.OTR-vimeo {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 0%; /* MATCH your screenshot aspect ratio */
+  /* If your screenshots are 1080x1920 (9:16), use 177% */
+  /* If they’re square, use 100% */
+  /* If they’re 4:5, use 125% */
+}
+
+.OTR-vimeo iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.OTR-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*
@@ -1518,6 +1579,44 @@ a.nav-link-primary-ribbon-current-vault {
   gap: 2rem;
   padding-top: 3%;
   padding-bottom: 3%;
+}
+
+.column-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  padding-bottom: 5rem;
+}
+
+.column-2-video {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding-left: 3%;
+  padding-right: 9%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.column-2-work-description {
+  display: flex;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.bottom-page-thumbnail {
+  width: 100vw;
+  padding: 0%;
+  margin: 0%;
+}
+
+.bottom-thumbnail-image {
+  width: 100%;
 }
 
 .about-text-1 {
@@ -2459,7 +2558,6 @@ to keep your styles reusable and consistent.
   .work-text-1 {
     width: 100%;
     background: rgb(255, 255, 255);
-    padding-top: 13%;
     padding-left: 13%;
     padding-right: 13%;
   }
@@ -3352,6 +3450,9 @@ to keep your styles reusable and consistent.
     flex-direction: row;
   }
 
+  .column-4 {
+    flex-direction: row;
+  }
   .signature {
     width: 30%;
   }
@@ -3510,14 +3611,15 @@ to keep your styles reusable and consistent.
     width: 100%;
     background: rgb(255, 255, 255);
     padding: 2rem;
-    padding-top: 13%;
+    padding-top: 0%;
     padding-left: 10%;
+    padding-right: 0%;
   }
 
   .work-text-2 {
     width: 100%;
     background: rgb(255, 255, 255);
-    padding-top: 13%;
+    padding-top: 0%;
     padding-right: 10%;
     padding-left: 0%;
   }
