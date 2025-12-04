@@ -1404,23 +1404,26 @@ a.nav-link-primary-ribbon-current-vault {
 
 .cross-banner-image {
   width: 100%;
-  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .case-study-text {
   width: 100%;
-  align-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .case-study-title {
   color: #000;
-  text-align: center;
+  text-align: left;
   font-size: 1.2rem;
   font-weight: 900;
 }
 
 .case-study-description {
   color: #000;
+  text-align: left;
   width: 40rem;
 }
 
