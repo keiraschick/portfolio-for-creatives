@@ -405,7 +405,7 @@ h2 {
   font-family: var(--font-family-heading);
   line-height: 1.2;
   font-weight: 900;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: var(--h2-color);
 }
 
@@ -799,6 +799,7 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100%;
   min-height: 5rem;
   background: #000;
+  transition: 1s ease;
 }
 
 .fixed-top-image {
@@ -815,6 +816,7 @@ a.nav-link-primary-ribbon-current-vault {
   top: 110px;
   left: 15px;
   z-index: 1000;
+  transition: 1s ease;
 }
 
 /* Spin animation */
@@ -1279,6 +1281,17 @@ a.nav-link-primary-ribbon-current-vault {
   white-space: nowrap;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* 
 
 ██     ██  ██████  ██████  ██   ██     ██████   █████   ██████  ███████ 
@@ -1436,6 +1449,13 @@ a.nav-link-primary-ribbon-current-vault {
 .work-title {
   color: #000;
   padding-right: 18%;
+  font-size: 2rem;
+}
+
+.about-title {
+  color: #fefae6;
+  padding-right: 18%;
+  font-size: 2rem;
 }
 
 .work-description {
@@ -1445,7 +1465,6 @@ a.nav-link-primary-ribbon-current-vault {
 .work-text-1 {
   width: 100%;
   background: rgb(255, 255, 255);
-  padding: 2rem;
   padding-right: 10%;
   padding-left: 10%;
   padding-top: 0%;
@@ -1453,7 +1472,6 @@ a.nav-link-primary-ribbon-current-vault {
 .work-text-2 {
   width: 100%;
   background: rgb(255, 255, 255);
-  padding: 2rem;
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 0%;
@@ -1529,6 +1547,26 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.vanguard-vimeo iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vimeo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7 / 4;
+  overflow: hidden;
+}
+
+.vanguard-vimeo {
+  position: absolute;
+  inset: 0;
 }
 
 /*
@@ -1610,13 +1648,19 @@ a.nav-link-primary-ribbon-current-vault {
   margin-bottom: 10%;
 }
 
+.column-1 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
 .column-2 {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 2rem;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .column-3 {
@@ -1708,10 +1752,8 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .about-category-container {
-  padding-bottom: 1.5rem;
   color: #fefae6;
   font-size: 0.9rem;
-  line-height: 3.5rem;
 }
 
 .about-category-header {
@@ -1731,12 +1773,14 @@ a.nav-link-primary-ribbon-current-vault {
 .linked-header:hover {
   text-decoration: underline;
   color: #fefae6;
+  line-height: 15px;
 }
 
 .linked-header:link,
 .linked-header:visited {
   color: #fefae6;
   text-decoration: none;
+  line-height: 50px;
 }
 
 .linked-header2:hover {
@@ -1923,6 +1967,7 @@ a.nav-link-primary-ribbon-current-vault {
 /* Full-width wrapper for the project section */
 .project-wrapper-full-width {
   width: 100%;
+  background: #fff;
 }
 
 /* Container for the project content with full-width display */
@@ -1945,6 +1990,12 @@ a.nav-link-primary-ribbon-current-vault {
   width: 130%;
 }
 
+.full-width-image2 {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -1963,6 +2014,7 @@ a.nav-link-primary-ribbon-current-vault {
   display: flex;
   flex-direction: column;
   padding-top: 3%;
+  padding-bottom: 2%;
   padding-left: 10.5%;
   padding-right: 10.5%;
   width: 100%; /* Space below the description */
@@ -3662,7 +3714,6 @@ to keep your styles reusable and consistent.
   .work-text-1 {
     width: 100%;
     background: rgb(255, 255, 255);
-    padding: 2rem;
     padding-top: 0%;
     padding-left: 10%;
     padding-right: 0%;
@@ -3687,8 +3738,8 @@ to keep your styles reusable and consistent.
     width: 20%;
     height: 10rem;
     content: url("../assets/branding-images/BANNER.svg");
-    top: 1920px;
-    left: 130px;
+    top: 1828px;
+    left: 140px;
   }
 
   .ribbon::before {
