@@ -55,13 +55,13 @@
     </figure>
 
     <div class="blurb-container">
-      <p class="blurb all-caps">
+      <p class="blurb all-caps reveal">
         graphic designer located in vancouver, bc. currently working as a
         freelance designer.
       </p>
     </div>
     <ul class="hero-headline-wrapper" id="wordmarkArea">
-      <li class="wordmark">
+      <li class="wordmark reveal">
         <object
           type="image/svg+xml"
           data="assets/branding-images/wordmarkframe.svg"
@@ -164,10 +164,10 @@
     </section>
 
     <section class="tagline-section all-caps">
-      <p class="tagline">designed for <strong>reality</strong></p>
-      <p class="tagline">born from <strong>imagination.</strong></p>
-      <p class="tagline2 all-caps"><br />when will our story begin?</p>
-      <p class="tagline2 all-caps">let's connect!</p>
+      <p class="tagline reveal">designed for <strong>reality</strong></p>
+      <p class="tagline reveal">born from <strong>imagination.</strong></p>
+      <p class="tagline2 all-caps reveal"><br />when will our story begin?</p>
+      <p class="tagline2 all-caps reveal">let's connect!</p>
       <div class="email-letter">
         <a href="mailto:keiraschick@gmail.com">
           <div class="letter-image">
@@ -354,5 +354,25 @@
 
     <canvas id="bouncingCanvas"></canvas>
     <script src="js/flames.js"></script>
+    <script>
+      const elements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            } else {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>

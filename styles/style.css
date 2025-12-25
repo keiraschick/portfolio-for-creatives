@@ -198,9 +198,20 @@ html {
   box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
   scroll-behavior: smooth; /* Adds smooth scrolling between sections */
   cursor: url("../assets/branding-images/cursor.svg"), auto !important; /* Custom cursor (change the URL below to use your own) */
+}
 
-  /* TODO: Replace the URL above to add a custom cursor. 
-     If you want to use the default browser cursor, just delete this line. */
+a:active,
+button:active {
+  cursor: url("/assets/branding-images/cursorclosed.svg") auto, pointer;
+}
+
+a,
+button,
+input,
+textarea,
+select,
+label {
+  cursor: url("/assets/branding-images/cursorclosed.svg"), auto;
 }
 
 /* Ensure all elements, including pseudo-elements, follow border-box sizing */
@@ -1283,13 +1294,21 @@ a.nav-link-primary-ribbon-current-vault {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reveal {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.reveal:not(.is-visible) {
+  transition-duration: 0.9s;
 }
 
 /* 

@@ -55,7 +55,7 @@
       </ul>
     </header>
 
-    <ul class="about-photo-grid reveal">
+    <ul class="about-photo-grid">
       <li>
         <figure class="about-fixed-top-image">
           <a href="mailto:keiraschick@gmail.com"
@@ -67,7 +67,7 @@
         </figure>
         <figure>
           <img
-            class="about-image"
+            class="about-image reveal"
             src="assets/branding-images/KeiraSchick_SelfPortrait_About.jpg"
             width="1080"
             height="516"
@@ -119,11 +119,12 @@
       <ul class="column-2">
         <li class="about-text-1-second">
           <h2 class="about-title all-caps ribbon2">recognition</h2>
-          <ul class="awards-list">
+          <ul class="awards-list reveal">
             <li class="about-category-container">
               <a
                 class="about-category-header linked-header"
                 href="https://www.appliedartsmag.com/winners/student/heartwood-gin-w343/?year=2025"
+                target="_blank"
                 >Applied Arts Student Award Winner
               </a>
               <p class="about-category-body">Design | Packaging Series</p>
@@ -132,6 +133,7 @@
               <a
                 class="about-category-header linked-header"
                 href="https://rgd.ca/hiring-designers/award-winners/2025-student-award-winners/award-for-packaging-design-series"
+                target="_blank"
                 >RGD Student Award Winner</a
               >
               <p class="about-category-body">Design | Packaging Series</p>
@@ -144,7 +146,7 @@
         </li>
         <li class="about-text-2-second">
           <h2 class="about-title all-caps ribbon">education</h2>
-          <ul class="education-list">
+          <ul class="education-list reveal">
             <li class="about-category-container">
               <p class="about-category-header">
                 Bachelor of Design in Visual Communications
@@ -158,7 +160,7 @@
       <ul class="column-2">
         <li class="about-text-1-second">
           <h2 class="about-title all-caps ribbon2">experience</h2>
-          <ul class="education-list">
+          <ul class="education-list reveal">
             <li class="about-category-container">
               <p class="about-category-header">we haven't gotten there yet</p>
               <p class="about-category-body">
@@ -169,7 +171,7 @@
         </li>
         <li class="about-text-2-second">
           <h2 class="about-title all-caps ribbon">I've worked with</h2>
-          <ul class="awards-list">
+          <ul class="awards-list reveal">
             <li class="about-category-container">
               <p class="about-category-header">
                 Sim & Schick Wealth Management
@@ -180,6 +182,7 @@
               <a
                 class="about-category-header linked-header"
                 href="https://arrowandaxe.ca/"
+                target="_blank"
                 >Arrow & Axe Gereral Store</a
               >
               <p class="about-category-body">Clothing Design</p>
@@ -243,5 +246,26 @@
         </ul>
       </li>
     </ul>
+
+    <script>
+      const elements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            } else {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>

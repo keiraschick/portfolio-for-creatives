@@ -72,7 +72,7 @@
     <main class="main-work-section">
       <section class="portfolio">
         <ul class="grid">
-          <li class="work-page-grid-item block">
+          <li class="work-page-grid-item block reveal">
             <a href="/Heartwood-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
@@ -94,7 +94,7 @@
             </a>
           </li>
 
-          <li class="work-page-grid-item block">
+          <li class="work-page-grid-item block reveal">
             <a href="TitleistRebrand-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
@@ -115,11 +115,11 @@
             </a>
           </li>
 
-          <li class="work-page-grid-item block">
+          <li class="work-page-grid-item block reveal">
             <a href="Vanguard-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
-                  src="assets/branding-images/KeiraSchick_Capstone_ComingSoon.jpg"
+                  src="assets/branding-images/KeiraSchick_VanguardThumbnail.jpg"
                   width="1920"
                   height="1080"
                   loading="lazy"
@@ -136,7 +136,7 @@
             </a>
           </li>
 
-          <li class="work-page-grid-item block">
+          <li class="work-page-grid-item block reveal">
             <a href="OffTheRecord-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
@@ -157,7 +157,7 @@
             </a>
           </li>
 
-          <li class="work-page-grid-item block">
+          <li class="work-page-grid-item block reveal">
             <a href="MorphoMagazine-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
@@ -176,7 +176,7 @@
             </a>
           </li>
 
-          <li class="work-page-grid-item block">
+          <li class="work-page-grid-item block reveal">
             <a href="WildsideMatcha-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
@@ -197,7 +197,7 @@
             </a>
           </li>
 
-          <li class="work-page-grid-item block">
+          <li class="work-page-grid-item block reveal">
             <a href="ThresholdLeadership-KeiraSchick.html" class="grayscale">
               <figure>
                 <img
@@ -217,8 +217,12 @@
               </div>
             </a>
           </li>
-          <li class="work-page-grid-item block">
-            <a href="ThresholdLeadership-KeiraSchick.html" class="grayscale">
+
+          <li class="work-page-grid-item block reveal">
+            <a
+              href="Sim&SchickWealthManagement-KeiraSchick.html"
+              class="grayscale"
+            >
               <figure>
                 <img
                   src="assets/branding-images/KeiraSchick_Sim&SchickThumbnail.jpg"
@@ -229,11 +233,9 @@
                 />
               </figure>
               <div class="project-details-overlay overlay rounded-large">
-                <p class="project-text-title">THRESHOLD LEADERSHIP</p>
-                <p class="project-text-list">
-                  Brand identity | Logo | Advertising | Clothing Design
-                </p>
-                <p class="project-text-year">2024</p>
+                <p class="project-text-title">Sim & Schick</p>
+                <p class="project-text-list">Logo Design</p>
+                <p class="project-text-year">2025</p>
               </div>
             </a>
           </li>
@@ -289,5 +291,25 @@
         </ul>
       </li>
     </ul>
+    <script>
+      const elements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            } else {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>

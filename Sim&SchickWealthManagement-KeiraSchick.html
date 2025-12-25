@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <title>
-      Keira Schick | Graphic Designer | Threshold Leadership - Brand Identity &
+      Keira Schick | Graphic Designer | Sim & Schick Private Wealth Management -
       Logo Design
     </title>
     <meta
       name="description"
-      content="Brand identity and design system for Threshold Leadership, built to engage students and appeal to universities through empowering visuals, and engaging practices."
+      content="COMING SOON! Wildside Matcha brings a healthier approach to energy drinks, inspired by animal archetypes that reflect the unique habits of everyday caffeine drinkers."
     />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
 
-  <body class="Titleist Rebrand">
+  <body>
     <header class="hero-header-work">
       <ul class="nav-branding">
         <li class="nav-branding-item">
@@ -65,26 +65,27 @@
     <main class="project-full-width">
       <ul class="project-navigation row">
         <li class="arrow-left">
-          <a href="WildsideMatcha-KeiraSchick.html" class="navigation-arrow">
+          <a
+            href="ThresholdLeadership-KeiraSchick.html"
+            class="navigation-arrow"
+          >
             <img
               src="assets/branding-images/left-arrow.svg"
               alt="Left arrow button for previous project"
           /></a>
         </li>
-        <li class="full-width-image white-images">
+        <li class="full-width-image">
           <img
-            src="assets/branding-images/KeiraSchick_ThresholdLeadership_ThumbnailLogo.jpg"
+            class="white-images reveal"
+            src="assets/branding-images/KeiraSchick_Progress_Thumbnail.jpg"
             width="2800"
             height="1500"
             loading="lazy"
-            alt="Titleist Rebrand Golf Ball Sleeve Mockup"
+            alt="Keira Schick in progress thumbnail"
           />
         </li>
         <li class="arrow-right">
-          <a
-            href="Sim&SchickWealthManagement-KeiraSchick.html"
-            class="navigation-arrow"
-          >
+          <a href="Heartwood-KeiraSchick.html" class="navigation-arrow">
             <img
               src="assets/branding-images/right-arrow.svg"
               alt="Right arrow button for previous project"
@@ -98,53 +99,15 @@
       <aside class="project-full-width">
         <div class="project-description-container">
           <div class="project-title col-2">
-            <h3 class="all-caps">threshold leadership</h3>
-            <p class="project-categories">
-              Brand Identity | Packaging | Website | Menu Design
-            </p>
-            <p class="project-year">2024</p>
+            <h3 class="all-caps">Sim & Schick</h3>
+            <p class="project-categories">This project is in the works!</p>
+            <p class="project-year">2025</p>
           </div>
-          <div class="work-timeline-container col-2">
+          <div class="work-timeline-container col-2 reveal">
             <p class="timeline">Timeline</p>
             <p class="project-categories">4 weeks</p>
           </div>
         </div>
-
-        <ul class="column-2">
-          <li class="work-image-1">
-            <img
-              src="assets/branding-images/KeiraSchick_Titleist_TourSoft_front.jpg"
-              alt="image name"
-              width="1484"
-              height="1124"
-            />
-          </li>
-          <li class="work-image-2">
-            <img
-              src="assets/branding-images/KeiraSchick_Titleist_TourSoft_front.jpg"
-              alt="image name"
-              width="1484"
-              height="1124"
-            />
-          </li>
-        </ul>
-
-        <ul class="column-2">
-          <li class="work-text-1"></li>
-          <li class="work-text-2">
-            <h2 class="work-title">RATIONALE</h2>
-            <h5 class="work-description">
-              Titleist is considered the largest and most played golf ball in
-              the world. Taking into consideration their existing packaging and
-              competitors, the branding for golf balls seem to follow a
-              consistent style. Strongly relying on player performance and
-              optimization, technology integration. Personally the packaging
-              feels as if it’s straying from it’s original routes--the game of
-              golf itself. My goal was to try and capture the true essence and
-              experience that embodies the origin of the sport itself.
-            </h5>
-          </li>
-        </ul>
 
         <ul class="footer-global">
           <li>
@@ -214,5 +177,25 @@
         </script>
       </aside>
     </div>
+    <script>
+      const elements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            } else {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
