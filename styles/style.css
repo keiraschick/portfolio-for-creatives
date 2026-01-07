@@ -120,7 +120,7 @@
   --color-bg-holding-page: rgba(1, 1, 1, 0.6);
   /* Headings */
   --h1-color: #060606;
-  --h2-color: #fefae6;
+  --h2-color: #000000;
   --h3-color: #000000;
   --h4-color: #000000;
   --h5-color: #fefae6;
@@ -135,7 +135,7 @@
   /* Link States */
   --color-link: #ffffff;
   --color-link-hover: #111;
-  --color-link-visited: #000000;
+  --color-link-visited: #bedd4e;
   /* Navigation */
   --color-nav-link: #000000;
   --color-nav-link-hover: #ff3f3f;
@@ -412,7 +412,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 4rem;
   font-family: var(--font-family-heading);
   line-height: 1.2;
   font-weight: 900;
@@ -474,34 +474,42 @@ em {
 /* ------------------------------------------------------------------ */
 
 .tagline {
-  font-size: 4rem;
   line-height: 1;
   margin-top: 3px;
   padding-top: 10px;
+  font-weight: 300;
   color: #fefae6;
+  margin-bottom: 0;
+}
+
+.title {
+  line-height: 1;
+  margin-top: 3px;
+  padding-top: 10px;
+  font-weight: 300;
+  color: #000000;
 }
 
 .tagline2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-items: space-between;
-  font-size: 1.3rem;
-  line-height: 1;
-  margin-top: 10%;
-  gap: 50px;
+  font-size: 2rem;
   color: #bedd4e;
 }
-.all-caps {
-  text-transform: uppercase;
+
+.tagline3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: space-between;
+  font-size: 1.2rem;
+  margin-top: 18%;
+  color: #fefae6;
 }
 
-.ribbon::before {
-  position: absolute;
-  width: 100%;
-  content: url("../assets/branding-images/BANNER.svg");
-  top: 40px;
-  left: 10px;
+.all-caps {
+  text-transform: uppercase;
 }
 
 /* Main hero headline — usually sits in the intro section */
@@ -961,8 +969,8 @@ a.nav-link-primary-ribbon-current-vault {
 
 .email-letter {
   position: relative;
-  left: 3%;
-  bottom: -3rem;
+  left: 2.5rem;
+  bottom: -4rem;
 }
 
 .letter-image {
@@ -1212,7 +1220,7 @@ a.nav-link-primary-ribbon-current-vault {
 
 /* The outer container — holds everything in place */
 .marquee {
-  padding-top: 10%;
+  padding-top: 15%;
   position: relative;
   width: 100%;
   min-height: 20vh;
@@ -1275,7 +1283,7 @@ a.nav-link-primary-ribbon-current-vault {
 
 /* Image-specific item */
 .marquee__item--image {
-  width: 30rem;
+  width: 20rem;
 }
 
 /* Image formatting */
@@ -1294,21 +1302,13 @@ a.nav-link-primary-ribbon-current-vault {
 
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.reveal {
-  transition: opacity 2s ease, transform 2s ease;
-}
-
-.reveal:not(.is-visible) {
-  transition-duration: 0.9s;
 }
 
 /* 
@@ -1472,9 +1472,15 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .about-title {
-  color: #fefae6;
-  padding-right: 18%;
-  font-size: 2rem;
+  color: #000000;
+  margin: 0;
+}
+
+.about-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 7%;
 }
 
 .work-description {
@@ -1749,17 +1755,9 @@ a.nav-link-primary-ribbon-current-vault {
 
 .about-text-1-second {
   width: 100%;
-  background: rgb(0, 0, 0);
   padding: 2rem;
-  padding-left: 18%;
-  position: relative;
-}
-
-.about-text-2-second {
-  width: 100%;
-  background: rgb(0, 0, 0);
-  padding: 2rem;
-  padding-right: 18%;
+  padding-left: 10%;
+  padding-left: 10%;
   position: relative;
 }
 
@@ -1770,16 +1768,27 @@ a.nav-link-primary-ribbon-current-vault {
   padding-bottom: 40%;
 }
 
-.about-category-container {
-  color: #fefae6;
-  font-size: 0.9rem;
+.about-category-header {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0%;
+  color: #000;
 }
 
-.about-category-header {
+.about-category-header-2 {
   font-size: 0.8rem;
   line-height: 1.2rem;
   font-weight: 600;
-  color: #fefae6;
+  color: #bedd4e;
+  margin: 0;
+}
+
+.about-category-header-2:hover,
+.about-category-visited {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .work-category-header {
@@ -1789,34 +1798,10 @@ a.nav-link-primary-ribbon-current-vault {
   color: #000000;
 }
 
-.linked-header:hover {
-  text-decoration: underline;
-  color: #fefae6;
-  line-height: 15px;
-}
-
-.linked-header:link,
-.linked-header:visited {
-  color: #fefae6;
-  text-decoration: none;
-  line-height: 50px;
-}
-
-.linked-header2:hover {
-  text-decoration: underline;
-  color: #000000;
-}
-
-.linked-header2:link,
-.linked-header2:visited {
-  color: #000000;
-  text-decoration: none;
-}
-
 .about-category-body {
   font-size: 0.8rem;
-  line-height: 1rem;
   font-weight: 200;
+  margin: 0%;
 }
 
 .work-category-body {
@@ -1824,6 +1809,53 @@ a.nav-link-primary-ribbon-current-vault {
   line-height: 1rem;
   font-weight: 200;
 }
+
+.about-info {
+  background: #fefae6;
+  padding-bottom: 10%;
+}
+
+.bio-info {
+  padding-bottom: 10%;
+}
+
+.info-menu {
+  padding-top: 10%;
+}
+
+.ribbon {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+
+  padding: 1rem 2rem 1rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #111;
+
+  background-color: #fefae6;
+  transition: background-color 0.3s ease;
+
+  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 24px) 50%, 100% 100%, 0% 100%);
+}
+
+.ribbon:hover {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem 1rem 2rem;
+  margin-bottom: 1.5rem;
+
+  border: 2px solid #111;
+  background-color: #bedd4e;
+
+  transition: background-color 0.3s ease;
+  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 24px) 50%, 100% 100%, 0% 100%);
+}
+
 /* 
 
 ███████  ██████   ██████  ████████ ███████ ██████  
@@ -2377,24 +2409,6 @@ to keep your styles reusable and consistent.
     padding-top: 80%;
   }
 
-  .ribbon::before {
-    position: absolute;
-    width: 15%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 7px;
-  }
-
-  .ribbon2::before {
-    position: absolute;
-    width: 15%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 7px;
-  }
-
   h5 {
     font-size: 1rem;
     line-height: 1.5;
@@ -2418,21 +2432,31 @@ to keep your styles reusable and consistent.
 
   .about-text-1-second {
     width: 100%;
-    background: rgb(0, 0, 0);
     padding-left: 9%;
     padding-right: 9%;
-  }
-  .about-text-2-second {
-    width: 100%;
-    background: rgb(0, 0, 0);
-    padding-right: 9%;
-    padding-left: 9%;
   }
 
   .about-category-header {
     font-size: 1rem;
+    font-weight: 600;
+    margin: 0%;
+    color: #000;
+  }
+
+  .about-category-header-2 {
+    font-size: 1rem;
     line-height: 1.1rem;
     font-weight: 600;
+    color: #bedd4e;
+    margin: 0;
+  }
+
+  .about-category-header-2:hover,
+  .about-category-visited {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+    text-decoration: underline;
   }
 
   .work-category-header {
@@ -2443,8 +2467,8 @@ to keep your styles reusable and consistent.
 
   .about-category-body {
     font-size: 0.9rem;
-    line-height: 0.2rem;
     font-weight: 200;
+    margin: 0%;
   }
 
   .work-category-body {
@@ -2543,6 +2567,15 @@ to keep your styles reusable and consistent.
     margin-top: 3px;
     padding-top: 10px;
     color: #fefae6;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #000000;
   }
 
   .tagline-section {
@@ -2584,6 +2617,15 @@ to keep your styles reusable and consistent.
     margin-top: 3px;
     padding-top: 10px;
     color: #fefae6;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    line-height: 0;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #000000;
   }
 
   .tagline-section {
@@ -2607,24 +2649,6 @@ to keep your styles reusable and consistent.
     padding-top: 80%;
   }
 
-  .ribbon::before {
-    position: absolute;
-    width: 15%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 25px;
-  }
-
-  .ribbon2::before {
-    position: absolute;
-    width: 15%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 25px;
-  }
-
   .ribbon3::before {
     position: absolute;
     width: 15%;
@@ -2643,8 +2667,26 @@ to keep your styles reusable and consistent.
 
   .about-category-header {
     font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0%;
+    color: #000;
+  }
+
+  .about-category-header-2 {
+    font-size: 1.1rem;
     line-height: 1.5rem;
     font-weight: 600;
+    color: #bedd4e;
+    margin: 0;
+  }
+
+  .about-category-header-2:hover,
+  .about-category-visited {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: #bedd4e;
+    text-decoration: underline;
   }
 
   .work-category-header {
@@ -2655,8 +2697,8 @@ to keep your styles reusable and consistent.
 
   .about-category-body {
     font-size: 1rem;
-    line-height: 0.2rem;
     font-weight: 200;
+    margin: 0%;
   }
 
   .work-category-body {
@@ -2696,15 +2738,8 @@ to keep your styles reusable and consistent.
 
   .about-text-1-second {
     width: 100%;
-    background: rgb(0, 0, 0);
     padding-left: 13%;
     padding-right: 13%;
-  }
-  .about-text-2-second {
-    width: 100%;
-    background: rgb(0, 0, 0);
-    padding-right: 13%;
-    padding-left: 13%;
   }
 
   a.nav-link-primary {
@@ -2828,6 +2863,15 @@ to keep your styles reusable and consistent.
     margin-top: 3px;
     padding-top: 10px;
     color: #fefae6;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    line-height: 0.7;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #000000;
   }
 
   .tagline-section {
@@ -2849,24 +2893,6 @@ to keep your styles reusable and consistent.
 
   .blurb-container {
     padding-top: 70%;
-  }
-
-  .ribbon::before {
-    position: absolute;
-    width: 20%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 40px;
-  }
-
-  .ribbon2::before {
-    position: absolute;
-    width: 20%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 40px;
   }
 
   .fixed-top-image {
@@ -2920,6 +2946,15 @@ to keep your styles reusable and consistent.
     margin-top: 3px;
     padding-top: 10px;
     color: #fefae6;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+    line-height: 0.5;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #000000;
   }
 
   .tagline-section {
@@ -2931,24 +2966,6 @@ to keep your styles reusable and consistent.
     flex-direction: column;
     justify-content: center;
     background: #000;
-  }
-
-  .ribbon::before {
-    position: absolute;
-    width: 20%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 60px;
-  }
-
-  .ribbon2::before {
-    position: absolute;
-    width: 20%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 60px;
   }
 
   .about-fixed-top-image {
@@ -3040,6 +3057,15 @@ to keep your styles reusable and consistent.
     margin-top: 3px;
     padding-top: 10px;
     color: #fefae6;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 3rem;
+    line-height: 0.7;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #000000;
   }
 
   .tagline-section {
@@ -3062,23 +3088,6 @@ to keep your styles reusable and consistent.
   .blurb-container {
     padding-top: 20%;
   }
-  .ribbon::before {
-    position: absolute;
-    width: 40%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 150px;
-    left: 130px;
-  }
-
-  .ribbon2::before {
-    position: absolute;
-    width: 40%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 150px;
-    left: 130px;
-  }
 
   h5 {
     font-size: 1rem;
@@ -3089,8 +3098,26 @@ to keep your styles reusable and consistent.
 
   .about-category-header {
     font-size: 1rem;
+    font-weight: 600;
+    margin: 0%;
+    color: #000;
+  }
+
+  .about-category-header-2 {
+    font-size: 1rem;
     line-height: 1.1rem;
     font-weight: 600;
+    color: #bedd4e;
+    margin: 0;
+  }
+
+  .about-category-header-2:hover,
+  .about-category-visited {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+    color: #bedd4e;
+    text-decoration: underline;
   }
 
   .work-category-header {
@@ -3101,8 +3128,8 @@ to keep your styles reusable and consistent.
 
   .about-category-body {
     font-size: 0.9rem;
-    line-height: 0.2rem;
     font-weight: 200;
+    margin: 0%;
   }
 
   .work-category-body {
@@ -3130,19 +3157,10 @@ to keep your styles reusable and consistent.
 
   .about-text-1-second {
     width: 100%;
-    background: rgb(0, 0, 0);
     padding: 2rem;
     padding-top: 15%;
     padding-left: 18%;
     padding-right: 18%;
-  }
-  .about-text-2-second {
-    width: 100%;
-    background: rgb(0, 0, 0);
-    padding: 2rem;
-    padding-top: 15%;
-    padding-right: 18%;
-    padding-left: 18%;
   }
 
   .logo {
@@ -3297,6 +3315,15 @@ to keep your styles reusable and consistent.
     margin-top: 3px;
     padding-top: 10px;
     color: #fefae6;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 4rem;
+    line-height: 1;
+    margin-top: 3px;
+    padding-top: 10px;
+    color: #000000;
   }
 
   .tagline-section {
@@ -3319,28 +3346,29 @@ to keep your styles reusable and consistent.
   .blurb-container {
     padding-top: 12%;
   }
-  .ribbon::before {
-    position: absolute;
-    width: 100%;
-    height: 22rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: -8px;
-  }
-
-  .ribbon2::before {
-    position: absolute;
-    width: 30%;
-    height: 20rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 80px;
-  }
 
   .about-category-header {
     font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0%;
+    color: #000;
+  }
+
+  .about-category-header-2 {
+    font-size: 0.8rem;
     line-height: 0.4rem;
     font-weight: 600;
+    color: #bedd4e;
+    margin: 0;
+  }
+
+  .about-category-header-2:hover,
+  .about-category-visited {
+    font-size: 0.8rem;
+    line-height: 0.4rem;
+    font-weight: 600;
+    color: #bedd4e;
+    text-decoration: underline;
   }
 
   .work-category-header {
@@ -3351,8 +3379,8 @@ to keep your styles reusable and consistent.
 
   .about-category-body {
     font-size: 0.8rem;
-    line-height: 0.2rem;
     font-weight: 200;
+    margin: 0%;
   }
 
   .work-category-body {
@@ -3370,8 +3398,26 @@ to keep your styles reusable and consistent.
 
   .about-category-header {
     font-size: 1.2rem;
-    line-height: 1.5rem;
     font-weight: 600;
+    margin: 0%;
+    color: #000;
+  }
+
+  .about-category-header-2 {
+    font-size: 1.2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: #bedd4e;
+    margin: 0;
+  }
+
+  .about-category-header-2:hover,
+  .about-category-visited {
+    font-size: 1.2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: #bedd4e;
+    text-decoration: underline;
   }
 
   .work-category-header {
@@ -3382,8 +3428,8 @@ to keep your styles reusable and consistent.
 
   .about-category-body {
     font-size: 1.1rem;
-    line-height: 0.2rem;
     font-weight: 200;
+    margin: 0%;
   }
 
   .work-category-body {
@@ -3407,14 +3453,9 @@ to keep your styles reusable and consistent.
 
   .about-text-1-second {
     width: 100%;
-    background: rgb(0, 0, 0);
-    padding: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
     padding-left: 10%;
-  }
-  .about-text-2-second {
-    width: 100%;
-    background: rgb(0, 0, 0);
-    padding: 2rem;
     padding-right: 10%;
   }
 
@@ -3437,7 +3478,7 @@ to keep your styles reusable and consistent.
   }
 
   h2 {
-    font-size: 2.7rem;
+    font-size: 4rem;
   }
 
   h3 {
@@ -3692,16 +3733,6 @@ to keep your styles reusable and consistent.
   }
 }
 
-@media (min-width: 1200px) {
-  .ribbon2::before {
-    position: absolute;
-    width: 100%;
-    height: 10rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 80px;
-  }
-}
 /* X-Large devices (large desktops, 1200px and up)*/
 
 @media (min-width: 1600px) {
@@ -3759,24 +3790,6 @@ to keep your styles reusable and consistent.
     content: url("../assets/branding-images/BANNER.svg");
     top: 1828px;
     left: 140px;
-  }
-
-  .ribbon::before {
-    position: absolute;
-    width: 30%;
-    height: 20rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: -8px;
-  }
-
-  .ribbon2::before {
-    position: absolute;
-    width: 30%;
-    height: 20rem;
-    content: url("../assets/branding-images/BANNER.svg");
-    top: 40px;
-    left: 130px;
   }
 
   .nav-branding {

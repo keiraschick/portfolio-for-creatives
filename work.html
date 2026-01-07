@@ -295,12 +295,11 @@
       const elements = document.querySelectorAll(".reveal");
 
       const observer = new IntersectionObserver(
-        (entries) => {
+        (entries, observer) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
-            } else {
-              entry.target.classList.remove("is-visible");
+              observer.unobserve(entry.target); // 👈 KEY LINE
             }
           });
         },
