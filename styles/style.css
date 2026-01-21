@@ -1231,6 +1231,7 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .marquee-work {
+  padding-bottom: 3rem;
   position: relative;
   width: 100%;
   min-height: 20vh;
@@ -1284,6 +1285,11 @@ a.nav-link-primary-ribbon-current-vault {
 /* Image-specific item */
 .marquee__item--image {
   width: 20rem;
+}
+
+.marquee__item--image-moodboards {
+  width: 35rem;
+  gap: 2rem;
 }
 
 /* Image formatting */
@@ -1530,6 +1536,12 @@ a.nav-link-primary-ribbon-current-vault {
   padding-right: 10%;
 }
 
+.work-image-single {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .case-study-text {
   width: 40%;
 }
@@ -1683,9 +1695,10 @@ a.nav-link-primary-ribbon-current-vault {
 .column-2 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .column-3 {
@@ -3606,7 +3619,9 @@ to keep your styles reusable and consistent.
   }
 
   .column-2 {
+    display: flex;
     flex-direction: row;
+    gap: 2rem;
   }
 
   .column-4 {
