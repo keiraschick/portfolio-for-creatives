@@ -22,10 +22,8 @@ const flameImages = [
   "assets/branding-images/Flame_green.svg",
   "assets/branding-images/Flame_green.svg",
   "assets/branding-images/Flame_blue.svg",
-  "assets/branding-images/candycane.svg",
   "assets/branding-images/Flame_purple.svg",
   "assets/branding-images/Flame_green.svg",
-  "assets/branding-images/candycane.svg",
 ];
 
 // ===== Shape Class =====

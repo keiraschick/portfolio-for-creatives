@@ -490,24 +490,6 @@ em {
   color: #000000;
 }
 
-.tagline2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 2rem;
-  color: #bedd4e;
-}
-
-.tagline3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: space-between;
-  font-size: 1.2rem;
-  margin-top: 18%;
-  color: #fefae6;
-}
-
 .all-caps {
   text-transform: uppercase;
 }
@@ -615,31 +597,6 @@ a:active {
 
 a.nav-link-primary {
   display: inline-block;
-  border: 2px solid black;
-  padding: 0.7rem 1.4rem;
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.2s ease;
-  font-size: 1.2rem;
-}
-
-a.nav-link-primary:hover {
-  display: inline-block;
-  border: 2px solid black;
-  padding: 0.7rem 1.4rem;
-  text-decoration: none;
-  color: black;
-  background-color: #bedd4e;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.2s ease;
-  font-size: 1.2rem;
-}
-
-a.nav-link-primary-invert {
-  display: inline-block;
   border: 2px solid #fefae6;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
@@ -650,7 +607,32 @@ a.nav-link-primary-invert {
   font-size: 1.2rem;
 }
 
-a.nav-link-primary-invert:hover {
+a.nav-link-primary:hover {
+  display: inline-block;
+  border: 2px solid #fefae6;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  color: #fefae6;
+  background-color: #bedd4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+a.hero-nav-link-primary {
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+a.hero-nav-link-primary:hover {
   display: inline-block;
   border: 2px solid #bedd4e;
   padding: 0.7rem 1.4rem;
@@ -667,8 +649,8 @@ a.nav-link-primary-ribbon-next-work {
   display: inline-block;
   padding: 0.5rem 1.4rem;
   text-decoration: none;
-  color: rgb(255, 255, 255);
-  background: rgb(0, 0, 0);
+  color: #000;
+  background: #fefae6;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.2s ease;
@@ -694,7 +676,7 @@ a.nav-link-primary-ribbon-current-work {
   display: inline-block;
   padding: 0.5rem 1.4rem;
   text-decoration: none;
-  color: #000000;
+  color: #000;
   background: #bedd4e;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -708,7 +690,7 @@ a.nav-link-primary-ribbon-next-vault:hover {
   display: inline-block;
   padding: 0.5rem 1.4rem;
   text-decoration: none;
-  color: black;
+  color: #000;
   background-color: #bedd4e;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -722,8 +704,8 @@ a.nav-link-primary-ribbon-next-vault {
   display: inline-block;
   padding: 0.5rem 1.4rem;
   text-decoration: none;
-  color: rgb(255, 255, 255);
-  background: rgb(0, 0, 0);
+  color: #000;
+  background: #fefae6;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.2s ease;
@@ -789,8 +771,12 @@ a.nav-link-primary-ribbon-current-vault {
 /* Great place for first impression and personal branding                    */
 /* -------------------------------------------------------------------------- */
 
-.blurb-container {
+.home-page {
   background: #fefae6;
+}
+
+.blurb-container {
+  background: transparent;
   padding-top: 10%;
 }
 
@@ -803,22 +789,14 @@ a.nav-link-primary-ribbon-current-vault {
 
 .hero-header {
   min-height: 5rem; /* Space reserved for logo + nav */
-  background: #fefae6;
+  background: transparent;
   background-repeat: no-repeat;
 }
 
-.hero-header-work {
-  /* Space reserved for logo + nav */
+.work-header {
   width: 100%;
   min-height: 5rem;
   background: transparent;
-}
-
-.hero-header-about {
-  width: 100%;
-  min-height: 5rem;
-  background: #000;
-  transition: 1s ease;
 }
 
 .fixed-top-image {
@@ -866,6 +844,22 @@ a.nav-link-primary-ribbon-current-vault {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 4%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to bottom, #000000, #0000005d, #00000000);
+}
+
+.hero-nav-branding {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 .sub-menu {
@@ -880,13 +874,17 @@ a.nav-link-primary-ribbon-current-vault {
   align-items: flex-end;
   justify-content: flex-end;
   display: block;
+  margin-top: 100%;
 }
 .nav-branding-group {
   display: flex;
   flex-direction: row;
 }
 .nav-branding-item {
-  padding: var(--padding-tiny);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-branding-logo {
@@ -914,7 +912,7 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .wordmark {
-  width: 110%;
+  width: 100%;
 }
 
 #wordmarkArea {
@@ -933,7 +931,7 @@ a.nav-link-primary-ribbon-current-vault {
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 860px;
+  height: 600vw;
   pointer-events: none;
   z-index: 999999 !important;
 }
@@ -1333,6 +1331,10 @@ a.nav-link-primary-ribbon-current-vault {
 /* The goal is to showcase your projects and provide a responsive, clean UI  */
 /* -------------------------------------------------------------------------- */
 
+.work-page {
+  background: #000;
+}
+
 /* Work wrapper (takes up available space) */
 .main-work-section {
   flex: 1;
@@ -1373,7 +1375,7 @@ a.nav-link-primary-ribbon-current-vault {
   grid-template-columns: 1fr;
   margin: 0rem;
   padding: 2.5%;
-  background-color: #ffffff; /* Space between grid items */
+  background-color: transparent; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
 }
 
@@ -2034,10 +2036,6 @@ a.nav-link-primary-ribbon-current-vault {
   background: #fff;
 }
 
-/* Container for the project content with full-width display */
-.project-full-width {
-}
-
 /* Sidebar Styles */
 .project-aside {
   width: 100%;
@@ -2142,10 +2140,10 @@ a.nav-link-primary-ribbon-current-vault {
 
 a.nav-link-primary {
   display: inline-block;
-  border: 2px solid black;
+  border: 2px solid #fefae6;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: black;
+  color: #fefae6;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.2s ease;
@@ -2165,19 +2163,19 @@ a.nav-link-primary:hover {
   font-size: 0.7rem;
 }
 
-a.nav-link-primary-invert {
+a.hero-nav-link-primary {
   display: inline-block;
-  border: 2px solid #fefae6;
+  border: 2px solid #000000;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: #fefae6;
+  color: #000000;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.2s ease;
   font-size: 0.7rem;
 }
 
-a.nav-link-primary-invert:hover {
+a.hero-nav-link-primary:hover {
   display: inline-block;
   border: 2px solid #bedd4e;
   padding: 0.5rem 1rem;
@@ -2492,10 +2490,10 @@ to keep your styles reusable and consistent.
 
   a.nav-link-primary {
     display: inline-block;
-    border: 2px solid black;
+    border: 2px solid #fefae6;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
-    color: black;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
@@ -2515,19 +2513,19 @@ to keep your styles reusable and consistent.
     font-size: 0.6rem;
   }
 
-  a.nav-link-primary-invert {
+  a.hero-nav-link-primary {
     display: inline-block;
-    border: 2px solid #fefae6;
+    border: 2px solid #000000;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
-    color: #fefae6;
+    color: #000000;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     font-size: 0.6rem;
   }
 
-  a.nav-link-primary-invert:hover {
+  a.hero-nav-link-primary:hover {
     display: inline-block;
     border: 2px solid #bedd4e;
     padding: 0.4rem 0.9rem;
@@ -2757,10 +2755,10 @@ to keep your styles reusable and consistent.
 
   a.nav-link-primary {
     display: inline-block;
-    border: 2px solid black;
+    border: 2px solid #fefae6;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: black;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
@@ -2780,19 +2778,19 @@ to keep your styles reusable and consistent.
     font-size: 0.7rem;
   }
 
-  a.nav-link-primary-invert {
+  a.hero-nav-link-primary {
     display: inline-block;
-    border: 2px solid #fefae6;
+    border: 2px solid #000000;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: #fefae6;
+    color: #000000;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     font-size: 0.7rem;
   }
 
-  a.nav-link-primary-invert:hover {
+  a.hero-nav-link-primary:hover {
     display: inline-block;
     border: 2px solid #bedd4e;
     padding: 0.5rem 1rem;
@@ -3182,10 +3180,10 @@ to keep your styles reusable and consistent.
 
   a.nav-link-primary {
     display: inline-block;
-    border: 2px solid black;
+    border: 2px solid #fefae6;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
-    color: black;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
@@ -3205,19 +3203,19 @@ to keep your styles reusable and consistent.
     font-size: 0.9rem;
   }
 
-  a.nav-link-primary-invert {
+  a.hero-nav-link-primary {
     display: inline-block;
-    border: 2px solid #fefae6;
+    border: 2px solid #000;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
-    color: #fefae6;
+    color: #000;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     font-size: 0.9rem;
   }
 
-  a.nav-link-primary-invert:hover {
+  a.hero-nav-link-primary:hover {
     display: inline-block;
     border: 2px solid #bedd4e;
     padding: 0.7rem 1.2rem;
@@ -3817,10 +3815,10 @@ to keep your styles reusable and consistent.
 
   a.nav-link-primary {
     display: inline-block;
-    border: 2px solid black;
+    border: 2px solid #fefae6;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
-    color: black;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
@@ -3840,12 +3838,12 @@ to keep your styles reusable and consistent.
     font-size: 1.2rem;
   }
 
-  a.nav-link-primary-invert {
+  a.hero-nav-link-primary {
     display: inline-block;
-    border: 2px solid #fefae6;
+    border: 2px solid #000;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
-    color: #fefae6;
+    color: #000;
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
