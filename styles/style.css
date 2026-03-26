@@ -3956,3 +3956,30 @@ That’s a wrap, class! 🧑‍🎓✨
 /* 🎉 You made it to the end! */
 /* This is a great place to celebrate your progress, add Easter eggs, or leave notes for your future self. */
 /* Happy coding, and don’t forget to take breaks, stay hydrated, and share your work proudly. 💻✨🎨 */
+
+/* -------------------------------------------------------------------------- */
+/* ✅ Global interaction overrides (all breakpoints)                           */
+/* -------------------------------------------------------------------------- */
+
+/* Keep header buttons from visually shrinking on hover/active on any screen. */
+a.nav-link-primary,
+a.nav-link-primary:hover,
+a.nav-link-primary:active,
+a.hero-nav-link-primary,
+a.hero-nav-link-primary:hover,
+a.hero-nav-link-primary:active {
+  transform: translateX(0) scale(1);
+}
+
+/* Add swipe-left hover effect to the green "work together" button wrappers. */
+.fixed-top-image,
+.about-fixed-top-image {
+  transition: transform 0.3s ease;
+}
+
+.fixed-top-image:hover,
+.fixed-top-image:focus-within,
+.about-fixed-top-image:hover,
+.about-fixed-top-image:focus-within {
+  transform: translateX(-12px);
+}
