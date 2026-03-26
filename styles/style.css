@@ -580,8 +580,12 @@ a:hover {
   color: var(--color-link-hover);
 }
 
-/* Focus — when a link is focused (keyboard navigation) */
+/* Focus — keep the outline for keyboard users, not mouse clicks */
 a:focus {
+  outline: none;
+}
+
+a:focus-visible {
   outline: 1px solid var(--color-accent-primary);
 }
 
@@ -826,6 +830,19 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100%;
   min-height: 5rem;
   background: transparent;
+}
+
+.hero-header-work .nav-branding {
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.hero-header-work .nav-branding.is-hidden {
+  transform: translateY(calc(-100% - 1rem));
+  opacity: 0;
+  pointer-events: none;
 }
 
 .fixed-top-image {
@@ -1270,7 +1287,8 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .marquee-work {
-  padding-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   position: relative;
   width: 100%;
   min-height: 20vh;
@@ -1428,6 +1446,7 @@ a.nav-link-primary-ribbon-current-vault {
   height: auto;
   position: relative;
   border: 1px solid #000;
+  overflow: hidden;
   /* Needed to position the overlay */
 }
 
@@ -1447,8 +1466,8 @@ a.nav-link-primary-ribbon-current-vault {
   left: 0;
   width: 100%;
   height: 100%;
+  visibility: hidden;
   opacity: 0; /* Initially invisible */
-  transition: var(--duration-slow) ease;
   display: flex;
   justify-content: center;
   align-items: left;
@@ -1460,8 +1479,8 @@ a.nav-link-primary-ribbon-current-vault {
     --color-overlay-primary
   ); /* Background color of the overlay */
   transition:
-    opacity var(--duration-normal),
-    visibility var(--duration-normal);
+    opacity 0.3s ease,
+    visibility 0s linear 0.3s;
 }
 
 .work-page-grid-item a.grayscale img {
@@ -1477,24 +1496,46 @@ a.nav-link-primary-ribbon-current-vault {
   font-size: 1.3rem;
   color: #ffffff;
   font-weight: 800;
+  opacity: 0;
+  transform: translateX(-1.5rem);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .project-text-list {
   color: #ffffff;
   font-weight: 200;
   font-size: 0.6rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-text-year {
   color: #ffffff;
   font-weight: 700;
   font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 /* Hover effect on work page grid items */
 .work-page-grid-item:hover .overlay {
   visibility: visible; /* Make overlay visible on hover */
   opacity: 1; /* Set opacity on hover */
+  transition:
+    opacity 0.3s ease,
+    visibility 0s;
+}
+
+.work-page-grid-item:hover .project-text-title {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.work-page-grid-item:hover .project-text-list,
+.work-page-grid-item:hover .project-text-year {
+  opacity: 1;
 }
 
 /* Optional container for future overlay customization */
@@ -1510,12 +1551,14 @@ a.nav-link-primary-ribbon-current-vault {
   font-weight: 800;
   line-height: 2rem;
   padding-top: 1rem;
+  color: #000;
 }
 
 .timeline {
   font-size: 1rem;
   font-weight: 800;
   line-height: 1rem;
+  color: #000;
 }
 
 .work-title {
@@ -1559,9 +1602,25 @@ a.nav-link-primary-ribbon-current-vault {
   text-align: right;
   padding-bottom: 1.5rem;
   padding-top: 7%;
-  color: #000000;
+  color: #000;
   font-size: 1rem;
   font-family: var(--font-family-project-title);
+}
+
+.project-meta-reveal .project-title .project-categories,
+.project-meta-reveal .work-timeline-container .project-categories {
+  opacity: 0;
+  transform: translateX(-1.5rem);
+  transition:
+    opacity 0.3s ease,
+    transform 1s ease;
+}
+
+.project-meta-reveal.is-visible .project-title .project-categories,
+.project-meta-reveal.is-visible .work-timeline-container .project-categories {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 1s;
 }
 
 .work-category-header {
@@ -1742,7 +1801,6 @@ a.nav-link-primary-ribbon-current-vault {
 .column-2 {
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
   padding-bottom: 2rem;
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -1754,7 +1812,8 @@ a.nav-link-primary-ribbon-current-vault {
   gap: 20px;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .column-4 {
@@ -1763,8 +1822,8 @@ a.nav-link-primary-ribbon-current-vault {
   gap: 20px;
   padding-left: 10%;
   padding-right: 10%;
-
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .column-2-video {
@@ -1773,14 +1832,14 @@ a.nav-link-primary-ribbon-current-vault {
   gap: 10px;
   padding-left: 3%;
   padding-right: 9%;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .column-2-work-description {
   display: flex;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -1789,6 +1848,7 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100vw;
   padding: 0%;
   margin: 0%;
+  padding-top: 2rem;
 }
 
 .bottom-thumbnail-image {
@@ -1836,9 +1896,10 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .about-category-header-2 {
+  display: block;
   font-size: 0.8rem;
   line-height: 1.2rem;
-  font-weight: 600;
+  font-weight: 200;
   color: #bedd4e;
   margin: 0;
 }
@@ -2078,7 +2139,17 @@ a.nav-link-primary-ribbon-current-vault {
 /* Full-width wrapper for the project section */
 .project-wrapper-full-width {
   width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
   background: #fff;
+  box-sizing: border-box;
+}
+
+.project-full-width {
+  width: 100%;
+  max-width: min(100%, 120rem);
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /* Sidebar Styles */
@@ -2094,7 +2165,19 @@ a.nav-link-primary-ribbon-current-vault {
 /* Container for project images with center alignment */
 
 .full-width-image {
-  width: 130%;
+  order: 1;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  grid-area: image;
+}
+
+.full-width-image img {
+  display: block;
+  width: 100vw;
+  height: clamp(24rem, calc(100vh - 9rem), 56rem);
+  object-fit: cover;
 }
 
 .full-width-image2 {
@@ -2120,11 +2203,13 @@ a.nav-link-primary-ribbon-current-vault {
 .project-description-container {
   display: flex;
   flex-direction: column;
-  padding-top: 3%;
-  padding-bottom: 2%;
-  padding-left: 10.5%;
-  padding-right: 10.5%;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 3rem);
+  padding-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+  padding-left: clamp(1.25rem, 6vw, 10.5%);
+  padding-right: clamp(1.25rem, 6vw, 10.5%);
   width: 100%; /* Space below the description */
+  box-sizing: border-box;
 }
 
 /* Column styles for two-column layouts */
@@ -2154,33 +2239,53 @@ a.nav-link-primary-ribbon-current-vault {
 
 /* Previous/Next Arrow Styles */
 
-.project-navigation {
-  display: flex;
+main.project-full-width > .project-navigation {
+  display: grid;
+  position: relative;
   width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "image image";
+  align-items: flex-start;
+  column-gap: 0;
 }
 
 /* Styling for left and right arrows */
 
-.arrow-left,
-.arrow-right {
-  width: 14%;
-}
-
-.arrow-left {
-  padding-left: 4%;
-  padding-right: 2%;
-}
-
-.arrow-right {
+main.project-full-width > .project-navigation .arrow-left,
+main.project-full-width > .project-navigation .arrow-right {
+  position: absolute;
+  bottom: 2rem;
+  width: auto;
   display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+main.project-full-width > .project-navigation .arrow-left {
+  left: 4%;
+  justify-content: flex-start;
+}
+
+main.project-full-width > .project-navigation .arrow-right {
+  right: 4%;
   justify-content: flex-end;
-  padding-right: 4%;
-  padding-left: 2%;
+}
+
+main.project-full-width > .project-navigation .navigation-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main.project-full-width > .project-navigation .navigation-arrow img {
+  display: block;
+  width: auto;
+  height: auto;
 }
 
 .project-categories {
   font-size: 1rem;
-  color: rgb(202, 19, 215);
+  color: #000;
 }
 
 a.nav-link-primary {
@@ -2465,7 +2570,7 @@ to keep your styles reusable and consistent.
 
   .project-categories {
     font-size: 0.6rem;
-    color: rgb(255, 149, 28);
+    color: #000;
     line-height: 0rem;
   }
 
@@ -2527,7 +2632,7 @@ to keep your styles reusable and consistent.
   .about-category-header-2 {
     font-size: 1rem;
     line-height: 1.1rem;
-    font-weight: 600;
+    font-weight: 200;
     color: #bedd4e;
     margin: 0;
   }
@@ -2717,7 +2822,7 @@ to keep your styles reusable and consistent.
 
   .project-categories {
     font-size: 0.7rem;
-    color: rgb(195, 235, 144);
+    color: #000;
   }
 
   .tagline {
@@ -2784,7 +2889,7 @@ to keep your styles reusable and consistent.
   .about-category-header-2 {
     font-size: 1.1rem;
     line-height: 1.5rem;
-    font-weight: 600;
+    font-weight: 200;
     color: #bedd4e;
     margin: 0;
   }
@@ -2981,7 +3086,7 @@ to keep your styles reusable and consistent.
 
 @media (min-width: 490px) {
   .project-categories {
-    color: #ac1313;
+    color: #000;
     font-size: 1rem;
   }
 
@@ -3176,7 +3281,7 @@ to keep your styles reusable and consistent.
 @media (min-width: 768px) {
   .project-categories {
     font-size: 1rem;
-    color: red;
+    color: #000;
   }
 
   .ribbon3::before {
@@ -3243,7 +3348,7 @@ to keep your styles reusable and consistent.
   .about-category-header-2 {
     font-size: 1rem;
     line-height: 1.1rem;
-    font-weight: 600;
+    font-weight: 200;
     color: #bedd4e;
     margin: 0;
   }
@@ -3435,7 +3540,7 @@ to keep your styles reusable and consistent.
   /* TODO: Add or adjust styles here for large devices. */
   .project-categories {
     font-size: 1rem;
-    color: rgb(53, 131, 219);
+    color: #000;
   }
 
   .work-image-1 {
@@ -3522,7 +3627,7 @@ to keep your styles reusable and consistent.
   .about-category-header-2 {
     font-size: 0.8rem;
     line-height: 0.4rem;
-    font-weight: 600;
+    font-weight: 200;
     color: #bedd4e;
     margin: 0;
   }
@@ -3570,8 +3675,8 @@ to keep your styles reusable and consistent.
 
   .about-category-header-2 {
     font-size: 1.2rem;
-    line-height: 3rem;
-    font-weight: 600;
+    line-height: 2rem;
+    font-weight: 200;
     color: #bedd4e;
     margin: 0;
   }
@@ -3579,7 +3684,7 @@ to keep your styles reusable and consistent.
   .about-category-header-2:hover,
   .about-category-visited {
     font-size: 1.2rem;
-    line-height: 3rem;
+    line-height: 2rem;
     font-weight: 600;
     color: #bedd4e;
     text-decoration: underline;
@@ -3752,6 +3857,8 @@ to keep your styles reusable and consistent.
     display: grid;
     grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
     gap: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .section-container {

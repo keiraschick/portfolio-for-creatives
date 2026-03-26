@@ -44,7 +44,7 @@
         <li class="nav-branding-logo">
           <a href="index.html"
             ><img
-              src="assets/branding-images/logo.svg"
+              src="assets/branding-images/logo_green.svg"
               alt="Keira Schick Dragon Logo"
               class="logo"
           /></a>
@@ -97,7 +97,7 @@
 
     <div class="project-wrapper-full-width">
       <aside class="project-full-width">
-        <div class="project-description-container">
+        <div class="project-description-container project-meta-reveal">
           <div class="project-title col-2">
             <h3 class="all-caps">wilside matcha</h3>
             <p class="project-categories">This project is in the works!</p>
@@ -177,5 +177,41 @@
         </script>
       </aside>
     </div>
+    <script>
+      const elements = document.querySelectorAll(".reveal, .project-meta-reveal");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.45,
+        }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+
+      const projectHeader = document.querySelector(".hero-header-work .nav-branding");
+      const headerTrigger = document.querySelector(
+        "main.project-full-width .full-width-image",
+      );
+
+      const syncProjectHeader = () => {
+        if (!projectHeader || !headerTrigger) return;
+
+        const triggerBottom = headerTrigger.getBoundingClientRect().bottom;
+
+        projectHeader.classList.toggle("is-hidden", triggerBottom <= 0);
+      };
+
+      syncProjectHeader();
+      window.addEventListener("scroll", syncProjectHeader, { passive: true });
+      window.addEventListener("resize", syncProjectHeader);
+    </script>
   </body>
 </html>
