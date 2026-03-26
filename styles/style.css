@@ -32,16 +32,14 @@
 /* TODO: Replace these Google Fonts with the ones you want to use on your site. */
 /* Remember, the more fonts you load, the longer it can take for your page to load. */
 
-/* Eczar Font (for headers or special text) */
-@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
+/* Instrument Font (for headers or special text) */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 
 /* Rubik Font (clean and modern for body text) */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap");
 
 /* Plus Jarkata Sans (great for readability and minimal design) */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-
-/*
 
 /* 
 ██ ███    ███ ██████   ██████  ██████  ████████      ██████ ███████ ███████ 
@@ -197,12 +195,15 @@
 html {
   box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
   scroll-behavior: smooth; /* Adds smooth scrolling between sections */
-  cursor: url("../assets/branding-images/cursor.svg"), auto !important; /* Custom cursor (change the URL below to use your own) */
+  cursor:
+    url("../assets/branding-images/cursor.svg"), auto !important; /* Custom cursor (change the URL below to use your own) */
 }
 
 a:active,
 button:active {
-  cursor: url("/assets/branding-images/cursorclosed.svg") auto, pointer;
+  cursor:
+    url("/assets/branding-images/cursorclosed.svg") auto,
+    pointer;
 }
 
 a,
@@ -596,52 +597,80 @@ a:active {
 /* -------------------------------------------------------------------------- */
 
 a.nav-link-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #fefae6;
+  min-width: 8.4rem;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
+  text-align: center;
   color: #fefae6;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
+  background-image: linear-gradient(#bedd4e, #bedd4e);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition:
+    background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    color 0.28s ease;
   font-size: 1.2rem;
 }
 
 a.nav-link-primary:hover {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #fefae6;
+  min-width: 8.4rem;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
+  text-align: center;
   color: #fefae6;
-  background-color: #bedd4e;
+  background-size: 100% 100%;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
   font-size: 1.2rem;
 }
 
 a.hero-nav-link-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #000;
+  min-width: 8.4rem;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
+  text-align: center;
   color: #000;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
+  background-image: linear-gradient(#bedd4e, #bedd4e);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition:
+    background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    color 0.28s ease;
   font-size: 1.2rem;
 }
 
 a.hero-nav-link-primary:hover {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #bedd4e;
+  min-width: 8.4rem;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
+  text-align: center;
   color: black;
-  background-color: #bedd4e;
+  background-size: 100% 100%;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
   font-size: 1.2rem;
 }
 
@@ -1010,11 +1039,17 @@ a.nav-link-primary-ribbon-current-vault {
     border-style: solid;
     border-width: 50px 60px 0 60px;
     -webkit-transform-origin: 50% 0%;
-    -webkit-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    -webkit-transition:
+      transform 0.4s 0.4s,
+      z-index 0.2s 0.4s;
     -moz-transform-origin: 50% 0%;
-    -moz-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    -moz-transition:
+      transform 0.4s 0.4s,
+      z-index 0.2s 0.4s;
     transform-origin: 50% 0%;
-    transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    transition:
+      transform 0.4s 0.4s,
+      z-index 0.2s 0.4s;
     border-color: #bedd4e transparent transparent transparent;
     z-index: 2;
   }
@@ -1062,11 +1097,17 @@ a.nav-link-primary-ribbon-current-vault {
   }
 
   .animated-mail .top-fold {
-    transition: transform 0.4s, z-index 0.2s;
+    transition:
+      transform 0.4s,
+      z-index 0.2s;
     transform: rotateX(180deg);
-    -webkit-transition: transform 0.4s, z-index 0.2s;
+    -webkit-transition:
+      transform 0.4s,
+      z-index 0.2s;
     -webkit-transform: rotateX(180deg);
-    -moz-transition: transform 0.3s, z-index 0.1s;
+    -moz-transition:
+      transform 0.3s,
+      z-index 0.1s;
     -moz-transform: rotateX(180deg);
     z-index: 0;
   }
@@ -1307,7 +1348,9 @@ a.nav-link-primary-ribbon-current-vault {
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
 }
 
 .reveal.is-visible {
@@ -1416,7 +1459,9 @@ a.nav-link-primary-ribbon-current-vault {
   background-color: var(
     --color-overlay-primary
   ); /* Background color of the overlay */
-  transition: opacity var(--duration-normal), visibility var(--duration-normal);
+  transition:
+    opacity var(--duration-normal),
+    visibility var(--duration-normal);
 }
 
 .work-page-grid-item a.grayscale img {
@@ -2139,52 +2184,80 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 a.nav-link-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #fefae6;
+  min-width: 5.75rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  text-align: center;
   color: #fefae6;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
+  background-image: linear-gradient(#bedd4e, #bedd4e);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition:
+    background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    color 0.28s ease;
   font-size: 0.7rem;
 }
 
 a.nav-link-primary:hover {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid black;
+  min-width: 5.75rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  text-align: center;
   color: black;
-  background-color: #bedd4e;
+  background-size: 100% 100%;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
   font-size: 0.7rem;
 }
 
 a.hero-nav-link-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #000000;
+  min-width: 5.75rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  text-align: center;
   color: #000000;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
+  background-image: linear-gradient(#bedd4e, #bedd4e);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition:
+    background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    color 0.28s ease;
   font-size: 0.7rem;
 }
 
 a.hero-nav-link-primary:hover {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #bedd4e;
+  min-width: 5.75rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  text-align: center;
   color: black;
-  background-color: #bedd4e;
+  background-size: 100% 100%;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
   font-size: 0.7rem;
 }
 
@@ -2239,11 +2312,8 @@ a.hero-nav-link-primary:hover {
   width: 100%;
   min-height: 100vh;
   /* TODO: Delete the following if you do not want a grainy gradient background on index.html. Be careful not to delete the closing } */
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 1),
-      var(--color-bg-holding-page)
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 1), var(--color-bg-holding-page)),
     var(--image-noise-texture);
   /* For more on grainy gradients see https://grainy-gradients.vercel.app/ */
 }
@@ -2489,52 +2559,80 @@ to keep your styles reusable and consistent.
   }
 
   a.nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #fefae6;
+    min-width: 5rem;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
+    text-align: center;
     color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 0.6rem;
   }
 
   a.nav-link-primary:hover {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
+    min-width: 5rem;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 0.6rem;
   }
 
   a.hero-nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #000000;
+    min-width: 5rem;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
+    text-align: center;
     color: #000000;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 0.6rem;
   }
 
   a.hero-nav-link-primary:hover {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #bedd4e;
+    min-width: 5rem;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 0.6rem;
   }
 
@@ -2754,52 +2852,80 @@ to keep your styles reusable and consistent.
   }
 
   a.nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #fefae6;
+    min-width: 5.75rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    text-align: center;
     color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 0.7rem;
   }
 
   a.nav-link-primary:hover {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
+    min-width: 5.75rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 0.7rem;
   }
 
   a.hero-nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #000000;
+    min-width: 5.75rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    text-align: center;
     color: #000000;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 0.7rem;
   }
 
   a.hero-nav-link-primary:hover {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #bedd4e;
+    min-width: 5.75rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 0.7rem;
   }
 
@@ -3179,52 +3305,80 @@ to keep your styles reusable and consistent.
   }
 
   a.nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #fefae6;
+    min-width: 7rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
+    text-align: center;
     color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 0.9rem;
   }
 
   a.nav-link-primary:hover {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
+    min-width: 7rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 0.9rem;
   }
 
   a.hero-nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #000;
+    min-width: 7rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
+    text-align: center;
     color: #000;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 0.9rem;
   }
 
   a.hero-nav-link-primary:hover {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #bedd4e;
+    min-width: 7rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 0.9rem;
   }
 
@@ -3810,56 +3964,84 @@ to keep your styles reusable and consistent.
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.7%;
+    padding: 4%;
   }
 
   a.nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #fefae6;
+    min-width: 8.4rem;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
+    text-align: center;
     color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 1.2rem;
   }
 
   a.nav-link-primary:hover {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
+    min-width: 8.4rem;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 1.2rem;
   }
 
   a.hero-nav-link-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #000;
+    min-width: 8.4rem;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
+    text-align: center;
     color: #000;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
     font-size: 1.2rem;
   }
 
-  a.nav-link-primary-invert:hover {
-    display: inline-block;
+  a.hero-nav-link-primary:hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #bedd4e;
+    min-width: 8.4rem;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
+    text-align: center;
     color: black;
-    background-color: #bedd4e;
+    background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
     font-size: 1.2rem;
   }
 
