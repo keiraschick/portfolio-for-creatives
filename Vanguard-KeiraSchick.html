@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
 
-  <body class="Titleist Rebrand">
+  <body class="Titleist Rebrand project-page">
     <header class="hero-header-work">
       <ul class="nav-branding">
         <li class="nav-branding-item">
@@ -150,7 +150,14 @@
               <iframe
                 src="https://player.vimeo.com/video/1148364112?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1"
                 frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allow="
+                  autoplay;
+                  fullscreen;
+                  picture-in-picture;
+                  clipboard-write;
+                  encrypted-media;
+                  web-share;
+                "
                 referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
               <script src="https://player.vimeo.com/api/player.js"></script>
@@ -280,7 +287,9 @@
       </aside>
     </div>
     <script>
-      const elements = document.querySelectorAll(".reveal, .project-meta-reveal");
+      const elements = document.querySelectorAll(
+        ".reveal, .project-meta-reveal",
+      );
 
       const observer = new IntersectionObserver(
         (entries, observer) => {
@@ -293,12 +302,14 @@
         },
         {
           threshold: 0.45,
-        }
+        },
       );
 
       elements.forEach((el) => observer.observe(el));
 
-      const projectHeader = document.querySelector(".hero-header-work .nav-branding");
+      const projectHeader = document.querySelector(
+        ".hero-header-work .nav-branding",
+      );
       const headerTrigger = document.querySelector(
         "main.project-full-width .full-width-image",
       );

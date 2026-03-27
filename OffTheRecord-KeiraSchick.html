@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
 
-  <body class="Titleist Rebrand">
+  <body class="Titleist Rebrand project-page">
     <header class="hero-header-work">
       <ul class="nav-branding">
         <li class="nav-branding-item">
@@ -454,7 +454,9 @@
       </aside>
     </div>
     <script>
-      const elements = document.querySelectorAll(".reveal, .project-meta-reveal");
+      const elements = document.querySelectorAll(
+        ".reveal, .project-meta-reveal",
+      );
 
       const observer = new IntersectionObserver(
         (entries, observer) => {
@@ -467,12 +469,14 @@
         },
         {
           threshold: 0.45,
-        }
+        },
       );
 
       elements.forEach((el) => observer.observe(el));
 
-      const projectHeader = document.querySelector(".hero-header-work .nav-branding");
+      const projectHeader = document.querySelector(
+        ".hero-header-work .nav-branding",
+      );
       const headerTrigger = document.querySelector(
         "main.project-full-width .full-width-image",
       );

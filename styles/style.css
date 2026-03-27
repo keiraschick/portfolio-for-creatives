@@ -41,6 +41,9 @@
 /* Plus Jarkata Sans (great for readability and minimal design) */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
+/* Geist Mono (clean monospaced accent font) */
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+
 /* 
 ██ ███    ███ ██████   ██████  ██████  ████████      ██████ ███████ ███████ 
 ██ ████  ████ ██   ██ ██    ██ ██   ██    ██        ██      ██      ██      
@@ -103,6 +106,7 @@
   --font-family-body: "Plus Jakarta Sans", sans;
   --font-family-heading: "Plus Jakarta Sans", sans;
   --font-family-project-title: "Plus Jakarta Sans", sans;
+  --font-family-mono-accent: "Geist Mono", monospace;
   /* Core Colours */
   --color-text-primary: #222;
   --color-text-secondary: #333;
@@ -506,8 +510,14 @@ em {
 /* Large project title — appears on individual project pages */
 .project-title {
   padding-top: 7%;
-  font-size: 3.625rem;
+  font-size: clamp(3rem, 6vw, 4rem);
   font-family: var(--font-family-project-title);
+}
+
+.project-title h3 {
+  font-size: inherit;
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 /* Project description text — pairs with the project title */
@@ -1507,6 +1517,7 @@ a.nav-link-primary-ribbon-current-vault {
   color: #ffffff;
   font-weight: 200;
   font-size: 0.6rem;
+  font-family: var(--font-family-mono-accent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1536,6 +1547,10 @@ a.nav-link-primary-ribbon-current-vault {
 .work-page-grid-item:hover .project-text-list,
 .work-page-grid-item:hover .project-text-year {
   opacity: 1;
+}
+
+.work-page-grid-item:hover .project-text-list {
+  color: #bedd4e;
 }
 
 /* Optional container for future overlay customization */
@@ -1577,6 +1592,17 @@ a.nav-link-primary-ribbon-current-vault {
   justify-content: space-between;
   align-items: flex-end;
   padding-bottom: 7%;
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .about-title-container {
+    align-items: flex-start;
+  }
 }
 
 .work-description {
@@ -1624,11 +1650,13 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .work-category-header {
+  font-size: 1rem;
   font-weight: 600;
   color: #000;
 }
 
 .work-category-body {
+  font-size: 1rem;
   line-height: 1rem;
   font-weight: 200;
 }
@@ -1801,6 +1829,7 @@ a.nav-link-primary-ribbon-current-vault {
 .column-2 {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   padding-bottom: 2rem;
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -1842,6 +1871,8 @@ a.nav-link-primary-ribbon-current-vault {
   padding-bottom: 2rem;
   padding-left: 10%;
   padding-right: 10%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .bottom-page-thumbnail {
@@ -1881,6 +1912,12 @@ a.nav-link-primary-ribbon-current-vault {
   position: relative;
 }
 
+.about-page .bio-info h5 {
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  font-weight: 200;
+}
+
 .about-image {
   text-align: center;
   width: 80%;
@@ -1888,9 +1925,13 @@ a.nav-link-primary-ribbon-current-vault {
   padding-bottom: 40%;
 }
 
-.about-category-header {
-  font-size: 0.8rem;
-  font-weight: 600;
+.about-category-header,
+.work-category-header {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 800;
+  font-family: var(--font-family-body);
+  font-style: normal;
   margin: 0%;
   color: #000;
 }
@@ -1904,6 +1945,10 @@ a.nav-link-primary-ribbon-current-vault {
   margin: 0;
 }
 
+.about-page .about-info-2 .about-category-header-2 {
+  font-family: var(--font-family-mono-accent);
+}
+
 .about-category-header-2:hover,
 .about-category-visited {
   font-size: 0.8rem;
@@ -1912,16 +1957,10 @@ a.nav-link-primary-ribbon-current-vault {
   text-decoration: underline;
 }
 
-.work-category-header {
-  font-size: 0.8rem;
-  line-height: 1.2rem;
-  font-weight: 600;
-  color: #000000;
-}
-
 .about-category-body {
   font-size: 0.8rem;
   font-weight: 200;
+  font-family: var(--font-family-mono-accent);
   margin: 0%;
 }
 
@@ -1929,10 +1968,11 @@ a.nav-link-primary-ribbon-current-vault {
   font-size: 0.8rem;
   line-height: 1rem;
   font-weight: 200;
+  font-family: var(--font-family-mono-accent);
 }
 
 .about-info {
-  background: #fefae6;
+  background: #000;
   padding-bottom: 10%;
 }
 
@@ -1975,6 +2015,11 @@ a.nav-link-primary-ribbon-current-vault {
 
   transition: background-color 0.3s ease;
   clip-path: polygon(0% 0%, 100% 0%, calc(100% - 24px) 50%, 100% 100%, 0% 100%);
+}
+
+.about-page .about-info .about-title,
+.about-page .about-info > .info-menu > .about-text-1-second > .about-title-container > .about-category-header {
+  color: #fefae6;
 }
 
 /* 
@@ -2288,6 +2333,68 @@ main.project-full-width > .project-navigation .navigation-arrow img {
   color: #000;
 }
 
+body.project-page {
+  background: #000;
+  color: #fefae6;
+}
+
+body.project-page .project-wrapper-full-width,
+body.project-page .project-full-width,
+body.project-page .project-description-container,
+body.project-page .work-text-1,
+body.project-page .work-text-2 {
+  background: #000;
+}
+
+body.project-page .project-title h3,
+body.project-page .project-year,
+body.project-page .work-title,
+body.project-page .work-category-header {
+  color: #fefae6;
+  font-weight: 800;
+}
+
+body.project-page .work-category-body {
+  color: #fefae6;
+}
+
+body.project-page .project-categories,
+body.project-page .work-timeline-container,
+body.project-page .project-description {
+  color: #bedd4e;
+  font-weight: 200;
+  font-family: var(--font-family-mono-accent);
+}
+
+body.project-page .work-description {
+  color: #fefae6;
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+body.project-page .timeline {
+  color: #fefae6;
+  text-transform: uppercase;
+  font-family: var(--font-family-body);
+}
+
+body.project-page .column-2-work-description,
+body.project-page .column-2-work-description .case-study-title,
+body.project-page .column-2-work-description .case-study-description {
+  color: #fefae6;
+}
+
+body.project-page .column-2-work-description .case-study-description {
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+body.project-page a.nav-link-primary:hover {
+  border-color: #bedd4e;
+}
+
 a.nav-link-primary {
   display: inline-flex;
   align-items: center;
@@ -2552,6 +2659,38 @@ to keep your styles reusable and consistent.
     vertical-align: top;
     margin-bottom: 1rem;
   }
+
+  .full-width-image {
+    overflow: hidden;
+  }
+
+  .full-width-image img {
+    width: 125vw;
+    max-width: none;
+    transform: translateY(-6rem) scale(0.8);
+    transform-origin: center center;
+  }
+
+  .project-description-container,
+  .work-timeline-container {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .work-timeline-container {
+    padding-top: 0;
+  }
+
+  main.project-full-width > .project-navigation .arrow-left,
+  main.project-full-width > .project-navigation .arrow-right {
+    bottom: 12rem;
+  }
+
+  .project-wrapper-full-width {
+    margin-top: -10rem;
+    position: relative;
+    z-index: 1;
+  }
 }
 
 /*
@@ -2622,9 +2761,13 @@ to keep your styles reusable and consistent.
     padding-right: 9%;
   }
 
-  .about-category-header {
+  .about-category-header,
+  .work-category-header {
     font-size: 1rem;
-    font-weight: 600;
+    line-height: 1.1rem;
+    font-weight: 800;
+    font-family: var(--font-family-body);
+    font-style: normal;
     margin: 0%;
     color: #000;
   }
@@ -2645,20 +2788,15 @@ to keep your styles reusable and consistent.
     text-decoration: underline;
   }
 
-  .work-category-header {
-    font-size: 1rem;
-    line-height: 1.1rem;
-    font-weight: 600;
-  }
-
   .about-category-body {
     font-size: 0.9rem;
     font-weight: 200;
+    font-family: var(--font-family-mono-accent);
     margin: 0%;
   }
 
   .work-category-body {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 2rem;
     font-weight: 200;
   }
@@ -2879,9 +3017,13 @@ to keep your styles reusable and consistent.
     color: var(--h5-color);
   }
 
-  .about-category-header {
-    font-size: 1.1rem;
-    font-weight: 600;
+  .about-category-header,
+  .work-category-header {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-family-body);
+    font-style: normal;
     margin: 0%;
     color: #000;
   }
@@ -2901,12 +3043,6 @@ to keep your styles reusable and consistent.
     font-weight: 600;
     color: #bedd4e;
     text-decoration: underline;
-  }
-
-  .work-category-header {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    font-weight: 600;
   }
 
   .about-category-body {
@@ -3162,7 +3298,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-body {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 2rem;
     font-weight: 200;
   }
@@ -3338,9 +3474,13 @@ to keep your styles reusable and consistent.
     color: var(--h5-color);
   }
 
-  .about-category-header {
+  .about-category-header,
+  .work-category-header {
     font-size: 1rem;
-    font-weight: 600;
+    line-height: 1.1rem;
+    font-weight: 800;
+    font-family: var(--font-family-body);
+    font-style: normal;
     margin: 0%;
     color: #000;
   }
@@ -3362,12 +3502,6 @@ to keep your styles reusable and consistent.
     text-decoration: underline;
   }
 
-  .work-category-header {
-    font-size: 1rem;
-    line-height: 1.1rem;
-    font-weight: 600;
-  }
-
   .about-category-body {
     font-size: 0.9rem;
     font-weight: 200;
@@ -3375,7 +3509,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-body {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.7rem;
     font-weight: 200;
   }
@@ -3536,6 +3670,50 @@ to keep your styles reusable and consistent.
 
 /* Switch from mobile to desktop navigation */
 
+@media (max-width: 991px) {
+  .project-description-container,
+  .work-timeline-container {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .work-timeline-container {
+    padding-top: 0;
+  }
+
+  .column-2-work-description {
+    display: block;
+  }
+
+  .column-2-work-description > *,
+  .column-2-work-description li,
+  .column-2-work-description ul {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .case-study-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-page .about-title-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .about-page .about-title.title,
+  .about-page .about-title.tagline {
+    line-height: 1.05;
+    padding-top: 0;
+  }
+
+  .about-page .about-category-header {
+    line-height: 1.2;
+  }
+}
+
 @media (min-width: 992px) {
   /* TODO: Add or adjust styles here for large devices. */
   .project-categories {
@@ -3654,8 +3832,8 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-body {
-    font-size: 0.8rem;
-    line-height: 0.2rem;
+    font-size: 1rem;
+    line-height: 1rem;
     font-weight: 200;
   }
 
@@ -3666,9 +3844,13 @@ to keep your styles reusable and consistent.
     color: var(--h5-color);
   }
 
-  .about-category-header {
-    font-size: 1.2rem;
-    font-weight: 600;
+  .about-category-header,
+  .work-category-header {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-family-body);
+    font-style: normal;
     margin: 0%;
     color: #000;
   }
@@ -3690,20 +3872,15 @@ to keep your styles reusable and consistent.
     text-decoration: underline;
   }
 
-  .work-category-header {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-  }
-
   .about-category-body {
     font-size: 1.1rem;
     font-weight: 200;
+    font-family: var(--font-family-mono-accent);
     margin: 0%;
   }
 
   .work-category-body {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 2rem;
     font-weight: 200;
   }
