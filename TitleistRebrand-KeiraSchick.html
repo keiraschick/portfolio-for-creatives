@@ -478,21 +478,21 @@
       const projectHeader = document.querySelector(
         ".hero-header-work .nav-branding",
       );
-      const headerTrigger = document.querySelector(
-        "main.project-full-width .full-width-image",
-      );
+      let lastScrollY = window.scrollY;
 
       const syncProjectHeader = () => {
-        if (!projectHeader || !headerTrigger) return;
+        if (!projectHeader) return;
 
-        const triggerBottom = headerTrigger.getBoundingClientRect().bottom;
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY;
+        const nearTop = currentScrollY <= 8;
 
-        projectHeader.classList.toggle("is-hidden", triggerBottom <= 0);
+        projectHeader.classList.toggle("is-hidden", scrollingDown && !nearTop);
+        lastScrollY = currentScrollY;
       };
 
       syncProjectHeader();
       window.addEventListener("scroll", syncProjectHeader, { passive: true });
-      window.addEventListener("resize", syncProjectHeader);
     </script>
   </body>
 </html>

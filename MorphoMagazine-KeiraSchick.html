@@ -108,7 +108,7 @@
         <ul class="column-2">
           <li class="work-image-1">
             <img
-              src="assets/branding-images/KeiraSchick_Titleist_TourSoft_front.jpg"
+              src="assets/branding-images/KeiraSchick_MorphoMagazine_insidespreadmockup.jpg"
               alt="image name"
               width="1484"
               height="1124"
@@ -116,7 +116,7 @@
           </li>
           <li class="work-image-2">
             <img
-              src="assets/branding-images/KeiraSchick_Titleist_TourSoft_front.jpg"
+              src="assets/branding-images/KeiraSchick_MorphoMagazine_coverslipmockup.jpg"
               alt="image name"
               width="1484"
               height="1124"
@@ -125,19 +125,61 @@
         </ul>
 
         <ul class="column-2">
-          <li class="work-text-1"></li>
-          <li class="work-text-2">
+          <li class="work-text-1">
             <h2 class="work-title all-caps">what is it?</h2>
             <h5 class="work-description">
-              Titleist is considered the largest and most played golf ball in
-              the world. Taking into consideration their existing packaging and
-              competitors, the branding for golf balls seem to follow a
-              consistent style. Strongly relying on player performance and
-              optimization, technology integration. Personally the packaging
-              feels as if it’s straying from it’s original routes--the game of
-              golf itself. My goal was to try and capture the true essence and
-              experience that embodies the origin of the sport itself.
+              In Morpho we focus on the art and beauty of the tattoos rather
+              than the person they’re on. Morpho is named after the Morpho
+              butterfly (featured on the back cover) known for going through a
+              physical change. Their blue wings enhance their beauty, just like
+              tattoos would to a human. This magazine features the history and
+              evolution of tattoos, the artist’s passion and relationship to the
+              craft of ink on skin, and the external expression of self. Tattoos
+              are more than just permanent ink, they’re an art form. A sense of
+              recognition, respect, and culture.
             </h5>
+          </li>
+          <li class="work-text-2"></li>
+        </ul>
+
+        <ul class="column-2-work-description">
+          <li>
+            <img
+              src="assets/branding-images/KeiraSchick_MorphoMagazine_multiplespreadmockup.jpg"
+              alt="image name"
+              width="1484"
+              height="1124"
+            />
+          </li>
+        </ul>
+
+        <ul class="column-2-work-description">
+          <li>
+            <img
+              src="assets/branding-images/KeiraSchick_morphomagazine.gif"
+              alt="image name"
+              width="1484"
+              height="1124"
+            />
+          </li>
+        </ul>
+
+        <ul class="column-2">
+          <li class="work-image-1">
+            <img
+              src="assets/branding-images/KeiraSchick_MorphoMagazine_backcovermockup.jpg"
+              alt="image name"
+              width="1484"
+              height="1124"
+            />
+          </li>
+          <li class="work-image-2">
+            <img
+              src="assets/branding-images/KeiraSchick_MorphoMagazine_insidecloseup.jpg"
+              alt="image name"
+              width="1484"
+              height="1124"
+            />
           </li>
         </ul>
 
@@ -230,22 +272,24 @@
 
       elements.forEach((el) => observer.observe(el));
 
-      const projectHeader = document.querySelector(".hero-header-work .nav-branding");
-      const headerTrigger = document.querySelector(
-        "main.project-full-width .full-width-image",
+      const projectHeader = document.querySelector(
+        ".hero-header-work .nav-branding",
       );
+      let lastScrollY = window.scrollY;
 
       const syncProjectHeader = () => {
-        if (!projectHeader || !headerTrigger) return;
+        if (!projectHeader) return;
 
-        const triggerBottom = headerTrigger.getBoundingClientRect().bottom;
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY;
+        const nearTop = currentScrollY <= 8;
 
-        projectHeader.classList.toggle("is-hidden", triggerBottom <= 0);
+        projectHeader.classList.toggle("is-hidden", scrollingDown && !nearTop);
+        lastScrollY = currentScrollY;
       };
 
       syncProjectHeader();
       window.addEventListener("scroll", syncProjectHeader, { passive: true });
-      window.addEventListener("resize", syncProjectHeader);
     </script>
   </body>
 </html>

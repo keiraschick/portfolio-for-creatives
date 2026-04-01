@@ -653,12 +653,12 @@ a.hero-nav-link-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #000;
+  border: 2px solid #fff;
   min-width: 8.4rem;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
   text-align: center;
-  color: #000;
+  color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
   background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -676,12 +676,12 @@ a.hero-nav-link-primary:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #bedd4e;
+  border: 2px solid #000;
   min-width: 8.4rem;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
   text-align: center;
-  color: black;
+  color: #000;
   background-size: 100% 100%;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -815,7 +815,11 @@ a.nav-link-primary-ribbon-current-vault {
 /* -------------------------------------------------------------------------- */
 
 .home-page {
-  background: #fefae6;
+  background-image: url("../assets/branding-images/home_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000;
 }
 
 .blurb-container {
@@ -842,21 +846,23 @@ a.nav-link-primary-ribbon-current-vault {
   background: transparent;
 }
 
-.hero-header-work .nav-branding {
+.hero-header-work .nav-branding,
+.work-header .nav-branding {
   transition:
     transform 0.35s ease,
     opacity 0.35s ease;
   will-change: transform, opacity;
 }
 
-.hero-header-work .nav-branding.is-hidden {
+.hero-header-work .nav-branding.is-hidden,
+.work-header .nav-branding.is-hidden {
   transform: translateY(calc(-100% - 1rem));
   opacity: 0;
   pointer-events: none;
 }
 
 .fixed-top-image {
-  width: 4.2rem;
+  width: 2.8rem;
   position: absolute;
   top: 70px;
   right: 50px;
@@ -864,7 +870,7 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .about-fixed-top-image {
-  width: 4.2rem;
+  width: 2.8rem;
   position: absolute;
   top: 110px;
   left: 15px;
@@ -963,12 +969,12 @@ a.nav-link-primary-ribbon-current-vault {
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 3%;
-  background: #fefae6;
+  background: transparent;
   /* Keeps text centered */
 }
 
 .wordmark {
-  width: 100%;
+  width: 70%;
 }
 
 #wordmarkArea {
@@ -1611,14 +1617,12 @@ a.nav-link-primary-ribbon-current-vault {
 
 .work-text-1 {
   width: 100%;
-  background: rgb(255, 255, 255);
   padding-right: 10%;
   padding-left: 10%;
   padding-top: 0%;
 }
 .work-text-2 {
   width: 100%;
-  background: rgb(255, 255, 255);
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 0%;
@@ -1867,7 +1871,6 @@ a.nav-link-primary-ribbon-current-vault {
 
 .column-2-work-description {
   display: flex;
-  padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 10%;
   padding-right: 10%;
@@ -2018,7 +2021,12 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .about-page .about-info .about-title,
-.about-page .about-info > .info-menu > .about-text-1-second > .about-title-container > .about-category-header {
+.about-page
+  .about-info
+  > .info-menu
+  > .about-text-1-second
+  > .about-title-container
+  > .about-category-header {
   color: #fefae6;
 }
 
@@ -2844,12 +2852,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #000000;
+    border: 2px solid #fff;
     min-width: 5rem;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
     text-align: center;
-    color: #000000;
+    color: #fff;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -2867,12 +2875,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #bedd4e;
+    border: 2px solid #000;
     min-width: 5rem;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: #000;
     background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -2906,7 +2914,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-fixed-top-image {
-    width: 5rem;
+    width: 3.4rem;
     position: absolute;
     top: 210px;
     left: 15px;
@@ -3135,12 +3143,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #000000;
+    border: 2px solid #fff;
     min-width: 5.75rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
     text-align: center;
-    color: #000000;
+    color: #fff;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -3158,12 +3166,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #bedd4e;
+    border: 2px solid #000;
     min-width: 5.75rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: #000;
     background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -3189,7 +3197,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 5rem;
+    width: 3.4rem;
     position: absolute;
     top: 70px;
     right: 80px;
@@ -3197,7 +3205,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-fixed-top-image {
-    width: 5rem;
+    width: 3.4rem;
     position: absolute;
     top: 260px;
     left: 15px;
@@ -3274,7 +3282,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 6rem;
+    width: 4rem;
     position: absolute;
     top: 70px;
     right: 100px;
@@ -3282,7 +3290,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-fixed-top-image {
-    width: 6rem;
+    width: 4rem;
     position: absolute;
     top: 300px;
     left: 25px;
@@ -3586,12 +3594,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #000;
+    border: 2px solid #fff;
     min-width: 7rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     text-align: center;
-    color: #000;
+    color: #fff;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -3609,12 +3617,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #bedd4e;
+    border: 2px solid #000;
     min-width: 7rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: #000;
     background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -3640,7 +3648,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 6.2rem;
+    width: 4.2rem;
     position: absolute;
     top: 70px;
     right: 140px;
@@ -3648,7 +3656,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-fixed-top-image {
-    width: 7em;
+    width: 4.6rem;
     position: absolute;
     top: 190px;
     left: 50px;
@@ -3734,16 +3742,12 @@ to keep your styles reusable and consistent.
 
   .work-text-1 {
     width: 100%;
-    background: rgb(255, 255, 255);
-    padding: 2rem;
-    padding-top: 13%;
+    padding-right: 0%;
     padding-left: 10%;
   }
 
   .work-text-2 {
     width: 100%;
-    background: rgb(255, 255, 255);
-    padding-top: 13%;
     padding-right: 10%;
     padding-left: 0%;
   }
@@ -4155,7 +4159,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 8rem;
+    width: 5.4rem;
     position: absolute;
     top: 50px;
     right: 180px;
@@ -4163,7 +4167,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-fixed-top-image {
-    width: 9rem;
+    width: 6rem;
     position: absolute;
     top: 170px;
     left: 50px;
@@ -4214,7 +4218,6 @@ to keep your styles reusable and consistent.
 
   .work-text-1 {
     width: 100%;
-    background: rgb(255, 255, 255);
     padding-top: 0%;
     padding-left: 10%;
     padding-right: 0%;
@@ -4222,7 +4225,6 @@ to keep your styles reusable and consistent.
 
   .work-text-2 {
     width: 100%;
-    background: rgb(255, 255, 255);
     padding-top: 0%;
     padding-right: 10%;
     padding-left: 0%;
@@ -4294,12 +4296,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #000;
+    border: 2px solid #fff;
     min-width: 8.4rem;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
     text-align: center;
-    color: #000;
+    color: #fff;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -4317,12 +4319,12 @@ to keep your styles reusable and consistent.
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #bedd4e;
+    border: 2px solid #000;
     min-width: 8.4rem;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: #000;
     background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -4349,7 +4351,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 12rem;
+    width: 8rem;
     position: absolute;
     top: 70px;
     right: 220px;
@@ -4357,7 +4359,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-fixed-top-image {
-    width: 12em;
+    width: 8rem;
     position: absolute;
     top: 200px;
     left: 110px;
@@ -4377,7 +4379,7 @@ to keep your styles reusable and consistent.
     padding-right: 8%;
     padding-bottom: 3%;
     padding-top: 0%;
-    background: #fefae6;
+    background: transparent;
     /* Keeps text centered */
   }
 

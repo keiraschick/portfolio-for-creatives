@@ -391,6 +391,23 @@
       );
 
       elements.forEach((el) => observer.observe(el));
+
+      const aboutHeader = document.querySelector(".work-header .nav-branding");
+      let lastScrollY = window.scrollY;
+
+      const syncAboutHeader = () => {
+        if (!aboutHeader) return;
+
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY;
+        const nearTop = currentScrollY <= 8;
+
+        aboutHeader.classList.toggle("is-hidden", scrollingDown && !nearTop);
+        lastScrollY = currentScrollY;
+      };
+
+      syncAboutHeader();
+      window.addEventListener("scroll", syncAboutHeader, { passive: true });
     </script>
   </body>
 </html>

@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>
-      Keira Schick | Graphic Designer | Sim & Schick Private Wealth Management -
-      Logo Design
+      Keira Schick | Graphic Designer | Rocket Carriers Trucking - Logo Design
     </title>
     <meta
       name="description"
@@ -66,7 +65,7 @@
       <ul class="project-navigation row">
         <li class="arrow-left">
           <a
-            href="ThresholdLeadership-KeiraSchick.html"
+            href="Sim&SchickWealthManagement-KeiraSchick.html"
             class="navigation-arrow"
           >
             <img
@@ -77,7 +76,7 @@
         <li class="full-width-image">
           <img
             class="white-images reveal"
-            src="assets/branding-images/KeiraSchick_Progress_Thumbnail.jpg"
+            src="assets/branding-images/RocketCarriers_Thumbnail_KeiraSchick.jpg"
             width="2800"
             height="1500"
             loading="lazy"
@@ -178,7 +177,9 @@
       </aside>
     </div>
     <script>
-      const elements = document.querySelectorAll(".reveal, .project-meta-reveal");
+      const elements = document.querySelectorAll(
+        ".reveal, .project-meta-reveal",
+      );
 
       const observer = new IntersectionObserver(
         (entries, observer) => {
@@ -191,27 +192,29 @@
         },
         {
           threshold: 0.45,
-        }
+        },
       );
 
       elements.forEach((el) => observer.observe(el));
 
-      const projectHeader = document.querySelector(".hero-header-work .nav-branding");
-      const headerTrigger = document.querySelector(
-        "main.project-full-width .full-width-image",
+      const projectHeader = document.querySelector(
+        ".hero-header-work .nav-branding",
       );
+      let lastScrollY = window.scrollY;
 
       const syncProjectHeader = () => {
-        if (!projectHeader || !headerTrigger) return;
+        if (!projectHeader) return;
 
-        const triggerBottom = headerTrigger.getBoundingClientRect().bottom;
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY;
+        const nearTop = currentScrollY <= 8;
 
-        projectHeader.classList.toggle("is-hidden", triggerBottom <= 0);
+        projectHeader.classList.toggle("is-hidden", scrollingDown && !nearTop);
+        lastScrollY = currentScrollY;
       };
 
       syncProjectHeader();
       window.addEventListener("scroll", syncProjectHeader, { passive: true });
-      window.addEventListener("resize", syncProjectHeader);
     </script>
   </body>
 </html>
