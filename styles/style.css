@@ -417,7 +417,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: var(--font-family-heading);
   line-height: 1.2;
   font-weight: 900;
@@ -1603,14 +1603,13 @@ a.nav-link-primary-ribbon-current-vault {
 
 .about-title {
   color: #000000;
-  margin: 0;
+  padding-bottom: 3rem;
 }
 
 .about-title-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-bottom: 7%;
 }
 
 @media (max-width: 768px) {
@@ -1632,13 +1631,15 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100%;
   padding-right: 10%;
   padding-left: 10%;
-  padding-top: 0%;
+  padding-top: 4%;
+  padding-bottom: 3%;
 }
 .work-text-2 {
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 0%;
+  padding-top: 4%;
+  padding-bottom: 3%;
 }
 
 .work-timeline-container {
@@ -1667,13 +1668,13 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .work-category-header {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #000;
 }
 
 .work-category-body {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1rem;
   font-weight: 200;
 }
@@ -1943,7 +1944,7 @@ a.nav-link-primary-ribbon-current-vault {
 
 .about-category-header,
 .work-category-header {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1rem;
   font-weight: 800;
   font-family: var(--font-family-body);
@@ -1981,7 +1982,7 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .work-category-body {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 1rem;
   font-weight: 200;
   font-family: var(--font-family-mono-accent);
@@ -1989,15 +1990,10 @@ a.nav-link-primary-ribbon-current-vault {
 
 .about-info {
   background: #000;
-  padding-bottom: 10%;
 }
 
 .bio-info {
   padding-bottom: 10%;
-}
-
-.info-menu {
-  padding-top: 10%;
 }
 
 .ribbon {
@@ -2788,7 +2784,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header,
   .work-category-header {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.1rem;
     font-weight: 800;
     font-family: var(--font-family-body);
@@ -2798,7 +2794,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-category-header-2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.1rem;
     font-weight: 200;
     color: #bedd4e;
@@ -2807,7 +2803,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header-2:hover,
   .about-category-visited {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.1rem;
     font-weight: 600;
     text-decoration: underline;
@@ -2821,7 +2817,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-body {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 2rem;
     font-weight: 200;
   }
@@ -3044,7 +3040,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header,
   .work-category-header {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5rem;
     font-weight: 800;
     font-family: var(--font-family-body);
@@ -3054,7 +3050,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-category-header-2 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     line-height: 1.5rem;
     font-weight: 200;
     color: #bedd4e;
@@ -3063,7 +3059,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header-2:hover,
   .about-category-visited {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     line-height: 1.5rem;
     font-weight: 600;
     color: #bedd4e;
@@ -3071,13 +3067,13 @@ to keep your styles reusable and consistent.
   }
 
   .about-category-body {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 200;
     margin: 0%;
   }
 
   .work-category-body {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 2rem;
     font-weight: 200;
   }
@@ -3323,7 +3319,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-body {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 2rem;
     font-weight: 200;
   }
@@ -3501,7 +3497,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header,
   .work-category-header {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.1rem;
     font-weight: 800;
     font-family: var(--font-family-body);
@@ -3511,7 +3507,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-category-header-2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.1rem;
     font-weight: 200;
     color: #bedd4e;
@@ -3520,7 +3516,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header-2:hover,
   .about-category-visited {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.1rem;
     font-weight: 600;
     color: #bedd4e;
@@ -3534,7 +3530,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-body {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.7rem;
     font-weight: 200;
   }
@@ -3725,7 +3721,6 @@ to keep your styles reusable and consistent.
   .about-page .about-title-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
   }
 
   .about-page .about-title.title,
@@ -3841,7 +3836,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-header {
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 0.4rem;
     font-weight: 600;
   }
@@ -3853,7 +3848,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-body {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1rem;
     font-weight: 200;
   }
@@ -3867,7 +3862,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header,
   .work-category-header {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5rem;
     font-weight: 800;
     font-family: var(--font-family-body);
@@ -3877,7 +3872,7 @@ to keep your styles reusable and consistent.
   }
 
   .about-category-header-2 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 2rem;
     font-weight: 200;
     color: #bedd4e;
@@ -3886,7 +3881,7 @@ to keep your styles reusable and consistent.
 
   .about-category-header-2:hover,
   .about-category-visited {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 2rem;
     font-weight: 600;
     color: #bedd4e;
@@ -3894,14 +3889,14 @@ to keep your styles reusable and consistent.
   }
 
   .about-category-body {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 200;
     font-family: var(--font-family-mono-accent);
     margin: 0%;
   }
 
   .work-category-body {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 2rem;
     font-weight: 200;
   }
@@ -3946,7 +3941,7 @@ to keep your styles reusable and consistent.
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   h3 {
