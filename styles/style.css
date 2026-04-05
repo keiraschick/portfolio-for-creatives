@@ -1906,7 +1906,7 @@ a.nav-link-primary-ribbon-current-vault {
 .about-text-1 {
   width: 100%;
   background: rgb(0, 0, 0);
-  padding: 2rem;
+  padding-bottom: 2rem;
   padding-top: 13%;
   padding-left: 18%;
   padding-right: 18%;
@@ -2039,6 +2039,8 @@ a.nav-link-primary-ribbon-current-vault {
   color: #fefae6;
 }
 
+.info-menu {
+}
 /* 
 
 ███████  ██████   ██████  ████████ ███████ ██████  
@@ -2642,6 +2644,15 @@ to keep your styles reusable and consistent.
 }
 
 @media only screen and (min-width: 1024px) {
+  .sub-menu-item {
+    width: 8rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    display: block;
+    margin-top: 150%;
+  }
+
   .masonry-grid {
     column-count: 3;
   }
@@ -3917,7 +3928,7 @@ to keep your styles reusable and consistent.
   .about-text-1-second {
     width: 100%;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 8rem;
     padding-left: 10%;
     padding-right: 10%;
   }
