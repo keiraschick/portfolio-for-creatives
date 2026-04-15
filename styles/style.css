@@ -1669,7 +1669,7 @@ a.nav-link-primary-ribbon-current-vault {
 
 .work-category-header {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #000;
 }
 
@@ -2094,6 +2094,11 @@ a.nav-link-primary-ribbon-current-vault {
   grid-row: 3 / 4;
 }
 
+.award-social {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
 .footer-logo {
   width: 15%;
 }
@@ -2368,7 +2373,7 @@ body.project-page .work-text-2 {
 body.project-page .project-title h3,
 body.project-page .project-year,
 body.project-page .work-title,
-body.project-page .work-category-header {
+body.project-page {
   color: #fefae6;
   font-weight: 800;
 }
@@ -2493,7 +2498,11 @@ a.hero-nav-link-primary:hover {
 }
 
 .white-images {
-  border: solid 1px black;
+  border: solid 1px #fefae6;
+}
+
+.invert-me {
+  filter: invert(100%);
 }
 
 /*
@@ -2658,7 +2667,7 @@ to keep your styles reusable and consistent.
   }
 
   .wordmark {
-    width: 70%;
+    width: 75%;
   }
 }
 
@@ -2797,7 +2806,7 @@ to keep your styles reusable and consistent.
   .work-category-header {
     font-size: 1.2rem;
     line-height: 1.1rem;
-    font-weight: 800;
+    font-weight: 400;
     font-family: var(--font-family-body);
     font-style: normal;
     margin: 0%;
@@ -3053,7 +3062,7 @@ to keep your styles reusable and consistent.
   .work-category-header {
     font-size: 1.2rem;
     line-height: 1.5rem;
-    font-weight: 800;
+    font-weight: 400;
     font-family: var(--font-family-body);
     font-style: normal;
     margin: 0%;
@@ -3512,7 +3521,7 @@ to keep your styles reusable and consistent.
     line-height: 1.1rem;
     font-weight: 800;
     font-family: var(--font-family-body);
-    font-style: normal;
+    font-style: n4rmal;
     margin: 0%;
     color: #000;
   }
@@ -3849,7 +3858,7 @@ to keep your styles reusable and consistent.
   .work-category-header {
     font-size: 1rem;
     line-height: 0.4rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .about-category-body {
@@ -3875,7 +3884,7 @@ to keep your styles reusable and consistent.
   .work-category-header {
     font-size: 1.2rem;
     line-height: 1.5rem;
-    font-weight: 800;
+    font-weight: 400;
     font-family: var(--font-family-body);
     font-style: normal;
     margin: 0%;
@@ -4153,6 +4162,10 @@ to keep your styles reusable and consistent.
   .footer-contact-social {
     grid-row: 1 / 2;
     grid-column: 3 / 4;
+  }
+
+  .award-social {
+    grid-row: 1 / 1;
   }
 
   /* ------------------------------- */
