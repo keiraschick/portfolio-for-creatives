@@ -2667,7 +2667,7 @@ to keep your styles reusable and consistent.
   }
 
   .wordmark {
-    width: 75%;
+    width: 30%;
   }
 }
 
@@ -2769,6 +2769,7 @@ to keep your styles reusable and consistent.
     width: 50%;
     margin-left: 30px;
     font-size: 80%;
+    font-weight: 600;
   }
 
   .blurb-container {
@@ -3036,6 +3037,7 @@ to keep your styles reusable and consistent.
     width: 50%;
     margin-left: 30px;
     font-size: 80%;
+    font-weight: 600;
   }
 
   .blurb-container {
@@ -3308,6 +3310,7 @@ to keep your styles reusable and consistent.
     width: 40%;
     margin-left: 35px;
     font-size: 80%;
+    font-weight: 600;
   }
 
   .blurb-container {
@@ -3502,6 +3505,7 @@ to keep your styles reusable and consistent.
     width: 25%;
     margin-left: 50px;
     font-size: 90%;
+    font-weight: 600;
   }
 
   .blurb-container {
@@ -3822,9 +3826,10 @@ to keep your styles reusable and consistent.
   }
 
   .blurb {
-    width: 25%;
+    width: 20%;
     margin-left: 50px;
     font-size: 100%;
+    font-weight: 400;
   }
 
   .blurb-container {
@@ -4267,9 +4272,10 @@ to keep your styles reusable and consistent.
   }
 
   .blurb {
-    width: 25%;
-    margin-left: 50px;
-    font-size: 120%;
+    width: 15%;
+    margin-left: 70px;
+    font-size: 100%;
+    font-weight: 600;
   }
 
   .ribbon3::before {
