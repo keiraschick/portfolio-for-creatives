@@ -125,7 +125,7 @@
   --h2-color: #000000;
   --h3-color: #000000;
   --h4-color: #000000;
-  --h5-color: #fefae6;
+  --h5-color: #ffffff;
   --h6-color: #000000;
   /* Special Text Colours */
   --color-text-holding-title: #000000;
@@ -649,16 +649,55 @@ a.nav-link-primary:hover {
   font-size: 1.2rem;
 }
 
-a.hero-nav-link-primary {
+a.work-nav-link-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #fff;
+  border: 2px solid #000000;
   min-width: 8.4rem;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
   text-align: center;
-  color: #fff;
+  color: #000000;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background-image: linear-gradient(#bedd4e, #bedd4e);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition:
+    background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    color 0.28s ease;
+  font-size: 1.2rem;
+}
+
+a.work-nav-link-primary:hover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+  min-width: 8.4rem;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  text-align: center;
+  color: #000000;
+  background-size: 100% 100%;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+}
+
+a.hero-nav-link-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fefae6;
+  min-width: 8.4rem;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  text-align: center;
+  color: #fefae6;
   font-weight: 600;
   letter-spacing: 0.5px;
   background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -815,16 +854,29 @@ a.nav-link-primary-ribbon-current-vault {
 /* -------------------------------------------------------------------------- */
 
 .home-page {
-  background-image: url("../assets/branding-images/home_background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-color: #000;
+}
+
+.intro-page {
+  max-height: 1300px;
+}
+
+.home-image {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+}
+
+.home-image-container {
+  width: 40%;
 }
 
 .blurb-container {
   background: transparent;
-  padding-top: 10%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero {
@@ -847,7 +899,7 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .hero-header-work .nav-branding,
-.work-header .nav-branding {
+.work-header .nav-branding .work-nav-branding {
   transition:
     transform 0.35s ease,
     opacity 0.35s ease;
@@ -913,6 +965,18 @@ a.nav-link-primary-ribbon-current-vault {
   background: linear-gradient(to bottom, #000000, #0000005d, #00000000);
 }
 
+.work-nav-branding {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to bottom, #ffffff, #ffffff5d, #00000000);
+}
+
 .hero-nav-branding {
   display: flex;
   flex-direction: row;
@@ -924,16 +988,18 @@ a.nav-link-primary-ribbon-current-vault {
   z-index: 1000;
 }
 
-.home-page .hero-nav-branding-top {
-  top: 0;
-  left: 0;
-}
-
-.home-page .hero-nav-branding-bottom {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-bottom: calc(4% + env(safe-area-inset-bottom, 0px));
+.hero-nav-branding-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 0%;
+  padding-bottom: 4%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 .sub-menu {
@@ -987,7 +1053,12 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .wordmark {
-  width: 90%;
+  width: 50%;
+  padding-bottom: 3%;
+}
+
+.home-image-container {
+  width: 80%;
 }
 
 #wordmarkArea {
@@ -1038,204 +1109,6 @@ a.nav-link-primary-ribbon-current-vault {
   flex-direction: row;
   justify-content: space-between;
   padding: var(--padding-small);
-}
-
-.email-letter {
-  position: relative;
-  left: 2.5rem;
-  bottom: -4rem;
-}
-
-.letter-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
-.animated-mail {
-  position: absolute;
-  height: 150px;
-  width: 200px;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  transition: 0.4s;
-
-  .letter-body {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 80px 120px;
-    border-color: transparent transparent #b4ce53 transparent;
-    z-index: 2;
-  }
-
-  .top-fold {
-    position: absolute;
-    top: 70px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 50px 60px 0 60px;
-    -webkit-transform-origin: 50% 0%;
-    -webkit-transition:
-      transform 0.4s 0.4s,
-      z-index 0.2s 0.4s;
-    -moz-transform-origin: 50% 0%;
-    -moz-transition:
-      transform 0.4s 0.4s,
-      z-index 0.2s 0.4s;
-    transform-origin: 50% 0%;
-    transition:
-      transform 0.4s 0.4s,
-      z-index 0.2s 0.4s;
-    border-color: #bedd4e transparent transparent transparent;
-    z-index: 2;
-  }
-
-  .back-fold {
-    position: absolute;
-    bottom: 0;
-    width: 120px;
-    height: 80px;
-    background: #bedd4e;
-    z-index: 0;
-  }
-
-  .left-fold {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 40px 0 40px 60px;
-    border-color: transparent transparent transparent #aec84e;
-    z-index: 2;
-  }
-
-  .letter {
-    left: 20px;
-    bottom: 0px;
-    position: absolute;
-    width: 80px;
-    height: 10px;
-    background: white;
-    z-index: 1;
-    overflow: hidden;
-    -webkit-transition: 0.4s 0.2s;
-    -moz-transition: 0.4s 0.2s;
-    transition: 0.4s 0.2s;
-  }
-}
-
-.letter-image:hover {
-  .animated-mail {
-    transform: translateY(50px);
-    -webkit-transform: translateY(50px);
-    -moz-transform: translateY(50px);
-  }
-
-  .animated-mail .top-fold {
-    transition:
-      transform 0.4s,
-      z-index 0.2s;
-    transform: rotateX(180deg);
-    -webkit-transition:
-      transform 0.4s,
-      z-index 0.2s;
-    -webkit-transform: rotateX(180deg);
-    -moz-transition:
-      transform 0.3s,
-      z-index 0.1s;
-    -moz-transform: rotateX(180deg);
-    z-index: 0;
-  }
-
-  .animated-mail .letter {
-    height: 100px;
-  }
-
-  .shadow {
-    width: 250px;
-  }
-}
-
-.sparkle {
-  position: absolute;
-  left: 25%;
-  top: 50%;
-  width: 15px;
-  height: 15px;
-  opacity: 1; /* No fading */
-  transform: translate(0, 0) scale(0.5);
-  transition: transform 0.5s ease-out; /* This is what makes them ease back */
-}
-
-@keyframes sparkle-burst {
-  0% {
-    opacity: 6;
-    transform: translate(0, 0) scale(0.6);
-  }
-
-  70% {
-    opacity: 6;
-    transform: translate(var(--x), var(--y)) scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(var(--x), var(--y)) scale(1.2);
-  }
-}
-
-/* When envelope is hovered → sparkles animate */
-.letter-image:hover .sparkle {
-  animation: sparkle-burst 1s ease-out forwards;
-}
-
-/* Random directions */
-.sparkle:nth-child(1) {
-  --x: -70px;
-  --y: -120px;
-}
-.sparkle:nth-child(2) {
-  --x: 80px;
-  --y: -70px;
-}
-.sparkle:nth-child(3) {
-  --x: -20px;
-  --y: -80px;
-}
-.sparkle:nth-child(4) {
-  --x: -60px;
-  --y: -40px;
-}
-.sparkle:nth-child(5) {
-  --x: 30px;
-  --y: -50px;
-}
-.sparkle:nth-child(6) {
-  --x: 80px;
-  --y: 70px;
-}
-.sparkle:nth-child(7) {
-  --x: -40px;
-  --y: 120px;
-}
-.sparkle:nth-child(8) {
-  --x: -100px;
-  --y: 80px;
-}
-.sparkle:nth-child(9) {
-  --x: 100px;
-  --y: 30px;
 }
 
 /*
@@ -1425,22 +1298,64 @@ a.nav-link-primary-ribbon-current-vault {
 /* -------------------------------------------------------------------------- */
 
 .work-page {
-  background: #000;
+  background: #ffffff;
 }
 
 /* Work wrapper (takes up available space) */
 .main-work-section {
   flex: 1;
+  padding-top: 0%;
 }
 
 /* Padding around work grid and project page */
 
-.portfolio,
 .project-wrapper,
 .work-sidebar-wrapper {
   padding: var(--padding-tiny);
   /* Padding to keep content from touching edges */
 }
+
+/* ── Toolbar row ── */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 25%;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+}
+
+.filter-btn {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vault-btn {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: #bedd4e;
+  border: 2px solid #111;
+  padding: 10px 18px;
+  box-shadow: 2px 2px 0 #111;
+  transform: translate(2px, 2px);
+}
+
+.vault-btn:hover {
+  box-shadow: 4px 4px 0 #111;
+  color: #000;
+  transform: translate(0px, 0px);
+}
+/* ── Toolbar row ── */
 
 /* Work Sidebar on Mobile */
 .work-sidebar {
@@ -1465,7 +1380,7 @@ a.nav-link-primary-ribbon-current-vault {
 .grid {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
   margin: 0rem;
   padding: 2.5%;
   background-color: transparent; /* Space between grid items */
@@ -1483,10 +1398,127 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 /* Project container for background and padding */
-.project-container {
-  background: var(--color-accent-primary);
-  background-color: #00ffff;
-  padding: var(--padding-medium);
+.card {
+  color: #000;
+  border: 1px solid #000000;
+  background: #fff;
+  position: relative;
+  padding: 0 0 32px 0;
+  box-shadow: 2px 2px 0 #000;
+  transform: translate(2px, 2px);
+}
+
+.card:hover {
+  border: 1px solid #000000;
+  background: #fff;
+  position: relative;
+  padding: 0 0 32px 0;
+  box-shadow: 4px 4px 0 #000000;
+  transform: translate(0px, 0px);
+}
+
+/* Clip overflow so icons above/below are hidden until revealed */
+.award-ribbon {
+  position: relative;
+  overflow: hidden; /* hides the ribbon content outside the card */
+}
+
+/* The ribbon strip */
+.ribbon {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 80px;
+  height: 340px;
+  background: #bedd4e;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0 30px; /* top padding + extra bottom for the clip-path point */
+  gap: 12px;
+
+  /* start position — only the last icon(s) visible */
+
+  transform: translateY(0%);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* On hover — scroll ribbon up to show all icons */
+.award-ribbon:hover .ribbon {
+  transform: translateY(-60%);
+
+  background: #bedd4e;
+}
+
+/* Icons inside the ribbon */
+.ribbon img {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+
+  background: #bedd4e;
+}
+
+/* ── Image container ── */
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #fff;
+}
+
+.card-image img {
+  padding: 6%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.card:hover .card-image img {
+  filter: grayscale(0%);
+}
+
+/* ── Card body ── */
+.card-body {
+  padding: 0 6%;
+}
+
+.card-title {
+  font-family: "Plus Jakarta Sans", sans;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+/* ── Tags ── */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  font-family: "Geist Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid #111;
+  padding: 7px 10px;
+}
+
+/* ── Year ── */
+.card-year {
+  font-family: "Plus Jakarta Sans", sans;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
 /* Overlay (appears on hover) */
@@ -1524,34 +1556,6 @@ a.nav-link-primary-ribbon-current-vault {
   filter: grayscale(200) brightness(20%);
 }
 
-.project-text-title {
-  font-size: 1.3rem;
-  color: #ffffff;
-  font-weight: 800;
-  opacity: 0;
-  transform: translateX(-1.5rem);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-.project-text-list {
-  color: #ffffff;
-  font-weight: 200;
-  font-size: 0.6rem;
-  font-family: var(--font-family-mono-accent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-text-year {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.7rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 /* Hover effect on work page grid items */
 .work-page-grid-item:hover .overlay {
   visibility: visible; /* Make overlay visible on hover */
@@ -1561,26 +1565,18 @@ a.nav-link-primary-ribbon-current-vault {
     visibility 0s;
 }
 
-.work-page-grid-item:hover .project-text-title {
+.work-page-grid-item:hover {
   opacity: 1;
   transform: translateX(0);
 }
 
-.work-page-grid-item:hover .project-text-list,
-.work-page-grid-item:hover .project-text-year {
+.work-page-grid-item:hover,
+.work-page-grid-item:hover {
   opacity: 1;
 }
 
-.work-page-grid-item:hover .project-text-list {
+.work-page-grid-item:hover {
   color: #bedd4e;
-}
-
-/* Optional container for future overlay customization */
-.project-details-overlay {
-  padding-bottom: 2rem;
-  padding-left: 2rem;
-  text-align: left;
-  /* Placeholder: no custom styles yet */
 }
 
 .project-year {
@@ -1619,6 +1615,10 @@ a.nav-link-primary-ribbon-current-vault {
   .about-title {
     line-height: 1.05;
     text-wrap: balance;
+  }
+
+  .wordmark {
+    width: 50%;
   }
 
   .about-title-container {
@@ -2005,7 +2005,7 @@ a.nav-link-primary-ribbon-current-vault {
   padding-bottom: 10%;
 }
 
-.ribbon {
+.horozontal-ribbon {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -2022,7 +2022,7 @@ a.nav-link-primary-ribbon-current-vault {
   clip-path: polygon(0% 0%, 100% 0%, calc(100% - 24px) 50%, 100% 100%, 0% 100%);
 }
 
-.ribbon:hover {
+.horozontal-ribbon:hover {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -2466,6 +2466,45 @@ a.nav-link-primary:hover {
   font-size: 0.7rem;
 }
 
+.work-nav-link-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+  min-width: 5.75rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: #ff5050;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background-image: linear-gradient(#475125, #bedd4e);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition:
+    background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    color 0.28s ease;
+  font-size: 0.7rem;
+}
+
+a.work-nav-link-primary:hover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  min-width: 5.75rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  background-size: 100% 100%;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.7rem;
+}
+
 a.hero-nav-link-primary {
   display: inline-flex;
   align-items: center;
@@ -2675,7 +2714,7 @@ to keep your styles reusable and consistent.
   }
 
   .wordmark {
-    width: 30%;
+    width: 24%;
   }
 }
 
@@ -2756,6 +2795,10 @@ to keep your styles reusable and consistent.
     width: 2.2rem;
   }
 
+  .home-image-container {
+    width: 40%;
+  }
+
   .project-categories {
     font-size: 0.6rem;
     color: #000;
@@ -2774,14 +2817,10 @@ to keep your styles reusable and consistent.
   }
 
   .blurb {
+    text-align: center;
     width: 50%;
-    margin-left: 30px;
     font-size: 80%;
     font-weight: 600;
-  }
-
-  .blurb-container {
-    padding-top: 80%;
   }
 
   h5 {
@@ -2890,16 +2929,55 @@ to keep your styles reusable and consistent.
     font-size: 0.6rem;
   }
 
-  a.hero-nav-link-primary {
+  .work-nav-link-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     min-width: 5rem;
     padding: 0.4rem 0.9rem;
     text-decoration: none;
     text-align: center;
-    color: #fff;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
+    font-size: 0.6rem;
+  }
+
+  a.work-nav-link-primary:hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    min-width: 5rem;
+    padding: 0.4rem 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-size: 100% 100%;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.6rem;
+  }
+
+  a.hero-nav-link-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fefae6;
+    min-width: 5rem;
+    padding: 0.4rem 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -2927,24 +3005,6 @@ to keep your styles reusable and consistent.
     font-weight: 600;
     letter-spacing: 0.5px;
     font-size: 0.6rem;
-  }
-
-  .project-text-title {
-    font-size: 1.7rem;
-    color: #ffffff;
-    font-weight: 800;
-  }
-
-  .project-text-list {
-    color: #ffffff;
-    font-weight: 200;
-    font-size: 0.7rem;
-  }
-
-  .project-text-year {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.8rem;
   }
 
   .about-name {
@@ -3042,14 +3102,10 @@ to keep your styles reusable and consistent.
   }
 
   .blurb {
+    text-align: center;
     width: 50%;
-    margin-left: 30px;
     font-size: 80%;
     font-weight: 600;
-  }
-
-  .blurb-container {
-    padding-top: 80%;
   }
 
   .ribbon3::before {
@@ -3182,16 +3238,55 @@ to keep your styles reusable and consistent.
     font-size: 0.7rem;
   }
 
-  a.hero-nav-link-primary {
+  .work-nav-link-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     min-width: 5.75rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
     text-align: center;
-    color: #fff;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
+    font-size: 0.7rem;
+  }
+
+  a.work-nav-link-primary:hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    min-width: 5.75rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-size: 100% 100%;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.7rem;
+  }
+
+  a.hero-nav-link-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fefae6;
+    min-width: 5.75rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -3219,24 +3314,6 @@ to keep your styles reusable and consistent.
     font-weight: 600;
     letter-spacing: 0.5px;
     font-size: 0.7rem;
-  }
-
-  .project-text-title {
-    font-size: 1.7rem;
-    color: #ffffff;
-    font-weight: 800;
-  }
-
-  .project-text-list {
-    color: #ffffff;
-    font-weight: 200;
-    font-size: 0.9rem;
-  }
-
-  .project-text-year {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
   }
 
   .fixed-top-image {
@@ -3275,6 +3352,10 @@ to keep your styles reusable and consistent.
   .project-categories {
     color: #000;
     font-size: 1rem;
+  }
+
+  .home-image-container {
+    width: 80%;
   }
 
   .ribbon3::before {
@@ -3316,13 +3397,8 @@ to keep your styles reusable and consistent.
 
   .blurb {
     width: 40%;
-    margin-left: 35px;
     font-size: 80%;
     font-weight: 600;
-  }
-
-  .blurb-container {
-    padding-top: 70%;
   }
 
   .fixed-top-image {
@@ -3359,6 +3435,9 @@ to keep your styles reusable and consistent.
 @media (min-width: 480px) {
   .logo {
     width: 3rem;
+  }
+  .home-image-container {
+    width: 50%;
   }
 
   .ribbon3::before {
@@ -3404,24 +3483,6 @@ to keep your styles reusable and consistent.
     top: 350px;
     left: 25px;
     z-index: 1000;
-  }
-
-  .project-text-title {
-    font-size: 2.2rem;
-    color: #ffffff;
-    font-weight: 800;
-  }
-
-  .project-text-list {
-    color: #ffffff;
-    font-weight: 200;
-    font-size: 1rem;
-  }
-
-  .project-text-year {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1.1rem;
   }
 
   .about-name {
@@ -3511,13 +3572,8 @@ to keep your styles reusable and consistent.
 
   .blurb {
     width: 25%;
-    margin-left: 50px;
     font-size: 90%;
     font-weight: 600;
-  }
-
-  .blurb-container {
-    padding-top: 20%;
   }
 
   h5 {
@@ -3635,16 +3691,55 @@ to keep your styles reusable and consistent.
     font-size: 0.9rem;
   }
 
-  a.hero-nav-link-primary {
+  a.work-nav-link-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     min-width: 7rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     text-align: center;
-    color: #fff;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
+    font-size: 0.9rem;
+  }
+
+  a.work-nav-link-primary:hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    min-width: 7rem;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-size: 100% 100%;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+  }
+
+  a.hero-nav-link-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fefae6;
+    min-width: 7rem;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -3671,24 +3766,6 @@ to keep your styles reusable and consistent.
     background-size: 100% 100%;
     font-weight: 600;
     letter-spacing: 0.5px;
-    font-size: 0.9rem;
-  }
-
-  .project-text-title {
-    font-size: 2rem;
-    color: #ffffff;
-    font-weight: 800;
-  }
-
-  .project-text-list {
-    color: #ffffff;
-    font-weight: 200;
-    font-size: 0.8rem;
-  }
-
-  .project-text-year {
-    color: #ffffff;
-    font-weight: 700;
     font-size: 0.9rem;
   }
 
@@ -3835,13 +3912,8 @@ to keep your styles reusable and consistent.
 
   .blurb {
     width: 20%;
-    margin-left: 50px;
     font-size: 100%;
     font-weight: 400;
-  }
-
-  .blurb-container {
-    padding-top: 12%;
   }
 
   .about-category-header {
@@ -4004,7 +4076,7 @@ to keep your styles reusable and consistent.
   }
 
   .hero-headline-wrapper {
-    padding-top: var(--padding-jumbo);
+    padding-top: 0%;
     padding-bottom: var(--padding-jumbo);
     padding-left: var(--padding-ultra);
     padding-right: var(--padding-ultra);
@@ -4021,26 +4093,6 @@ to keep your styles reusable and consistent.
   }
 
   /* Work Page Grid for Large Devices */
-
-  /* Grayscale filter with full-colour on hover and tap */
-
-  .project-text-title {
-    font-size: 1.8rem;
-    color: #ffffff;
-    font-weight: 800;
-  }
-
-  .project-text-list {
-    color: #ffffff;
-    font-weight: 200;
-    font-size: 0.9rem;
-  }
-
-  .project-text-year {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-  }
 
   /* Padding around work grid and project page */
 
@@ -4246,24 +4298,6 @@ to keep your styles reusable and consistent.
     color: rgb(0, 0, 0);
   }
 
-  .project-text-title {
-    font-size: 2.3rem;
-    color: #ffffff;
-    font-weight: 800;
-  }
-
-  .project-text-list {
-    color: #ffffff;
-    font-weight: 200;
-    font-size: 0.9rem;
-  }
-
-  .project-text-year {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
   .work-text-1 {
     width: 100%;
     padding-top: 0%;
@@ -4280,7 +4314,6 @@ to keep your styles reusable and consistent.
 
   .blurb {
     width: 15%;
-    margin-left: 70px;
     font-size: 100%;
     font-weight: 600;
   }
@@ -4294,7 +4327,7 @@ to keep your styles reusable and consistent.
     left: 140px;
   }
 
-  .nav-branding {
+  .nav-branding .work-nav-branding {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -4341,16 +4374,55 @@ to keep your styles reusable and consistent.
     font-size: 1.2rem;
   }
 
-  a.hero-nav-link-primary {
+  .work-nav-link-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     min-width: 8.4rem;
     padding: 0.7rem 1.4rem;
     text-decoration: none;
     text-align: center;
-    color: #fff;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-image: linear-gradient(#bedd4e, #bedd4e);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease,
+      color 0.28s ease;
+    font-size: 1.2rem;
+  }
+
+  a.work-nav-link-primary:hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    min-width: 8.4rem;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-size: 100% 100%;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+  }
+
+  a.hero-nav-link-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fefae6;
+    min-width: 8.4rem;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    text-align: center;
+    color: #fefae6;
     font-weight: 600;
     letter-spacing: 0.5px;
     background-image: linear-gradient(#bedd4e, #bedd4e);
@@ -4426,7 +4498,7 @@ to keep your styles reusable and consistent.
     justify-content: center;
     padding-left: 8%;
     padding-right: 8%;
-    padding-bottom: 3%;
+    padding-bottom: 0%;
     padding-top: 0%;
     background: transparent;
     /* Keeps text centered */
@@ -4447,7 +4519,7 @@ to keep your styles reusable and consistent.
   /* TODO: Add styles here for XX-large devices. */
 
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
   }
 }

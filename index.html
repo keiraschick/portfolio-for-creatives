@@ -34,48 +34,78 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body class="home-page" id="top">
-    <header class="hero-header hero-header-top">
-      <ul class="hero-nav-branding hero-nav-branding-top">
-        <li class="nav-branding-item">
-          <a href="work.html" class="hero-nav-link-primary all-caps">work</a>
-        </li>
-        <li class="nav-branding-item">
-          <a href="about.html" class="hero-nav-link-primary all-caps">about</a>
-        </li>
-      </ul>
-    </header>
+    <section class="intro-page">
+      <header class="hero-header">
+        <ul class="hero-nav-branding">
+          <li class="nav-branding-item">
+            <a href="work.html" class="hero-nav-link-primary all-caps">work</a>
+          </li>
+          <li class="nav-branding-item">
+            <a href="about.html" class="hero-nav-link-primary all-caps"
+              >about</a
+            >
+          </li>
+        </ul>
+      </header>
 
-    <ul class="hero-headline-wrapper" id="wordmarkArea">
-      <li class="wordmark reveal">
-        <object
-          type="image/svg+xml"
-          data="assets/branding-images/logorestframe.svg"
-          onload="console.log('SVG loaded')"
-        ></object>
-      </li>
-      <li class="clear-box" id="wordmarkAnimation"></li>
-    </ul>
-    <div class="blurb-container">
-      <p class="blurb all-caps reveal">
-        <span style="background-color: #bedd4e">
-          graphic designer located in vancouver, bc. currently working at
-          Resonance.
-        </span>
-      </p>
-    </div>
-
-    <header class="hero-header hero-header-bottom">
-      <ul class="hero-nav-branding hero-nav-branding-bottom">
-        <li class="nav-branding-item">
-          <a href="work.html" class="hero-nav-link-primary all-caps">shop</a>
+      <ul class="hero-headline-wrapper" id="wordmarkArea">
+        <li class="wordmark reveal">
+          <object
+            type="image/svg+xml"
+            data="assets/branding-images/logorestframe.svg"
+            onload="console.log('SVG loaded')"
+          ></object>
         </li>
-        <li class="nav-branding-item">
-          <a href="about.html" class="hero-nav-link-primary all-caps"
-            >contact</a
-          >
-        </li>
+        <li class="clear-box" id="wordmarkAnimation"></li>
       </ul>
-    </header>
+
+      <div>
+        <li class="home-image">
+          <img
+            class="home-image-container white-images"
+            src="assets/branding-images/home_background.jpg"
+            alt="image name"
+            width="1484"
+            height="1124"
+          />
+        </li>
+      </div>
+
+      <div class="blurb-container">
+        <p class="blurb all-caps reveal">
+          <span>
+            graphic designer located in vancouver, bc. currently working at
+            Resonance.
+          </span>
+        </p>
+      </div>
+
+      <header class="hero-header">
+        <ul class="hero-nav-branding-bottom">
+          <li class="nav-branding-item">
+            <a href="404.html" class="hero-nav-link-primary all-caps">shop</a>
+          </li>
+          <li class="nav-branding-item">
+            <a
+              href="mailto:keiraschick@gmail.com"
+              class="hero-nav-link-primary all-caps"
+              >contact</a
+            >
+          </li>
+        </ul>
+      </header>
+    </section>
+
+    <section>
+      <div style="background-color: black">
+        <p class="blurb all-caps reveal">
+          <span style="background-color: #bedd4e">
+            graphic designer located in vancouver, bc. currently working at
+            Resonance.
+          </span>
+        </p>
+      </div>
+    </section>
 
     <canvas id="bouncingCanvas"></canvas>
     <script src="js/flames.js"></script>
