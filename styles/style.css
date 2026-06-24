@@ -1617,6 +1617,44 @@ a.nav-link-primary-ribbon-current-vault {
     text-wrap: balance;
   }
 
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 50%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+  }
+
+  .ribbon {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 70px;
+    height: 260px;
+    background: #bedd4e;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0 30px; /* top padding + extra bottom for the clip-path point */
+    gap: 12px;
+
+    /* start position — only the last icon(s) visible */
+
+    transform: translateY(0%);
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .ribbon img {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    background: #bedd4e;
+  }
+
   .wordmark {
     width: 50%;
   }
