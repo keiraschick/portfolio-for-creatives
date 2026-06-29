@@ -37,7 +37,12 @@
     <header class="work-header">
       <ul class="work-nav-branding">
         <li class="nav-branding-item">
-          <a href="work.html" class="work-nav-link-primary all-caps">work</a>
+          <a
+            href="work.html"
+            class="nav-link-primary all-caps"
+            style="color: rgb(0, 0, 0); border: 2px solid rgb(0, 0, 0)"
+            >work</a
+          >
         </li>
         <li class="nav-branding-logo">
           <a href="index.html"
@@ -48,7 +53,13 @@
           /></a>
         </li>
         <li class="nav-branding-item">
-          <a href="about.html" class="work-nav-link-primary all-caps">about</a>
+          <a
+            href="about.html"
+            class="nav-link-primary all-caps"
+            style="color: rgb(0, 0, 0); border: 2px solid rgb(0, 0, 0)"
+          >
+            about</a
+          >
         </li>
       </ul>
       <div class="toolbar">
@@ -255,6 +266,64 @@
       </section>
     </main>
 
+    <ul class="column-2">
+      <li class="work-image-1"></li>
+      <li class="work-end-container">
+        <h2 class="work-end-title">
+          Hey, you’ve reached the end of the chapter.
+        </h2>
+        <a
+          class="vault-btn all-caps"
+          onclick="scrollToTop()"
+          style="color: #000"
+          >Jump to the beginning!</a
+        >
+      </li>
+    </ul>
+
+    <ul class="footer-content">
+      <figure class="bottom-spinner">
+        <a href="mailto:keiraschick@gmail.com"
+          ><img
+            src="assets/branding-images/worktogether_button.png"
+            class="spin"
+            alt="Let's work together spinning in top-right corner"
+        /></a>
+      </figure>
+      <h2 class="footer-end-title" style="color: #fff">
+        Honestly, I don't know what you’re doing down here.
+      </h2>
+      <ul class="footer-content-line">
+        <li class="footer-title">Send a message</li>
+        <a class="footer-link">keiraschick@gmail.com</a>
+        <a
+          class="footer-link"
+          href="https://www.instagram.com/kikisgallery?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          >Instagram</a
+        >
+        <a
+          class="footer-link"
+          href="https://www.linkedin.com/in/keira-schick-3644a7250"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a
+          class="footer-link"
+          href="https://www.behance.net/keiraschick0"
+          target="_blank"
+          >Behance</a
+        >
+      </ul>
+      <ul class="footer-content-line">
+        <li class="footer-title">Venture to</li>
+        <a class="footer-link" href="index.html">Home</a>
+        <a class="footer-link" href="work.html">Work</a>
+        <a class="footer-link" href="404.html">Shop</a>
+        <a class="footer-link" href="404.html">Top Secret Page</a>
+      </ul>
+    </ul>
+
     <ul class="footer-global">
       <li>
         <ul class="footer-list">
@@ -303,6 +372,7 @@
         </ul>
       </li>
     </ul>
+
     <script>
       const elements = document.querySelectorAll(".reveal");
 
@@ -321,6 +391,11 @@
       );
 
       elements.forEach((el) => observer.observe(el));
+    </script>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     </script>
   </body>
 </html>
