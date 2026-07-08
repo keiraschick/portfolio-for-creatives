@@ -62,8 +62,39 @@
           >
         </li>
       </ul>
+
       <div class="toolbar">
-        <a class="filter-btn">FILTER +</a>
+        <div class="filter-wrapper" id="filterWrapper">
+          <a class="filter-btn" id="filterToggle">
+            FILTER <span class="filter-icon">+</span>
+          </a>
+
+          <div class="filter-dropdown" id="filterDropdown">
+            <div class="filter-grid">
+              <button class="filter-option" data-filter="brand identity">
+                Brand Identity
+              </button>
+              <button class="filter-option" data-filter="editorial">
+                Editorial
+              </button>
+              <button class="filter-option" data-filter="packaging">
+                Packaging
+              </button>
+              <button class="filter-option" data-filter="promotional">
+                Promotional
+              </button>
+              <button class="filter-option" data-filter="print">Print</button>
+              <button class="filter-option" data-filter="advertising">
+                Advertising
+              </button>
+              <button class="filter-option" data-filter="logo">Logo</button>
+              <button class="filter-option" data-filter="campaign">
+                campaign
+              </button>
+            </div>
+          </div>
+        </div>
+
         <a class="vault-btn" href="vault.html" style="color: #000"
           >CHECK OUT THE VAULT</a
         >
@@ -104,23 +135,21 @@
 
           <a
             class="card"
-            href="TitleistRebrand-KeiraSchick.html"
+            href="America'sBestCities-KeiraSchick.html"
             style="color: #000"
           >
             <div class="card-image">
               <img
-                src="assets/branding-images/KeiraSchick_Titleist_TourSoft_front.jpg"
-                alt="Keira Schick Titliest Rebrand TourSoft front box mockup"
+                src="assets/branding-images/KeiraSchick_America'sBestCities_Thumbnail.png"
+                alt="Keira Schick America's Best Cities report spotlight mockup"
               />
             </div>
             <div class="card-body">
-              <h2 class="card-title">Titleist Rebrand</h2>
+              <h2 class="card-title">America's Best Cities</h2>
               <ul class="tag-list">
-                <li class="tag">Brand Identity</li>
-                <li class="tag">Packaging</li>
-                <li class="tag">Marketing Strategy</li>
+                <li class="tag">Editorial</li>
               </ul>
-              <p class="card-year">2024</p>
+              <p class="card-year">2026</p>
             </div>
           </a>
 
@@ -151,10 +180,32 @@
               <ul class="tag-list">
                 <li class="tag">Brand Identity</li>
                 <li class="tag">Packaging</li>
-                <li class="tag">Geurilla</li>
+                <li class="tag">Campaign</li>
                 <li class="tag">Advertising</li>
               </ul>
               <p class="card-year">2025</p>
+            </div>
+          </a>
+
+          <a
+            class="card"
+            href="TitleistRebrand-KeiraSchick.html"
+            style="color: #000"
+          >
+            <div class="card-image">
+              <img
+                src="assets/branding-images/KeiraSchick_Titleist_TourSoft_front.jpg"
+                alt="Keira Schick Titliest Rebrand TourSoft front box mockup"
+              />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Titleist Rebrand</h2>
+              <ul class="tag-list">
+                <li class="tag">Brand Identity</li>
+                <li class="tag">Packaging</li>
+                <li class="tag">Marketing Strategy</li>
+              </ul>
+              <p class="card-year">2024</p>
             </div>
           </a>
 
@@ -174,7 +225,7 @@
               <ul class="tag-list">
                 <li class="tag">Brand Identity</li>
                 <li class="tag">Promotional</li>
-                <li class="tag">Social Campaign</li>
+                <li class="tag">Campaign</li>
               </ul>
               <p class="card-year">2024</p>
             </div>
@@ -260,26 +311,6 @@
                 <li class="tag">Logo</li>
               </ul>
               <p class="card-year">TBD</p>
-            </div>
-          </a>
-
-          <a
-            class="card"
-            href="America'sBestCities-KeiraSchick.html"
-            style="color: #000"
-          >
-            <div class="card-image">
-              <img
-                src="assets/branding-images/KeiraSchick_America'sBestCities_Thumbnail.png"
-                alt="Keira Schick America's Best Cities report spotlight mockup"
-              />
-            </div>
-            <div class="card-body">
-              <h2 class="card-title">America's Best Cities</h2>
-              <ul class="tag-list">
-                <li class="tag">Editorial</li>
-              </ul>
-              <p class="card-year">2026</p>
             </div>
           </a>
         </ul>
@@ -420,5 +451,6 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     </script>
+    <script src="js/Filter menu"></script>
   </body>
 </html>

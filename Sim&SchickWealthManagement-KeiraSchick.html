@@ -64,15 +64,23 @@
     </figure>
     <main class="project-full-width">
       <ul class="project-navigation row">
+        <
         <li class="arrow-left">
           <a
-            href="ThresholdLeadership-KeiraSchick.html"
-            class="navigation-arrow"
+            href="RocketCarriers_KeiraSchick.html"
+            class="nav-btn nav-btn--prev"
           >
-            <img
-              src="assets/branding-images/left-arrow-white.svg"
-              alt="Left arrow button for previous project"
-          /></a>
+            <div class="nav-btn__box">
+              <img
+                src="assets/favicons/leftarrow_line.svg"
+                alt="Previous project"
+              />
+            </div>
+            <div class="nav-btn__label">
+              <span>Previous</span>
+              <span>Project</span>
+            </div>
+          </a>
         </li>
         <li class="full-width-image">
           <img
@@ -85,11 +93,20 @@
           />
         </li>
         <li class="arrow-right">
-          <a href="Heartwood-KeiraSchick.html" class="navigation-arrow">
-            <img
-              src="assets/branding-images/right-arrow-white.svg"
-              alt="Right arrow button for previous project"
-            />
+          <a
+            href="WildsideMatcha-KeiraSchick.html"
+            class="nav-btn nav-btn--next"
+          >
+            <div class="nav-btn__label">
+              <span>Next</span>
+              <span>Project</span>
+            </div>
+            <div class="nav-btn__box">
+              <img
+                src="assets/favicons/rightarrow_line.svg"
+                alt="Next project"
+              />
+            </div>
           </a>
         </li>
       </ul>
@@ -198,7 +215,9 @@
 
       elements.forEach((el) => observer.observe(el));
 
-      const projectHeader = document.querySelector(".hero-header-work .nav-branding");
+      const projectHeader = document.querySelector(
+        ".hero-header-work .nav-branding",
+      );
       let lastScrollY = window.scrollY;
 
       const syncProjectHeader = () => {

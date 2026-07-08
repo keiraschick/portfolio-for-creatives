@@ -203,6 +203,163 @@ html {
     url("../assets/branding-images/cursor.svg"), auto !important; /* Custom cursor (change the URL below to use your own) */
 }
 
+.filter-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+/* Toggle button */
+.filter-toggle {
+  font-family: "Geist Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 1.1rem 1.4rem;
+  cursor: url("../assets/branding-images/cursor.svg"), auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 280px;
+}
+
+.filter-icon {
+  font-size: 1.2rem;
+  display: inline-block;
+  line-height: 1;
+  margin-bottom: 3px; /* tweak this value until it sits level */
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Rotate + to × when open */
+.filter-wrapper.is-open .filter-icon {
+  transform: rotate(45deg);
+}
+
+/* Dropdown panel */
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 400px;
+  background: #fff;
+  border: 1px solid #000;
+  border-top: none;
+
+  /* Collapsed state */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Expanded state */
+.filter-wrapper.is-open .filter-dropdown {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(9px);
+}
+
+/* Grid of filter options */
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-top: 1px solid #000;
+}
+
+.filter-option {
+  font-family: "Geist Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  padding: 1rem;
+  text-align: left;
+  cursor: url("../assets/branding-images/cursor.svg"), auto;
+  transition: background 0.2s ease;
+}
+/* Remove right border on even items (right column) */
+.filter-option:nth-child(even) {
+  border-right: none;
+}
+
+/* Remove bottom border on the last two items */
+.filter-option:last-child,
+.filter-option:nth-last-child(2) {
+  border-bottom: none;
+}
+/* Active/selected state */
+.filter-option.is-active {
+  background: #bedd4e;
+}
+
+.filter-option:hover:not(.is-active) {
+  background: #f5f5f5;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Green square with offset shadow */
+.nav-btn__box {
+  width: 44px;
+  height: 44px;
+  background: #bedd4e;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-btn__box img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Label stacked vertically */
+.nav-btn__label {
+  display: flex;
+  flex-direction: column;
+  font-family: "Geist Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Next button label aligns right */
+.nav-btn--next .nav-btn__label {
+  text-align: right;
+}
+
+/* Hover — press effect */
+.nav-btn:hover .nav-btn__box {
+  box-shadow: 1px 1px 0 #000;
+  transform: translate(2px, 2px);
+}
+
 a:active,
 button:active {
   cursor:
@@ -914,7 +1071,7 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .fixed-top-image {
-  width: 2.8rem;
+  width: 6rem;
   position: absolute;
   top: 70px;
   right: 50px;
@@ -1322,6 +1479,113 @@ a.nav-link-primary-ribbon-current-vault {
   /* Padding to keep content from touching edges */
 }
 
+/* Title */
+.project-main-title {
+  font-family: "Plus Jakarta Sans", sans;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 400;
+  color: #fefae6;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4rem;
+}
+
+.work-tag {
+  font-family: "Geist Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid #fefae6;
+  color: #fefae6;
+  padding: 7px 12px;
+  list-style: none;
+}
+
+/* Divider line */
+.project-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  border-top: 1px solid #333;
+  padding-top: 2rem;
+  padding-bottom: 5%;
+  width: 100%;
+}
+
+/* Each meta column */
+.project-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Push year to the far right */
+.project-meta-item--year {
+  margin-left: auto;
+}
+
+.meta-label {
+  font-family: "Plus Jakarta Sans", sans;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #fefae6;
+}
+
+.meta-value {
+  font-family: "Geist Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: #bedd4e;
+  line-height: 0%;
+}
+
+.meta-value-link {
+  font-family: "Geist Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: #bedd4e;
+  line-height: 0%;
+}
+
+.meta-value-link:hover {
+  font-family: "Geist Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #bedd4e;
+  text-decoration: underline;
+
+  line-height: 0%;
+}
+
+.meta-year {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fefae6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-meta-row {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .project-meta-item--year {
+    margin-left: 0;
+  }
+}
+
 /* ── Toolbar row ── */
 .toolbar {
   display: flex;
@@ -1329,6 +1593,13 @@ a.nav-link-primary-ribbon-current-vault {
   align-items: flex-end;
   padding-top: 25%;
   padding-left: 3.5%;
+  padding-right: 3.5%;
+}
+
+.toolbar-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   padding-right: 3.5%;
 }
 
@@ -1353,14 +1624,16 @@ a.nav-link-primary-ribbon-current-vault {
   background: #bedd4e;
   border: 2px solid #111;
   padding: 10px 18px;
-  box-shadow: 2px 2px 0 #111;
-  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 #111;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .vault-btn:hover {
-  box-shadow: 4px 4px 0 #111;
+  box-shadow: 2px 2px 0 #111;
   color: #000;
-  transform: translate(0px, 0px);
+  transform: translate(2px, 2px);
 }
 /* ── Toolbar row ── */
 
@@ -1411,8 +1684,10 @@ a.nav-link-primary-ribbon-current-vault {
   background: #fff;
   position: relative;
   padding: 0 0 32px 0;
-  box-shadow: 2px 2px 0 #000;
-  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 #000;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .card:hover {
@@ -1420,8 +1695,8 @@ a.nav-link-primary-ribbon-current-vault {
   background: #fff;
   position: relative;
   padding: 0 0 32px 0;
-  box-shadow: 4px 4px 0 #000000;
-  transform: translate(0px, 0px);
+  box-shadow: 2px 2px 0 #000000;
+  transform: translate(2px, 2px);
 }
 
 /* Clip overflow so icons above/below are hidden until revealed */
@@ -1803,10 +2078,21 @@ a.nav-link-primary-ribbon-current-vault {
   padding-top: 4%;
   padding-bottom: 3%;
 }
+
 .work-text-2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 4%;
+}
+
+.work-story-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
@@ -1846,7 +2132,8 @@ a.nav-link-primary-ribbon-current-vault {
 
 .work-category-body {
   font-size: 0.9rem;
-  line-height: 1rem;
+  line-height: 0.2rem;
+  padding-bottom: 0%;
   font-weight: 200;
 }
 
@@ -2160,7 +2447,7 @@ a.nav-link-primary-ribbon-current-vault {
 
 .work-category-body {
   font-size: 0.7rem;
-  line-height: 1rem;
+  line-height: 0.2rem;
   font-weight: 200;
   font-family: var(--font-family-mono-accent);
 }
@@ -2393,6 +2680,8 @@ a.nav-link-primary-ribbon-current-vault {
   max-width: min(100%, 120rem);
   margin: 0 auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Sidebar Styles */
@@ -2483,7 +2772,8 @@ a.nav-link-primary-ribbon-current-vault {
 /* Previous/Next Arrow Styles */
 
 main.project-full-width > .project-navigation {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -2500,27 +2790,28 @@ main.project-full-width > .project-navigation .arrow-right {
   bottom: 2rem;
   width: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   z-index: 2;
 }
 
-main.project-full-width > .project-navigation .arrow-left {
+.project-navigation .arrow-left {
   left: 4%;
   justify-content: flex-start;
 }
 
-main.project-full-width > .project-navigation .arrow-right {
+.project-navigation .arrow-right {
   right: 4%;
   justify-content: flex-end;
 }
 
-main.project-full-width > .project-navigation .navigation-arrow {
+.project-navigation .navigation-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-main.project-full-width > .project-navigation .navigation-arrow img {
+.project-navigation .navigation-arrow img {
   display: block;
   width: auto;
   height: auto;
@@ -3051,7 +3342,7 @@ to keep your styles reusable and consistent.
 
   .work-category-body {
     font-size: 0.8rem;
-    line-height: 2rem;
+    line-height: 0.2rem;
     font-weight: 200;
   }
 
@@ -3325,7 +3616,7 @@ to keep your styles reusable and consistent.
 
   .work-category-body {
     font-size: 0.8rem;
-    line-height: 2rem;
+    line-height: 0.2rem;
     font-weight: 200;
   }
 
@@ -3354,6 +3645,12 @@ to keep your styles reusable and consistent.
   .work-text-2 {
     width: 100%;
     background: rgb(255, 255, 255);
+    padding-right: 13%;
+    padding-left: 13%;
+  }
+
+  .work-story-copy {
+    width: 100%;
     padding-right: 13%;
     padding-left: 13%;
   }
@@ -3482,7 +3779,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 3.4rem;
+    width: 6rem;
     position: absolute;
     top: 70px;
     right: 80px;
@@ -3567,7 +3864,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 4rem;
+    width: 6rem;
     position: absolute;
     top: 70px;
     right: 100px;
@@ -3592,7 +3889,7 @@ to keep your styles reusable and consistent.
 
   .work-category-body {
     font-size: 0.8rem;
-    line-height: 2rem;
+    line-height: 0.2rem;
     font-weight: 200;
   }
 }
@@ -3784,7 +4081,7 @@ to keep your styles reusable and consistent.
 
   .work-category-body {
     font-size: 0.8rem;
-    line-height: 1.7rem;
+    line-height: 0.2rem;
     font-weight: 200;
   }
 
@@ -3868,7 +4165,7 @@ to keep your styles reusable and consistent.
     color: #000000;
     font-weight: 600;
     letter-spacing: 0.5px;
-    background-image: linear-gradient(#4f5a27, #bedd4e);
+    background-image: linear-gradient(#bedd4e, #bedd4e);
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 0% 100%;
@@ -3935,7 +4232,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 4.2rem;
+    width: 7rem;
     position: absolute;
     top: 70px;
     right: 140px;
@@ -4038,6 +4335,12 @@ to keep your styles reusable and consistent.
     padding-left: 0%;
   }
 
+  .work-story-copy {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 0%;
+  }
+
   .ribbon3::before {
     position: absolute;
     width: 20%;
@@ -4118,7 +4421,7 @@ to keep your styles reusable and consistent.
 
   .work-category-body {
     font-size: 0.8rem;
-    line-height: 1rem;
+    line-height: 0.2rem;
     font-weight: 200;
   }
 
@@ -4164,9 +4467,13 @@ to keep your styles reusable and consistent.
     margin: 0%;
   }
 
+  .work-category-container {
+    padding-bottom: 3%;
+  }
+
   .work-category-body {
     font-size: 0.9rem;
-    line-height: 2rem;
+    line-height: 0.2rem;
     font-weight: 200;
   }
 
@@ -4293,8 +4600,7 @@ to keep your styles reusable and consistent.
     width: 65%;
   }
 
-  .project-image-container,
-  .project-description-container {
+  .project-image-container {
     flex-direction: row;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
@@ -4424,7 +4730,7 @@ to keep your styles reusable and consistent.
   }
 
   .fixed-top-image {
-    width: 5.4rem;
+    width: 7rem;
     position: absolute;
     top: 50px;
     right: 180px;

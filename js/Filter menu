@@ -1,0 +1,44 @@
+const toggle = document.getElementById("filterToggle");
+const wrapper = toggle.closest(".filter-wrapper");
+const options = document.querySelectorAll(".filter-option");
+const cards = document.querySelectorAll(".card");
+
+// Open / close
+toggle.addEventListener("click", () => {
+  wrapper.classList.toggle("is-open");
+});
+
+// Close when clicking outside
+document.addEventListener("click", (e) => {
+  if (!wrapper.contains(e.target)) {
+    wrapper.classList.remove("is-open");
+  }
+});
+
+// Filter logic
+options.forEach((option) => {
+  option.addEventListener("click", () => {
+    const filter = option.dataset.filter;
+
+    // Toggle active state
+    option.classList.toggle("is-active");
+
+    // Collect all active filters
+    const active = [
+      ...document.querySelectorAll(".filter-option.is-active"),
+    ].map((o) => o.dataset.filter);
+
+    // Show all if nothing selected, otherwise match tags
+    cards.forEach((card) => {
+      if (active.length === 0) {
+        card.style.display = "";
+      } else {
+        const tags = [...card.querySelectorAll(".tag")].map((t) =>
+          t.textContent.toLowerCase().trim(),
+        );
+        const match = active.some((f) => tags.includes(f));
+        card.style.display = match ? "" : "none";
+      }
+    });
+  });
+});
