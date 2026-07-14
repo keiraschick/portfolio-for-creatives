@@ -667,6 +667,7 @@ em {
 /* Large project title — appears on individual project pages */
 .project-title {
   padding-top: 7%;
+  padding-bottom: 4%;
   font-size: clamp(3rem, 6vw, 4rem);
   font-family: var(--font-family-project-title);
 }
@@ -1347,7 +1348,6 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100%;
   min-height: 20vh;
   overflow: hidden;
-  background: #000000;
   display: flex;
   align-items: center;
 }
@@ -1359,7 +1359,6 @@ a.nav-link-primary-ribbon-current-vault {
   width: 100%;
   min-height: 20vh;
   overflow: hidden;
-  background: #000000;
   display: flex;
   align-items: center;
 }
@@ -1369,7 +1368,6 @@ a.nav-link-primary-ribbon-current-vault {
   display: flex;
   flex-shrink: 0;
   white-space: nowrap;
-  background: #000000;
   animation: marquee-scroll 20s linear infinite;
 }
 
@@ -1387,7 +1385,6 @@ a.nav-link-primary-ribbon-current-vault {
 .marquee__content {
   display: inline-flex;
   flex-shrink: 0; /* Prevents shrinking */
-  background: #000000;
 }
 
 /* The list and items inside the marquee */
@@ -1397,7 +1394,6 @@ a.nav-link-primary-ribbon-current-vault {
   margin: 0;
   padding: 0;
   list-style: none;
-  background: #000000;
 }
 
 /* Base style for all items */
@@ -2073,8 +2069,6 @@ a.nav-link-primary-ribbon-current-vault {
 
 .work-text-1 {
   width: 100%;
-  padding-right: 10%;
-  padding-left: 10%;
   padding-top: 4%;
   padding-bottom: 3%;
 }
@@ -2084,8 +2078,6 @@ a.nav-link-primary-ribbon-current-vault {
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
   padding-top: 4%;
 }
 
@@ -2094,8 +2086,6 @@ a.nav-link-primary-ribbon-current-vault {
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
   padding-top: 4%;
 }
 
@@ -2139,11 +2129,9 @@ a.nav-link-primary-ribbon-current-vault {
 
 .work-image-1 {
   width: 100%;
-  padding-left: 10%;
 }
 .work-image-2 {
   width: 100%;
-  padding-right: 10%;
 }
 
 .work-image-single {
@@ -2308,7 +2296,8 @@ a.nav-link-primary-ribbon-current-vault {
   gap: 2rem;
   padding-bottom: 2rem;
   width: 100vw;
-  margin-left: calc(50% - 50vw);
+  padding-left: clamp(1.25rem, 6vw, 10.5%);
+  padding-right: clamp(1.25rem, 6vw, 10.5%);
 }
 
 .column-3 {
@@ -2714,8 +2703,6 @@ a.nav-link-primary-ribbon-current-vault {
 
 .full-width-image2 {
   width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
 }
 
 .row {
@@ -3263,13 +3250,9 @@ to keep your styles reusable and consistent.
 
   .work-image-1 {
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
   }
   .work-image-2 {
     width: 100%;
-    padding-right: 10%;
-    padding-left: 10%;
   }
 
   .blurb {
@@ -3631,8 +3614,6 @@ to keep your styles reusable and consistent.
   .work-text-1 {
     width: 100%;
     background: rgb(255, 255, 255);
-    padding-left: 13%;
-    padding-right: 13%;
   }
 
   .about-text-2 {
@@ -3645,14 +3626,10 @@ to keep your styles reusable and consistent.
   .work-text-2 {
     width: 100%;
     background: rgb(255, 255, 255);
-    padding-right: 13%;
-    padding-left: 13%;
   }
 
   .work-story-copy {
     width: 100%;
-    padding-right: 13%;
-    padding-left: 13%;
   }
 
   .about-text-1-second {
@@ -4314,31 +4291,21 @@ to keep your styles reusable and consistent.
 
   .work-image-1 {
     width: 100%;
-    padding-left: 10%;
-    padding-right: 0%;
   }
   .work-image-2 {
     width: 100%;
-    padding-right: 10%;
-    padding-left: 0%;
   }
 
   .work-text-1 {
     width: 100%;
-    padding-right: 0%;
-    padding-left: 10%;
   }
 
   .work-text-2 {
     width: 100%;
-    padding-right: 10%;
-    padding-left: 0%;
   }
 
   .work-story-copy {
     width: 100%;
-    padding-right: 10%;
-    padding-left: 0%;
   }
 
   .ribbon3::before {
@@ -4772,15 +4739,11 @@ to keep your styles reusable and consistent.
   .work-text-1 {
     width: 100%;
     padding-top: 0%;
-    padding-left: 10%;
-    padding-right: 0%;
   }
 
   .work-text-2 {
     width: 100%;
     padding-top: 0%;
-    padding-right: 10%;
-    padding-left: 0%;
   }
 
   .blurb {
