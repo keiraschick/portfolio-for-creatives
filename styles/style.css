@@ -1012,11 +1012,20 @@ a.nav-link-primary-ribbon-current-vault {
 /* -------------------------------------------------------------------------- */
 
 .home-page {
-  background-color: #000;
 }
 
 .intro-page {
-  max-height: 1300px;
+  background-color: #000;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.showcase-section {
+  background-color: #ffffff;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-image {
@@ -1032,6 +1041,7 @@ a.nav-link-primary-ribbon-current-vault {
 .blurb-container {
   background: transparent;
   padding-top: 5%;
+  padding-bottom: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1155,6 +1165,7 @@ a.nav-link-primary-ribbon-current-vault {
 
 .hero-nav-branding-bottom {
   display: flex;
+  margin-top: auto;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -1363,6 +1374,86 @@ a.nav-link-primary-ribbon-current-vault {
   align-items: center;
 }
 
+.marquee-testimonials {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.marquee__track-testimonials {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee__track-testimonials:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee__content-testimonials {
+  display: flex;
+  gap: 2rem;
+  padding-right: 2rem;
+
+  padding-bottom: 10%;
+}
+
+/* Base card */
+.testimonial-container {
+  width: 28rem;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.testimonial-container:nth-child(1) {
+  transform: translateY(0rem);
+}
+.testimonial-container:nth-child(2) {
+  transform: translateY(2rem);
+}
+.testimonial-container:nth-child(3) {
+  transform: translateY(4rem);
+}
+
+/* Green gradient variant */
+.testimonial-container--green {
+  background: linear-gradient(160deg, #bedd4e 0%, #e8f5b0 40%, transparent 70%);
+}
+
+.testimonial-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.testimonial-role {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.testimonial-body {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 /* The moving "track" that slides left to right */
 .marquee__track {
   display: flex;
@@ -1382,8 +1473,10 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 /* Each block of repeated content (we duplicate it in HTML) */
+
 .marquee__content {
   display: inline-flex;
+  row-gap: 300px;
   flex-shrink: 0; /* Prevents shrinking */
 }
 
@@ -1572,6 +1665,28 @@ a.nav-link-primary-ribbon-current-vault {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .blurb-container {
+    background: transparent;
+    padding-top: 5%;
+    padding-bottom: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-headline-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    padding-top: 30%;
+    background: transparent;
+    /* Keeps text centered */
+  }
+
   .project-meta-row {
     flex-wrap: wrap;
     gap: 2rem;
@@ -3157,6 +3272,7 @@ to keep your styles reusable and consistent.
   }
 
   .wordmark {
+    padding-top: 2%;
     width: 24%;
   }
 }
@@ -3794,7 +3910,7 @@ to keep your styles reusable and consistent.
   }
 
   .home-image-container {
-    width: 80%;
+    width: 100%;
   }
 
   .ribbon3::before {
@@ -3876,7 +3992,11 @@ to keep your styles reusable and consistent.
     width: 3rem;
   }
   .home-image-container {
-    width: 50%;
+    width: 70%;
+  }
+
+  .wordmark {
+    width: 24%;
   }
 
   .ribbon3::before {
@@ -4513,223 +4633,221 @@ to keep your styles reusable and consistent.
   .hero {
     min-height: 100vh;
   }
+}
+.error-headline-wrapper {
+  padding-top: var(--padding-small);
+  padding-bottom: var(--padding-small);
+  padding-left: var(--padding-ultra);
+  padding-right: var(--padding-ultra);
+}
 
-  .hero-headline-wrapper {
-    padding-top: 0%;
-    padding-bottom: var(--padding-jumbo);
-    padding-left: var(--padding-ultra);
-    padding-right: var(--padding-ultra);
-  }
-  .error-headline-wrapper {
-    padding-top: var(--padding-small);
-    padding-bottom: var(--padding-small);
-    padding-left: var(--padding-ultra);
-    padding-right: var(--padding-ultra);
-  }
+.error-404 {
+  font-size: 5rem;
+}
 
-  .error-404 {
-    font-size: 5rem;
-  }
+/* Work Page Grid for Large Devices */
 
-  /* Work Page Grid for Large Devices */
+/* Padding around work grid and project page */
 
-  /* Padding around work grid and project page */
+.portfolio,
+.project-wrapper,
+.work-sidebar-wrapper {
+  padding: var(--padding-small);
+}
 
-  .portfolio,
-  .project-wrapper,
-  .work-sidebar-wrapper {
-    padding: var(--padding-small);
-  }
+/* Project Page Flex Direction on Large Devices */
 
-  /* Project Page Flex Direction on Large Devices */
+.project-wrapper,
+.work-sidebar-wrapper {
+  flex-direction: row;
+}
 
-  .project-wrapper,
-  .work-sidebar-wrapper {
-    flex-direction: row;
-  }
+/* Project Full Width Styles */
 
-  /* Project Full Width Styles */
+/* Sidebar on Large Devices */
 
-  /* Sidebar on Large Devices */
+.project-aside {
+  width: 35%;
+  height: 80vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 8rem;
+  padding-right: 2rem;
+}
 
-  .project-aside {
-    width: 35%;
-    height: 80vh;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 8rem;
-    padding-right: 2rem;
-  }
+/* Main Project Image Area on Large Devices */
 
-  /* Main Project Image Area on Large Devices */
+.project-details {
+  width: 65%;
+}
 
-  .project-details {
-    width: 65%;
-  }
+.project-image-container {
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+  gap: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
 
-  .project-image-container {
-    flex-direction: row;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
-    gap: 20px;
-    padding-left: 10%;
-    padding-right: 10%;
-  }
+.section-container {
+  width: 80%; /* Adjust this width for larger screens if needed */
+  flex-direction: row;
+}
+.col-2 {
+  width: 100%;
+}
 
-  .section-container {
-    width: 80%; /* Adjust this width for larger screens if needed */
-    flex-direction: row;
-  }
-  .col-2 {
-    width: 100%;
-  }
+.project-navigation {
+  justify-content: flex-start;
+}
 
-  .project-navigation {
-    justify-content: flex-start;
-  }
+.arrow {
+  padding-right: 1rem;
+}
 
-  .arrow {
-    padding-right: 1rem;
-  }
+.column-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
 
-  .column-2 {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-  }
+.column-4 {
+  flex-direction: row;
+}
 
-  .column-4 {
-    flex-direction: row;
-  }
+.column-3 {
+  flex-direction: row;
+}
 
-  .column-3 {
-    flex-direction: row;
-  }
+.signature {
+  width: 30%;
+}
+/* About Page Grid for Large Devices */
 
-  .signature {
-    width: 30%;
-  }
-  /* About Page Grid for Large Devices */
+.about-grid {
+  padding: var(--padding-jumbo);
+  grid-template-columns: 2fr 3fr;
+}
 
-  .about-grid {
-    padding: var(--padding-jumbo);
-    grid-template-columns: 2fr 3fr;
-  }
+.about-grid-image {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
 
-  .about-grid-image {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
+/* ------------------------------- */
+/* 🖥️ FOOTER GRID - DESKTOP LAYOUT */
+/* ------------------------------- */
 
-  /* ------------------------------- */
-  /* 🖥️ FOOTER GRID - DESKTOP LAYOUT */
-  /* ------------------------------- */
+.footer-global {
+  display: grid;
+  grid-gap: 3rem;
+  min-height: auto;
+  padding: 2%;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid #fefae6;
+  /* Three equal columns */
+}
 
-  .footer-global {
-    display: grid;
-    grid-gap: 3rem;
-    min-height: auto;
-    padding: 2%;
-    grid-template-columns: 1fr 1fr 1fr;
-    border-top: 1px solid #fefae6;
-    /* Three equal columns */
-  }
+.footer-list {
+  text-align: left;
+}
 
-  .footer-list {
-    text-align: left;
-  }
+.footer-socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  gap: 20px;
+}
 
-  .footer-socials-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-    gap: 20px;
-  }
+.footer-socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  gap: 20px;
+  padding-right: 2%;
+}
 
-  .footer-socials-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-    gap: 20px;
-    padding-right: 2%;
-  }
+/* Column 2: Awards & Works */
+.footer-highlights {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
 
-  /* Column 2: Awards & Works */
-  .footer-highlights {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-  }
+/* Column 3: Contact & Social */
+.footer-contact-social {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
 
-  /* Column 3: Contact & Social */
-  .footer-contact-social {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
-  }
+.award-social {
+  grid-row: 1 / 1;
+}
 
-  .award-social {
-    grid-row: 1 / 1;
-  }
+/* ------------------------------- */
+/* 📏 FULL-WIDTH BOTTOM SECTION */
+/* ------------------------------- */
+.footer-full-width {
+  grid-row: 2 / 3;
+  grid-column: 1 / 4; /* Spans all three columns */
+  text-align: center;
+  align-self: end; /* Aligns content to bottom */
+}
 
-  /* ------------------------------- */
-  /* 📏 FULL-WIDTH BOTTOM SECTION */
-  /* ------------------------------- */
-  .footer-full-width {
-    grid-row: 2 / 3;
-    grid-column: 1 / 4; /* Spans all three columns */
-    text-align: center;
-    align-self: end; /* Aligns content to bottom */
-  }
+/* Work Sidebar on Large Devices */
 
-  /* Work Sidebar on Large Devices */
+.work-sidebar {
+  width: 25%;
+  height: 80vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+}
 
-  .work-sidebar {
-    width: 25%;
-    height: 80vh;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 1rem;
-  }
+/* Main Work Area on Large Devices */
 
-  /* Main Work Area on Large Devices */
+.work-details {
+  width: 75%;
+}
 
-  .work-details {
-    width: 75%;
-  }
+.fixed-top-image {
+  width: 7rem;
+  position: absolute;
+  top: 50px;
+  right: 180px;
+  z-index: 1000;
+}
 
-  .fixed-top-image {
-    width: 7rem;
-    position: absolute;
-    top: 50px;
-    right: 180px;
-    z-index: 1000;
-  }
+.about-fixed-top-image {
+  width: 10rem;
+  position: absolute;
+  top: 170px;
+  left: 50px;
+  z-index: 1000;
+}
 
-  .about-fixed-top-image {
-    width: 10rem;
-    position: absolute;
-    top: 170px;
-    left: 50px;
-    z-index: 1000;
-  }
+.about-name {
+  position: absolute;
+  top: 560px; /* Move slightly below the image edge */
+  right: 70px; /* Push slightly to the right */
+  z-index: 20; /* Make sure it appears above the image */
+  width: 50%;
+}
 
-  .about-name {
-    position: absolute;
-    top: 560px; /* Move slightly below the image edge */
-    right: 70px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 50%;
-  }
-
-  .about-image {
-    padding-top: 10%;
-    padding-bottom: 15%;
-  }
+.about-image {
+  padding-top: 10%;
+  padding-bottom: 15%;
 }
 
 /* X-Large devices (large desktops, 1200px and up)*/
 
 @media (min-width: 1600px) {
   /* TODO: Add styles here for X-large devices. */
+
+  .wordmark {
+    width: 24%;
+    padding-top: 6%;
+  }
 
   .project-categories {
     font-size: 1rem;
