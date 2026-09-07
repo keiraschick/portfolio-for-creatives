@@ -1012,6 +1012,7 @@ a.nav-link-primary-ribbon-current-vault {
 /* -------------------------------------------------------------------------- */
 
 .home-page {
+  background-color: #000;
 }
 
 .intro-page {
@@ -1032,10 +1033,6 @@ a.nav-link-primary-ribbon-current-vault {
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center;
-}
-
-.home-image-container {
-  width: 40%;
 }
 
 .blurb-container {
@@ -1126,6 +1123,11 @@ a.nav-link-primary-ribbon-current-vault {
 
 /* Responsive adjustments for small screens */
 @media (max-width: 600px) {
+  .about-name {
+    width: clamp(140px, 45vw, 300px);
+    bottom: 2%;
+    right: 2%;
+  }
 }
 
 .nav-branding {
@@ -1231,10 +1233,6 @@ a.nav-link-primary-ribbon-current-vault {
 .wordmark {
   width: 50%;
   padding-bottom: 3%;
-}
-
-.home-image-container {
-  width: 80%;
 }
 
 #wordmarkArea {
@@ -3366,7 +3364,7 @@ to keep your styles reusable and consistent.
   }
 
   .home-image-container {
-    width: 40%;
+    width: clamp(400px, 60vw, 2000px);
   }
 
   .project-categories {
@@ -3573,12 +3571,29 @@ to keep your styles reusable and consistent.
     font-size: 0.6rem;
   }
 
+  .about-image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* prevents the name svg from spilling past rounded corners, if any */
+  }
+
+  .about-image-wrapper {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .about-name {
     position: absolute;
-    top: 330px; /* Move slightly below the image edge */
-    right: 20px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 60%;
+    bottom: 12%; /* percentage of the wrapper's height, not the viewport */
+    right: 10%; /* percentage of the wrapper's width */
+    width: clamp(
+      190px,
+      60vw,
+      700px
+    ); /* scales fluidly, never exceeds native size */
+    height: auto; /* keeps the 671x280 aspect ratio intact */
+    z-index: 20;
   }
 
   .about-fixed-top-image {
@@ -3898,14 +3913,6 @@ to keep your styles reusable and consistent.
     z-index: 1000;
   }
 
-  .about-name {
-    position: absolute;
-    top: 440px; /* Move slightly below the image edge */
-    right: 20px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 60%;
-  }
-
   .about-image {
     text-align: center;
     width: 80%;
@@ -3918,10 +3925,6 @@ to keep your styles reusable and consistent.
   .project-categories {
     color: #000;
     font-size: 1rem;
-  }
-
-  .home-image-container {
-    width: 100%;
   }
 
   .ribbon3::before {
@@ -3983,14 +3986,6 @@ to keep your styles reusable and consistent.
     z-index: 1000;
   }
 
-  .about-name {
-    position: absolute;
-    top: 500px; /* Move slightly below the image edge */
-    right: 20px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 50%;
-  }
-
   .work-category-body {
     font-size: 0.8rem;
     line-height: 0.2rem;
@@ -4001,9 +3996,6 @@ to keep your styles reusable and consistent.
 @media (min-width: 480px) {
   .logo {
     width: 3rem;
-  }
-  .home-image-container {
-    width: 70%;
   }
 
   .wordmark {
@@ -4054,25 +4046,9 @@ to keep your styles reusable and consistent.
     left: 25px;
     z-index: 1000;
   }
-
-  .about-name {
-    position: absolute;
-    top: 570px; /* Move slightly below the image edge */
-    right: 20px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 50%;
-  }
 }
 
 @media (min-width: 640px) {
-  .about-name {
-    position: absolute;
-    top: 370px; /* Move slightly below the image edge */
-    right: 20px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 50%;
-  }
-
   .ribbon3::before {
     position: absolute;
     width: 15%;
@@ -4353,14 +4329,6 @@ to keep your styles reusable and consistent.
     top: 190px;
     left: 50px;
     z-index: 1000;
-  }
-
-  .about-name {
-    position: absolute;
-    top: 450px; /* Move slightly below the image edge */
-    right: 60px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 50%;
   }
 
   /* TODO: Adjust  layout for tablets */
@@ -4824,19 +4792,11 @@ to keep your styles reusable and consistent.
 }
 
 .about-fixed-top-image {
-  width: 10rem;
+  width: 8rem;
   position: absolute;
-  top: 170px;
+  top: 100px;
   left: 50px;
   z-index: 1000;
-}
-
-.about-name {
-  position: absolute;
-  top: 560px; /* Move slightly below the image edge */
-  right: 70px; /* Push slightly to the right */
-  z-index: 20; /* Make sure it appears above the image */
-  width: 50%;
 }
 
 .about-image {
@@ -5024,14 +4984,6 @@ to keep your styles reusable and consistent.
     width: 95%;
     padding-bottom: 20%;
     padding-top: 10%;
-  }
-
-  .about-name {
-    position: absolute;
-    top: 640px; /* Move slightly below the image edge */
-    right: 96px; /* Push slightly to the right */
-    z-index: 20; /* Make sure it appears above the image */
-    width: 50%;
   }
 
   .fixed-top-image {
