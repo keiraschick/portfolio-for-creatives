@@ -2502,13 +2502,13 @@ a.nav-link-primary-ribbon-current-vault {
 
 .about-page .bio-info h5 {
   font-family: var(--font-family-body);
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 200;
 }
 
 .about-category-header h5 {
   font-family: var(--font-family-body);
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 200;
 }
 
@@ -2519,7 +2519,6 @@ a.nav-link-primary-ribbon-current-vault {
   padding-bottom: 40%;
 }
 
-.about-category-header,
 .work-category-header {
   font-size: 0.9rem;
   line-height: 1rem;
@@ -2567,10 +2566,6 @@ a.nav-link-primary-ribbon-current-vault {
 
 .about-info {
   background: #000;
-}
-
-.bio-info {
-  padding-bottom: 10%;
 }
 
 .horozontal-ribbon {
@@ -4123,7 +4118,7 @@ to keep your styles reusable and consistent.
   }
 
   h5 {
-    font-size: 1rem;
+    font-size: 9rem;
     line-height: 1.5;
     margin-bottom: 2rem;
     color: var(--h5-color);
@@ -4792,10 +4787,10 @@ to keep your styles reusable and consistent.
 }
 
 .about-fixed-top-image {
-  width: 8rem;
+  width: 5rem;
   position: absolute;
   top: 100px;
-  left: 50px;
+  left: 25px;
   z-index: 1000;
 }
 
