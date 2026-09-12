@@ -53,14 +53,7 @@
         </li>
       </ul>
     </header>
-    <figure class="fixed-top-image">
-      <a href="mailto:keiraschick@gmail.com"
-        ><img
-          src="assets/branding-images/worktogether_button.png"
-          class="spin"
-          alt="Let's work together spinning in top-right corner"
-      /></a>
-    </figure>
+    
 
     <main class="project-full-width">
       <ul class="project-navigation row">
@@ -114,7 +107,7 @@
       <aside class="project-full-width">
         <div class="project-description-container project-meta-reveal">
           <div class="project-title">
-            <h3 class="all-caps">heartwood</h3>
+            <h2 class="about-title title typewriter" style="color: #fefae6;" data-text="Whether it's a fine dining experience or a bottle to take home, Heartwood offers a moment of escape from the everyday bustle, a reminder to reconnect with Vancouver's land and tide."></h2>
             <ul class="tag-list">
               <li class="work-tag">Brand Identity</li>
               <li class="work-tag">Packaging</li>
@@ -142,9 +135,16 @@
               <p class="meta-value">&#10551; Keira Schick</p>
             </div>
 
+            <div class="project-meta-item">
+                  <p class="meta-label">AWARDS</p>
+                  <p class="meta-value">&#10551; RGD x2</p>
+                </div>
+
             <div class="project-meta-item project-meta-item--year">
               <p class="meta-year">2024</p>
             </div>
+
+            
           </div>
         </div>
       </aside>
@@ -153,37 +153,24 @@
    
         <div class="column-2"></div>
 
+
+        <div class="column-2"></div>
+
+        <ul class="column-2 row">
+          <img
+            class="full-width-image2"
+            src="assets/branding-images/KeiraSchick_Heartwood_LandMenuMockup.jpg"
+            width="2800"
+            height="1500"
+            loading="lazy"
+            alt="Heartwood menu on land category dishes"
+          />
+        </ul>
+
         <ul class="column-2">
+          
           <li class="work-text-1">
-            <ul class="awards-list">
-              <li class="work-category-container">
-                <a
-                  style="color: #fefae6"
-                  class="work-category-header linked-header2"
-                  href="https://www.appliedartsmag.com/winners/student/heartwood-gin-w343/?year=2025"
-                  target="_blank"
-                  >Applied Arts Student Award Winner
-                </a>
-                <p class="work-category-body" style="color: #bedd4e">
-                  &#10551; Design | Packaging Series
-                </p>
-              </li>
-              <li class="work-category-container">
-                <a
-                  style="color: #fefae6"
-                  class="work-category-header linked-header2"
-                  href="https://rgd.ca/hiring-designers/award-winners/2025-student-award-winners/award-for-packaging-design-series"
-                  target="_blank"
-                  >RGD Student Award Winner</a
-                >
-                <p class="work-category-body" style="color: #bedd4e">
-                  &#10551; Design | Packaging Series
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li class="work-text-2">
-            <h2 class="work-title all-caps">What's the Story?</h2>
+            <h2 class="work-title">What's the story?</h2>
             <h5 class="work-description">
               Getting consumed in the hustle and bustle of life is overwhelming.
               But what if we could provide you a haven filled with solace. A
@@ -197,19 +184,8 @@
               essence of Vancouver’s land and tide.
             </h5>
           </li>
-        </ul>
-
-        <div class="column-2"></div>
-
-        <ul class="column-2 row">
-          <img
-            class="full-width-image2"
-            src="assets/branding-images/KeiraSchick_Heartwood_LandMenuMockup.jpg"
-            width="2800"
-            height="1500"
-            loading="lazy"
-            alt="Heartwood menu on land category dishes"
-          />
+          <li class="work-text-2">
+          </li>
         </ul>
 
         <ul class="column-2">
@@ -431,6 +407,10 @@
           </li>
         </ul>
 
+        <div class="flier-star">
+      <img src="assets/branding-images/JankyStar.svg" alt="Janky Star" />
+    </div>
+
         <script>
           myID = document.getElementById("myID");
 
@@ -487,5 +467,37 @@
       window.addEventListener("scroll", syncProjectHeader, { passive: true });
       window.addEventListener("resize", syncProjectHeader);
     </script>
+<script>
+      const typewriterElements = document.querySelectorAll(".typewriter");
+
+      const typewriterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const text = el.getAttribute("data-text");
+              let i = 0;
+
+              function typeChar() {
+                if (i < text.length) {
+                  el.textContent += text.charAt(i);
+                  i++;
+                  setTimeout(typeChar, 60);
+                }
+              }
+
+              setTimeout(typeChar, 300); // 👈 delay before typing starts
+              observer.unobserve(el);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        },
+      );
+
+      typewriterElements.forEach((el) => typewriterObserver.observe(el));
+    </script>
+
   </body>
 </html>

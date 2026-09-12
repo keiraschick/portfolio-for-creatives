@@ -54,19 +54,12 @@
         </li>
       </ul>
     </header>
-    <figure class="fixed-top-image">
-      <a href="mailto:keiraschick@gmail.com"
-        ><img
-          src="assets/branding-images/worktogether_button.png"
-          class="spin"
-          alt="Let's work together spinning in top-right corner"
-      /></a>
-    </figure>
+   
     <main class="project-full-width">
       <ul class="project-navigation row">
         <li class="arrow-left">
           <a
-            href="America'sBestCities-KeiraSchick.html"
+            href="Heartwood-KeiraSchick.html"
             class="nav-btn nav-btn--prev"
           >
             <div class="nav-btn__box">
@@ -117,7 +110,7 @@
   
       <div class="project-title">
         
-        <h3 class="all-caps">America's Best Cities</h3>
+        <h2 class="about-title title typewriter" style="color: #fefae6;" data-text="A data-driven report based on three key indicators, ranking America's leading cities and why people choose them."></h2>
         <ul class="tag-list">
           <li class="work-tag">Editorial</li>
         </ul>
@@ -127,31 +120,31 @@
       <div class="project-meta-row">
         <div class="project-meta-item">
           <p class="meta-label">Timeline</p>
-          <p class="meta-value">&#10551; 2 months</p>
+          <p class="meta-value reveal">&#10551; 2 months</p>
         </div>
         <div class="project-meta-item">
           <p class="meta-label">Client</p>
-          <a class="meta-value-link" href="https://resonanceco.com/" style="color: #bedd4e;">&#10551; Resonance</a>
+          <a class="meta-value-link reveal" href="https://resonanceco.com/" style="color: #bedd4e;">&#10551; Resonance</a>
           
         </div>
         <div class="project-meta-item">
           <p class="meta-label">Credits</p>
-          <p class="meta-value">&#10551; Brandon McComas — Content Director
+          <p class="meta-value reveal">&#10551; Brandon McComas — Content Director
 </p>
-<p class="meta-value">&#10551; Tom Gierasimczuk — Editorial Director
+<p class="meta-value reveal">&#10551; Tom Gierasimczuk — Editorial Director
 </p>
-<p class="meta-value">&#10551; Jessica Hyun & Julia Hu — Data Validation
+<p class="meta-value reveal">&#10551; Jessica Hyun & Julia Hu — Data Validation
 </p>
-<p class="meta-value">&#10551; Deanna DiBrienza — Project Manager
+<p class="meta-value reveal">&#10551; Deanna DiBrienza — Project Manager
 </p> </div>
    <div class="project-meta-item"> 
     <p class="meta-label">CREDITS CONT.</p>
-  <p class="meta-value">&#10551; Dominic Prevost - Creative Director
+  <p class="meta-value reveal">&#10551; Dominic Prevost - Creative Director
 </p>
-<p  class="meta-value">&#10551; Dylan Meiteen — Design Consultant</p>
-<p class="meta-value">&#10551; Keira Schick — Designer
+<p  class="meta-value reveal">&#10551; Dylan Meiteen — Design Consultant</p>
+<p class="meta-value reveal">&#10551; Keira Schick — Designer
 </p>
-<p class="meta-value">&#10551; Bill Ellis — Web Developer</p>
+<p class="meta-value reveal">&#10551; Bill Ellis — Web Developer</p>
         </div>
         <div class="project-meta-item project-meta-item--year">
           <p class="meta-year">2026</p>
@@ -174,7 +167,7 @@
 
           <ul class="column-2">
           <li class="work-text-1">
-            <h2 class="work-title all-caps">what's the story?</h2>
+            <h2 class="work-title">What's the story?</h2>
             <h5 class="work-description">
             Resonance is a leading advisor and consultancy in placemaking, destination, and city branding and development. One of Resonance’s known services is for their data-driven, statistic-forward rankings of Europe's, America's, and the World's Best Cities.  
             </h5>
@@ -293,15 +286,28 @@
           />
         </ul>
 
-        <ul class="bottom-page-thumbnail">
-          <li>
-            <img
-              class="bottom-thumbnail-image"
-              src="assets/branding-images/KeiraSchick_ABC_BottomImage.jpg"
-              alt="Poster Scatter Bottom Image"
-            />
-          </li>
-        </ul>
+
+        
+        <ul class="">
+  <li class="work-end-container">
+    <img
+      class="bottom-thumbnail-image"
+      src="assets/branding-images/KeiraSchick_ABC_BottomImage.jpg"
+      alt="Poster Scatter Bottom Image"
+    />
+    <div class="work-end-content">
+      <h2 class="work-end-title reveal">
+        Hey, you've reached the end of the chapter.
+      </h2>
+      <a
+          class="vault-btn all-caps"
+          onclick="scrollToTop()"
+          style="color: #000"
+          >Jump to the beginning!</a
+        >
+    </div>
+  </li>
+</ul>
 
         <ul class="footer-global">
           <li>
@@ -411,5 +417,38 @@
       syncProjectHeader();
       window.addEventListener("scroll", syncProjectHeader, { passive: true });
     </script>
+
+<script>
+      const typewriterElements = document.querySelectorAll(".typewriter");
+
+      const typewriterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const text = el.getAttribute("data-text");
+              let i = 0;
+
+              function typeChar() {
+                if (i < text.length) {
+                  el.textContent += text.charAt(i);
+                  i++;
+                  setTimeout(typeChar, 60);
+                }
+              }
+
+              setTimeout(typeChar, 300); // 👈 delay before typing starts
+              observer.unobserve(el);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        },
+      );
+
+      typewriterElements.forEach((el) => typewriterObserver.observe(el));
+    </script>
+
   </body>
 </html>

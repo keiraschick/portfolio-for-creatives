@@ -44,6 +44,8 @@
 /* Geist Mono (clean monospaced accent font) */
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 
+/* Reklam in Semi Bold Regular is my header/header body copy */
+
 /* 
 ██ ███    ███ ██████   ██████  ██████  ████████      ██████ ███████ ███████ 
 ██ ████  ████ ██   ██ ██    ██ ██   ██    ██        ██      ██      ██      
@@ -83,6 +85,16 @@
 /* File for adding a scroll-to-top button or effect */
 @import url("scroll-to-top.css");
 
+@font-face {
+  font-family: "Reklam";
+  src:
+    url("../assets/fonts/Reklam-RegularSemiBold.woff2") format("woff2"),
+    url("../assets/fonts/Reklam-RegularSemiBold.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 
 ██    ██  █████  ██████  ██  █████  ██████  ██      ███████ ███████ 
 ██    ██ ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██      ██      
@@ -104,7 +116,7 @@
 :root {
   /* Typography */
   --font-family-body: "Plus Jakarta Sans", sans;
-  --font-family-heading: "Plus Jakarta Sans", sans;
+  --font-family-heading: "Reklam", sans;
   --font-family-project-title: "Plus Jakarta Sans", sans;
   --font-family-mono-accent: "Geist Mono", monospace;
   /* Core Colours */
@@ -176,6 +188,11 @@
   --padding-large: 3rem; /* Section spacing: content blocks, banner padding */
   --padding-jumbo: 3rem; /* Hero elements: full-width containers, page headers */
   --padding-ultra: 8rem; /* Full-bleed spacing: edge-to-edge layouts, super-sized headers */
+}
+
+.typewriter {
+  display: inline-block;
+  min-height: 1.2em;
 }
 
 /* ======================
@@ -591,7 +608,8 @@ h3 {
 }
 
 h4 {
-  font-size: 1.2rem;
+  font-family: Reklam;
+  font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h4-color);
@@ -1087,12 +1105,18 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .about-fixed-top-image {
-  width: 2.8rem;
   position: absolute;
-  top: 110px;
-  left: 15px;
+  top: clamp(90px, 20vw, 260px);
+  left: clamp(15px, 4vw, 60px);
+  width: clamp(5rem, 11rem - 4.5vw, 9rem);
   z-index: 1000;
   transition: 1s ease;
+}
+
+@media (min-width: 1400px) {
+  .about-fixed-top-image {
+    width: clamp(14rem, 4rem + 4vw, 16rem); /* grows again on large screens */
+  }
 }
 
 .bottom-spinner {
@@ -1568,7 +1592,7 @@ a.nav-link-primary-ribbon-current-vault {
 
 /* Title */
 .project-main-title {
-  font-family: "Plus Jakarta Sans", sans;
+  font-family: "Reklam", sans;
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 400;
   color: #fefae6;
@@ -1667,6 +1691,13 @@ a.nav-link-primary-ribbon-current-vault {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+  }
+
+  .column-2-about {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
     width: 100%;
   }
 
@@ -1801,18 +1832,21 @@ a.nav-link-primary-ribbon-current-vault {
   position: relative;
   padding: 0 0 32px 0;
   box-shadow: 4px 4px 0 #000;
+}
+
+.card.reveal {
   transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    opacity 1.2s ease,
+    transform 1.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .card:hover {
-  border: 1px solid #000000;
-  background: #fff;
-  position: relative;
-  padding: 0 0 32px 0;
   box-shadow: 2px 2px 0 #000000;
   transform: translate(2px, 2px);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 /* Clip overflow so icons above/below are hidden until revealed */
@@ -1885,9 +1919,9 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .card-title {
-  font-family: "Plus Jakarta Sans", sans;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 400;
+  font-family: "Reklam", sans;
+  font-size: clamp(34px, 6vw, 59px);
+  font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.01em;
   margin-bottom: 20px;
@@ -1931,20 +1965,43 @@ a.nav-link-primary-ribbon-current-vault {
 }
 
 .work-end-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-page-end-container {
+  padding-top: 20%;
+  padding-left: 14%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-end-container .bottom-thumbnail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.work-end-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
-  padding-top: 10%;
+  justify-content: center;
+  padding-left: 4%;
   padding-right: 15%;
-  padding-left: 2%;
-  padding-bottom: 15%;
 }
 
 .work-end-title {
   padding-bottom: 5%;
-  font-family: "Plus Jakarta Sans", sans;
-  font-size: clamp(32px, 4vw, 52px);
+  font-family: "Reklam", sans;
+  font-size: clamp(34px, 6vw, 59px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.01em;
@@ -2021,6 +2078,13 @@ a.nav-link-primary-ribbon-current-vault {
     gap: 2rem;
   }
 
+  .column-2-about {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-bottom: 8%;
+  }
+
   .footer-content {
     padding: 9% 5% 9% 5%;
     display: flex;
@@ -2033,8 +2097,8 @@ a.nav-link-primary-ribbon-current-vault {
 
   .footer-end-title {
     width: 50%;
-    font-family: "Plus Jakarta Sans", sans;
-    font-size: clamp(32px, 4vw, 52px);
+    font-family: "Reklam", sans;
+    font-size: clamp(34px, 6vw, 70px);
     font-weight: 400;
     line-height: 1.05;
     letter-spacing: -0.01em;
@@ -2081,16 +2145,21 @@ a.nav-link-primary-ribbon-current-vault {
     line-height: 1.05;
     text-wrap: balance;
   }
+  .work-category-container {
+    padding-bottom: 4%;
+  }
 
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+    background-color: #000;
     padding: 12% 8%;
     gap: 2.5rem;
+    border-top: solid 1px #fefae6;
   }
 
   .footer-end-title {
-    font-family: "Plus Jakarta Sans", sans;
+    font-family: "Reklam", sans;
     font-size: clamp(32px, 4vw, 52px);
     font-weight: 400;
     line-height: 1.05;
@@ -2249,7 +2318,6 @@ a.nav-link-primary-ribbon-current-vault {
 .work-category-body {
   font-size: 0.9rem;
   line-height: 0.2rem;
-  padding-bottom: 0%;
   font-weight: 200;
 }
 
@@ -2477,10 +2545,9 @@ a.nav-link-primary-ribbon-current-vault {
 .about-text-1 {
   width: 100%;
   background: rgb(0, 0, 0);
+  padding: 2rem;
   padding-bottom: 2rem;
   padding-top: 13%;
-  padding-left: 18%;
-  padding-right: 18%;
 }
 
 .about-text-2 {
@@ -2488,21 +2555,18 @@ a.nav-link-primary-ribbon-current-vault {
   background: rgb(0, 0, 0);
   padding: 2rem;
   padding-top: 13%;
-  padding-right: 18%;
-  padding-left: 18%;
+  padding-bottom: 2rem;
 }
 
 .about-text-1-second {
   width: 100%;
   padding: 2rem;
-  padding-left: 10%;
-  padding-left: 10%;
   position: relative;
 }
 
 .about-page .bio-info h5 {
   font-family: var(--font-family-body);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 200;
 }
 
@@ -3256,6 +3320,37 @@ to keep your styles reusable and consistent.
   margin-bottom: 1.5rem;
 }
 
+.masonry-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000000bc;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.masonry-overlay-text {
+  color: #fefae6;
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* sits above the ::after tint (which has no explicit z-index, so defaults below this) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.masonry-item:hover::after,
+.masonry-item:hover .masonry-overlay-text {
+  opacity: 1;
+}
+
 .masonry-grid {
   padding: 2.5%;
   grid-gap: 1.5rem;
@@ -3392,21 +3487,15 @@ to keep your styles reusable and consistent.
   .about-text-1 {
     width: 100%;
     background: rgb(0, 0, 0);
-    padding-left: 9%;
-    padding-right: 9%;
   }
   .about-text-2 {
     width: 100%;
     background: rgb(0, 0, 0);
-    padding-right: 9%;
-    padding-left: 9%;
     padding-top: 0%;
   }
 
   .about-text-1-second {
     width: 100%;
-    padding-left: 9%;
-    padding-right: 9%;
   }
 
   .about-category-header,
@@ -3591,14 +3680,6 @@ to keep your styles reusable and consistent.
     z-index: 20;
   }
 
-  .about-fixed-top-image {
-    width: 3.4rem;
-    position: absolute;
-    top: 210px;
-    left: 15px;
-    z-index: 1000;
-  }
-
   .tagline {
     font-size: 1.5rem;
     line-height: 1.2;
@@ -3659,7 +3740,7 @@ to keep your styles reusable and consistent.
   }
 
   .title {
-    font-size: 1.2rem;
+    font-size: 3rem;
     line-height: 0;
     margin-top: 3px;
     padding-top: 10px;
@@ -3744,8 +3825,6 @@ to keep your styles reusable and consistent.
     width: 100%;
     background: rgb(0, 0, 0);
     padding-top: 20%;
-    padding-left: 13%;
-    padding-right: 13%;
   }
 
   .work-text-1 {
@@ -3756,8 +3835,6 @@ to keep your styles reusable and consistent.
   .about-text-2 {
     width: 100%;
     background: rgb(0, 0, 0);
-    padding-right: 13%;
-    padding-left: 13%;
   }
 
   .work-text-2 {
@@ -3771,8 +3848,6 @@ to keep your styles reusable and consistent.
 
   .about-text-1-second {
     width: 100%;
-    padding-left: 13%;
-    padding-right: 13%;
   }
 
   a.nav-link-primary {
@@ -3900,14 +3975,6 @@ to keep your styles reusable and consistent.
     z-index: 1000;
   }
 
-  .about-fixed-top-image {
-    width: 3.4rem;
-    position: absolute;
-    top: 260px;
-    left: 15px;
-    z-index: 1000;
-  }
-
   .about-image {
     text-align: center;
     width: 80%;
@@ -3973,14 +4040,6 @@ to keep your styles reusable and consistent.
     z-index: 1000;
   }
 
-  .about-fixed-top-image {
-    width: 4rem;
-    position: absolute;
-    top: 300px;
-    left: 25px;
-    z-index: 1000;
-  }
-
   .work-category-body {
     font-size: 0.8rem;
     line-height: 0.2rem;
@@ -4033,14 +4092,6 @@ to keep your styles reusable and consistent.
     justify-content: center;
     background: #000;
   }
-
-  .about-fixed-top-image {
-    width: 7rem;
-    position: absolute;
-    top: 350px;
-    left: 25px;
-    z-index: 1000;
-  }
 }
 
 @media (min-width: 640px) {
@@ -4051,14 +4102,6 @@ to keep your styles reusable and consistent.
     content: url("../assets/branding-images/BANNER.svg");
     top: 760px;
     left: 55px;
-  }
-
-  .about-fixed-top-image {
-    width: 9rem;
-    position: absolute;
-    top: 180px;
-    left: 25px;
-    z-index: 1000;
   }
 
   .about-image {
@@ -4169,24 +4212,17 @@ to keep your styles reusable and consistent.
     background: rgb(0, 0, 0);
     padding: 2rem;
     padding-top: 15%;
-    padding-left: 18%;
-    padding-right: 18%;
   }
   .about-text-2 {
     width: 100%;
     background: rgb(0, 0, 0);
     padding: 2rem;
     padding-top: 15%;
-    padding-right: 18%;
-    padding-left: 18%;
   }
 
   .about-text-1-second {
     width: 100%;
-    padding: 2rem;
     padding-top: 15%;
-    padding-left: 18%;
-    padding-right: 18%;
   }
 
   .logo {
@@ -4318,14 +4354,6 @@ to keep your styles reusable and consistent.
     z-index: 1000;
   }
 
-  .about-fixed-top-image {
-    width: 7rem;
-    position: absolute;
-    top: 190px;
-    left: 50px;
-    z-index: 1000;
-  }
-
   /* TODO: Adjust  layout for tablets */
 }
 
@@ -4338,6 +4366,12 @@ to keep your styles reusable and consistent.
   .work-timeline-container {
     text-align: left;
     align-items: flex-start;
+  }
+
+  .about-page .bio-info h5 {
+    font-family: var(--font-family-body);
+    font-size: 0.8rem;
+    font-weight: 200;
   }
 
   .work-timeline-container {
@@ -4529,7 +4563,7 @@ to keep your styles reusable and consistent.
   }
 
   .work-category-container {
-    padding-bottom: 3%;
+    padding-bottom: 1%;
   }
 
   .work-category-body {
@@ -4786,14 +4820,6 @@ to keep your styles reusable and consistent.
   z-index: 1000;
 }
 
-.about-fixed-top-image {
-  width: 5rem;
-  position: absolute;
-  top: 100px;
-  left: 25px;
-  z-index: 1000;
-}
-
 .about-image {
   padding-top: 10%;
   padding-bottom: 15%;
@@ -4989,14 +5015,6 @@ to keep your styles reusable and consistent.
     z-index: 1000;
   }
 
-  .about-fixed-top-image {
-    width: 13rem;
-    position: absolute;
-    top: 200px;
-    left: 110px;
-    z-index: 1000;
-  }
-
   .logo {
     width: 5rem;
   }
@@ -5051,6 +5069,36 @@ to keep your styles reusable and consistent.
 That’s a wrap, class! 🧑‍🎓✨
 
 */
+
+@media only screen and (min-width: 790px) and (max-width: 1150px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+/* Force ribbon items to stay on one line, scaling text instead of wrapping */
+.horozontal-ribbon {
+  flex-wrap: nowrap;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.about-category-header {
+  font-size: clamp(0.6rem, 2.8vw, 1rem) !important;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.about-category-body {
+  font-size: clamp(0.5rem, 2vw, 0.8rem) !important;
+  font-weight: 400;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
 /* 🎉 You made it to the end! */
 /* This is a great place to celebrate your progress, add Easter eggs, or leave notes for your future self. */

@@ -73,12 +73,11 @@
 
       <div class="blurb-container">
         <p
-          class="blurb all-caps reveal"
+          class="blurb all-caps typewriter"
           style="color: #bedd4e; font-weight: 300"
-        >
-          graphic designer located in vancouver, bc. Currently at the west
-          harbour.
-        </p>
+          data-text="graphic designer located in vancouver, bc. Currently at the west
+          harbour."
+        ></p>
       </div>
 
       <header class="hero-header">
@@ -117,6 +116,37 @@
       );
 
       elements.forEach((el) => observer.observe(el));
+    </script>
+    <script>
+      const typewriterElements = document.querySelectorAll(".typewriter");
+
+      const typewriterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const text = el.getAttribute("data-text");
+              let i = 0;
+
+              function typeChar() {
+                if (i < text.length) {
+                  el.textContent += text.charAt(i);
+                  i++;
+                  setTimeout(typeChar, 60);
+                }
+              }
+
+              setTimeout(typeChar, 300); // 👈 delay before typing starts
+              observer.unobserve(el);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        },
+      );
+
+      typewriterElements.forEach((el) => typewriterObserver.observe(el));
     </script>
   </body>
 </html>
