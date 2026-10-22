@@ -1578,12 +1578,12 @@ a.nav-link-primary-ribbon-current-vault {
 
 /* Work wrapper (takes up available space) */
 .main-work-section {
-  padding-top: 6rem; /* clears the fixed nav on desktop */
+  padding-top: 0rem; /* clears the fixed nav on desktop */
 }
 
 @media (max-width: 768px) {
   .main-work-section {
-    padding-top: 8rem; /* nav takes more vertical space on mobile — adjust to match */
+    padding-top: 6rem; /* nav takes more vertical space on mobile — adjust to match */
   }
 }
 
@@ -2013,7 +2013,7 @@ main.project-full-width {
 }
 
 .work-end-title {
-  padding-bottom: 5%;
+  padding-bottom: 2%;
   font-family: "Reklam", sans;
   font-size: clamp(34px, 6vw, 59px);
   font-weight: 400;
@@ -2498,6 +2498,13 @@ main.project-full-width {
   padding-left: 10%;
 }
 
+.column-1-video {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 6%;
+  padding-left: 6%;
+}
+
 .reel {
   padding-bottom: 10%;
 }
@@ -2578,6 +2585,7 @@ main.project-full-width {
 
 .bottom-thumbnail-image {
   width: 100%;
+  padding-top: 2%;
 }
 
 .about-text-1 {
@@ -2908,7 +2916,7 @@ main.project-full-width {
 
 .full-width-image {
   order: 1;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin: 0;
@@ -2917,7 +2925,7 @@ main.project-full-width {
 
 .full-width-image img {
   display: block;
-  width: 100vw;
+  width: 100%;
   height: clamp(24rem, calc(100vh - 9rem), 56rem);
   object-fit: cover;
 }
@@ -3449,7 +3457,7 @@ to keep your styles reusable and consistent.
   }
 
   .full-width-image img {
-    width: 125vw;
+    width: 100%;
     max-width: none;
     transform: translateY(-6rem) scale(0.8);
     transform-origin: center center;
