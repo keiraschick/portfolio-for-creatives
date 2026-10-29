@@ -2307,7 +2307,7 @@ main.project-full-width {
   font-family: var(--font-family-project-title);
 }
 
-.project-meta-reveal .project-title .project-categories,
+.project-meta-reveal .project-categories,
 .project-meta-reveal .work-timeline-container .project-categories {
   opacity: 0;
   transform: translateX(-1.5rem);
@@ -2316,7 +2316,7 @@ main.project-full-width {
     transform 1s ease;
 }
 
-.project-meta-reveal.is-visible .project-title .project-categories,
+.project-meta-reveal.is-visible .project-categories,
 .project-meta-reveal.is-visible .work-timeline-container .project-categories {
   opacity: 1;
   transform: translateX(0);
