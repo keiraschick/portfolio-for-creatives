@@ -3452,14 +3452,10 @@ to keep your styles reusable and consistent.
     margin-bottom: 1rem;
   }
 
-  .full-width-image {
-    overflow: hidden;
-  }
-
   .full-width-image img {
     width: 100%;
     max-width: none;
-    transform: translateY(-6rem) scale(0.8);
+    transform: translateY(-6rem); /* scale removed */
     transform-origin: center center;
   }
 
@@ -3791,6 +3787,10 @@ to keep your styles reusable and consistent.
     margin-top: 3px;
     padding-top: 10px;
     color: #000000;
+  }
+
+  .about-title.title {
+    line-height: 1.15 !important;
   }
 
   .tagline-section {
